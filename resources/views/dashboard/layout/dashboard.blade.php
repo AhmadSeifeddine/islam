@@ -123,14 +123,14 @@
                         <!--begin::Content-->
                         <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                             <!--begin::Toolbar container-->
-                            <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                            <div id="kt_app_toolbar_container" class="d-flex w-100 flex-stack">
                                 @yield('toolbar')
                             </div>
                         </div>
                         <!--begin::Content-->
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
-                            <div id="kt_app_content_container" class="app-container container-xxl">
+                            <div id="kt_app_content_container" class="app-container ">
                                 @yield('content')
                             </div>
                         </div>
@@ -152,12 +152,9 @@
         <!--end::Page-->
     </div>
 
-    <script src="{{ asset('packages/iziToast/js/iziToast.min.js') }}"></script>
-    <script src="{{ asset('packages/iziToast/js/iziToast.js') }}"></script>
     <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('global/Launcher.js') }}" type="module"></script>
     @stack('scripts')
 </body>
 <!--end::Body-->
