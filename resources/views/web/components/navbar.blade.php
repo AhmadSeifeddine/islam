@@ -1,14 +1,15 @@
-<div id="kt_app_header" class="app-header navbar flex-column" data-kt-sticky="true"
+<div id="kt_app_header" class="app-header navbar flex-column"  data-kt-sticky="true"
     data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize"
-    data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+    data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false" style="border-bottom: 0px !important">
     <!--begin::Header container-->
-    <div class="app-container container-xxl d-flex align-items-stretch justify-content-between"
-        id="kt_app_header_container" style="height: 400px !important">
-        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
+    <div class=" container-xl d-flex align-items-stretch justify-content-between"
+        id="kt_app_header_container" style="height: 1000px !important">
+        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <span>
                 <div class="d-flex align-items-center">
-                    <img alt="Logo" src="{{ asset('vendor/img/logo/logoCropped.svg') }}"
-                        class="w-75px app-sidebar-logo-default me-1">
+                    {{-- <img alt="Logo" src="{{ asset('vendor/img/logo/logoCropped.svg') }}"
+                        class="w-75px app-sidebar-logo-default me-1"> --}}
+                    @include('web.components.logo')
                     <div class="d-flex flex-column">
                         <span class="fs-2 fw-bold d-none d-lg-block">أهل الحديث</span>
                         <span class="text-muted fs-8 d-none d-lg-block">أحمد ورافع</span>
@@ -19,68 +20,84 @@
         <!--end::Logo-->
 
         <!--begin::Header wrapper-->
-        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+        <div class="Header-wrapper-menu d-flex align-items-stretch justify-content-between" id="kt_app_header_wrapper" style="flex-grow: 0.5;">
 
             <!--begin::Menu wrapper-->
             <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true"
                 data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}"
-                data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start"
+                data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end"
                 data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true"
                 data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
-                data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+                data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}"
+                style="background-color: var(--background);">
                 <!--begin::Menu-->
                 <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
                     id="kt_app_header_menu" data-kt-menu="true">
                     @guest
                         <div class="menu-item px-3">
                             <a href="/"
-                                class="text-hover menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
-                                {{ __('الرئيسية') }}
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('مقالات') }}
                             </a>
                         </div>
                         <div class="menu-item px-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
-                                class="text-hover menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
-                                {{ __('المحاضرات') }}
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('كتب') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
-                                class="text-hover menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
-                                {{ __('الدورات') }}
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('عقيدة') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
-                                class="text-hover menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
-                                {{ __('الاختبارات') }}
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('فقه') }}
                             </a>
                         </div>
+
+                        <div class="menu-item px-3">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('فيديوهات') }}
+                            </a>
+                        </div>
+
+                        <div class="menu-item px-3">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                                {{ __('شخصيات') }}
+                            </a>
+                        </div>
+
                     @else
                         <div class="menu-item px-3">
                             <a href="/"
-                                class="text-hover menu-link  fs-5 text-logo-hover-color fw-bold px-3 py-2">
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('الرئيسية') }}
                             </a>
                         </div>
                         <div class="menu-item px-3">
-                            <a href="" class="text-hover menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
+                            <a href="" class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                     {{ __('المحاضرات') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
                             <a href=""
-                                class="text-hover  menu-link fs-5 text-logo-hover-color fw-bold px-3 py-2">
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('الدورات') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
                             <a href=""
-                                class="text-hover menu-link  fs-5 text-logo-hover-color fw-bold px-3 py-2">
+                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('الاختبارات') }}
                             </a>
                         </div>
@@ -93,16 +110,16 @@
             <!--begin::Navbar-->
             <div class="app-navbar flex-shrink-0">
                 <!--begin::Theme mode-->
-                <div class="app-navbar-item ms-1 ms-md-4">
+                <div class="app-navbar-item">
                     <!--begin::Menu toggle-->
                     <a href="#"
                         class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
                         data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent"
                         data-kt-menu-placement="bottom-end">
                         <i class="bi bi-brightness-high theme-light-show icon-light fs-2" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" title="Light"></i>
+                            data-bs-placement="bottom" title="فاتح"></i>
                         <i class="bi bi-moon-stars theme-dark-show fs-2" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" title="Dark"></i>
+                            data-bs-placement="bottom" title="داكن"></i>
                     </a>
                     <!--begin::Menu toggle-->
                     <!--begin::Menu-->
@@ -110,38 +127,38 @@
                         data-kt-menu="true" data-kt-element="theme-mode-menu">
                         <!--begin::Menu item-->
                         <div class="menu-item px-3 my-0">
-                            <a href="#" class="menu-link px-3 py-2 active" data-kt-element="mode"
+                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center gap-2 active" data-kt-element="mode"
                                 data-kt-value="light">
                                 <span class="menu-icon" data-kt-element="icon">
                                     <i class="bi bi-brightness-high icon-light fs-2"></i>
                                 </span>
                                 <span class="menu-title">
-                                    {{ __('light') }}
+                                    {{ __('فاتح') }}
                                 </span>
                             </a>
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-3 my-0">
-                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="dark">
+                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center gap-2" data-kt-element="mode" data-kt-value="dark">
                                 <span class="menu-icon" data-kt-element="icon">
                                     <i class="bi bi-moon-stars icon-light fs-2"></i>
                                 </span>
                                 <span class="menu-title">
-                                    {{ __('dark') }}
+                                    {{ __('داكن') }}
                                 </span>
                             </a>
                         </div>
                         <!--end::Menu item-->
 
                         <!--begin::Menu item-->
-                        <div class="menu-item px-3 my-0">
-                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="system">
+                        <div class="menu-item px-3 my-0 ">
+                            <a href="#" class="menu-link px-3 py-2 d-flex align-items-center gap-2" data-kt-element="mode" data-kt-value="system">
                                 <span class="menu-icon" data-kt-element="icon">
                                     <i class="bi bi-display fs-2"></i>
                                 </span>
                                 <span class="menu-title">
-                                    {{ __('system') }}
+                                    {{ __('النظام') }}
                                 </span>
                             </a>
                         </div>
@@ -152,10 +169,10 @@
                 </div>
                 <!--end::Theme mode-->
                 @guest
-                    <div class="menu-item px-3 d-flex align-items-center justify-content-center flex-lg-grow-1">
-                        <button data-bs-toggle="modal" data-bs-target="#join-now-modal" class="btn btn-sm bg-logo">
-                            <i class="bi bi-person text-white me-1"></i>{{ __('join_now') }}
-                        </button>
+                    <div class="menu-item ps-3 ps-lg-0 pe-2 d-flex align-items-center justify-content-center flex-lg-grow-1">
+                        <a href="" class="btn-bg-logo">
+                            {{ __('تسجيل الدخول') }}
+                        </a>
                     </div>
                 @endguest
                 {{-- End Language --}}
@@ -231,7 +248,7 @@
                     <!--end::User menu-->
                 @endauth
                 <!--begin::Header menu toggle-->
-                <div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+                <div class="app-navbar-item d-lg-none" title="Show header menu">
                     <div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px"
                         id="kt_app_header_menu_toggle">
                         <i class="bi bi-grid-3x3-gap-fill fs-1 icon-light"></i>
@@ -249,71 +266,6 @@
     <!--end::Header container-->
 </div>
 
-<div class="modal fade" identifier="modal-handler" clear-forms role="dialog" tabindex="-1" id="join-now-modal">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
-        <div class="modal-content border-0 shadow-lg">
-            <div class="modal-body p-0">
-                <div class="row g-0">
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="h-100 position-relative" style="min-height: 500px;">
-                            <img style="border-top-left-radius:7px; border-bottom-left-radius: 7px;"
-                                class="w-100 h-100 object-fit-cover position-absolute"
-                                src=""
-                                alt="{{ __('modal_image') }}">
-                            <div class="position-absolute top-0 start-0 w-100 h-100 bg-opacity-60"></div>
-                        </div>
-                    </div>
-                    <div style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;"
-                        class="col-lg-6 modal-body-login d-flex align-items-start justify-content-center">
-                        <div class="p-8 w-100">
-                            <div class="modal-header border-0">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="{{ __('close') }}"></button>
-                            </div>
-                            <h3 class="fw-bold mb-7 mt-5 text-center">{{ __('access_your_account') }}</h3>
-                            <form form-id="student-login-form" http-request route=""
-                                identifier="single-form-post-handler" serialize-as="formdata" feedback
-                                class="needs-validation" on-success="handleSuccess" success-toast close-modal>
-                                <div class="mb-6 mt-12">
-                                    <label for="uuid"
-                                        class="form-label visually-hidden">{{ __('uuid') }}</label>
-                                    <div class="input-group input-group-lg bg-light">
-                                        <input type="text" class="form-control bg-transparent border-0 px-3"
-                                            id="uuid" name="uuid" feedback-id="uuid-feedback"
-                                            placeholder="{{ __('enter_your_uuid') }}" data-uuid-input>
-                                    </div>
-                                    <div id="uuid-feedback" class="invalid-feedback"></div>
-                                </div>
-                                <div class="mb-6 mt-5">
-                                    <label for="password"
-                                        class="form-label visually-hidden">{{ __('password') }}</label>
-                                    <div class="input-group input-group-lg bg-light">
-                                        <input type="password" class="form-control bg-transparent border-0 px-3"
-                                            id="password" name="password" feedback-id="password-feedback"
-                                            placeholder="{{ __('enter_your_password') }}">
-                                    </div>
-                                    <div id="password-feedback" class="invalid-feedback"></div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center mb-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                                        <label class="form-check-label"
-                                            for="rememberMe">{{ __('remember_me') }}</label>
-                                    </div>
-                                </div>
-                                <button submit-form-id="student-login-form" type="submit"
-                                    class="btn bg-logo d-flex align-items-center justify-content-center gap-4 btn-lg w-100 mb-3">{{ __('sign_in') }}</button>
-                                <p class="text-center mb-0">{{ __('dont_have_account') }} <a
-                                        href="https://wa.link/30pyko"
-                                        class="text-logo text-decoration-none">{{ __('request_one') }}</a></p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <script>
     function handleSuccess(response) {
         setTimeout(() => {

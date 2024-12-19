@@ -78,7 +78,8 @@
 
 </script>
 
-<body id="kt_app_body" data-kt-app-layout="light-header" data-kt-app-header-fixed="true" data-kt-app-toolbar-enabled="true" class="app-default">
+<body id="kt_app_body" data-kt-app-layout="light-header" data-kt-app-header-fixed="true"
+    data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load-->
     <script>
         var defaultThemeMode = "light";
@@ -108,17 +109,46 @@
                 @include('web.components.navbar')
                 <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                        <div class="d-flex flex-column flex-column-fluid">
-                            <div id="kt_app_content" class="app-content mt-5 flex-column-fluid">
-                                <div id="kt_app_content_container">
-                                    <!-- Page Content -->
-                                    @yield('content')
+                        <div class="d-flex flex-column flex-column-fluid justify-content-center align-items-center vh-100">
+                            <div id="kt_app_content" class="app-content flex-column-fluid d-flex justify-content-center align-items-center">
+                                <div id="kt_app_content_container" class="text-center">
+                                    <section class="landing-page py-5">
+                                        <div class="container text-center">
+                                            <h1 class="display-4 fw-bold text-uppercase mb-4" style="color: var(--gold);">
+                                                <span class="typing-animation">مرحبا بكم في ليبيفي</span>
+                                            </h1>
+                                            <p class="lead mb-5" style="color: var(--text);">
+                                                <span class="typing-animation">اكتشف عالم التعلم والتطوير مع ليبيفي، حيث نساعدك على تحقيق أهدافك التعليمية.</span>
+                                            </p>
+                                            <a href="#courses" class="btn btn-bg-logo btn-lg">استكشف الدورات</a>
+                                        </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Footer -->
+                <style>
+                    .typing-animation {
+                        display: inline-block;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        border-right: 0.15em solid var(--gold);
+                        animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+                    }
+
+                    @keyframes typing {
+                        from { width: 0; }
+                        to { width: 100%; }
+                    }
+
+                    @keyframes blink-caret {
+                        from, to { border-color: transparent; }
+                        50% { border-color: var(--gold); }
+                    }
+                </style>
+                @yield('content')
+                @include('web.components.footer')
             </main>
         </div>
 
