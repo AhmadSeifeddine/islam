@@ -24,7 +24,7 @@
                 <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
                     data-bs-target="#kt_job_4_2">
                     <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
+                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
                         <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
                                 class="path1"></span><span class="path2"></span></i>
                         <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span
@@ -62,7 +62,7 @@
                 <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
                     data-bs-target="#kt_job_4_3">
                     <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
+                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
                         <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
                                 class="path1"></span><span class="path2"></span></i>
                         <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span
@@ -100,7 +100,7 @@
                 <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
                     data-bs-target="#kt_job_4_4">
                     <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
+                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
                         <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
                                 class="path1"></span><span class="path2"></span></i>
                         <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span

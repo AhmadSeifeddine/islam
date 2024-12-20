@@ -169,7 +169,7 @@
                 <!-- About us -->
 
                 @include('web.components.faq')
-                @yield('content')
+                @include('web.components.contact')
                 @include('web.components.footer')
             </main>
         </div>
