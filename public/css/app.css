@@ -49,6 +49,19 @@ body {
     fill: var(--background) !important;
 }
 
+.section-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    padding: 5px;
+}
+
+.section-text{
+    font-size: 1.3rem;
+    color: var(--text);
+}
+
 .footer-bg {
     background-color: var(--background) !important;
     border-top: 1px solid var(--gold);
@@ -170,5 +183,98 @@ body {
     .btn-bg-logo:hover {
         transform: none;
         box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.huge-font {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.big-font{
+    font-size: 4.5rem;
+}
+
+.landing-vh{
+    height: 90vh;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .huge-font {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .big-font {
+        font-size: 3rem;
+    }
+
+    .huge-font{
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .big-font {
+        font-size: 2.5rem;
+    }
+
+    .huge-font{
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .big-font {
+        font-size: 2rem;
+    }
+
+    .huge-font{
+        font-size: 3.5rem;
+    }
+
+    .landing-vh{
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 494px) {
+    .big-font {
+        font-size: 1.5rem;
+    }
+
+    .huge-font{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .big-font {
+        font-size: 1.265rem;
+    }
+
+    .huge-font{
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--gold);
+        margin-bottom: 2rem;
+        padding-right: 10px;
+    }
+
+    .section-text{
+        font-size: 1.3rem;
+        color: var(--text);
+        padding-right: 10px;
+        padding-left: 10px;
+
     }
 }
