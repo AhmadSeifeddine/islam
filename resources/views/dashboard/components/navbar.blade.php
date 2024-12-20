@@ -37,7 +37,7 @@
                 <!--begin::Theme mode-->
                 <div class="app-navbar-item ms-1 ms-md-4">
                     <!--begin::Menu toggle-->
-                    <a href="#"
+                    <a
                         class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
                         data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent"
                         data-kt-menu-placement="bottom-end">
@@ -46,11 +46,11 @@
                     </a>
                     <!--begin::Menu toggle-->
                     <!--begin::Menu-->
-                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-state-color fw-semibold py-4 fs-base w-70px"
+                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-gray-500 menu-state-color fw-semibold py-4 fs-base w-60px"
                         data-kt-menu="true" data-kt-element="theme-mode-menu">
                         <!--begin::Menu item-->
-                        <div class="menu-item px-3 my-0">
-                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
+                        <div class="menu-item">
+                            <a class="menu-link d-flex align-items-center js py-2" data-kt-element="mode" data-kt-value="light">
                                 <span class="menu-icon" data-kt-element="icon">
                                     <i class="bi bi-sun fs-2"></i>
                                 </span>
