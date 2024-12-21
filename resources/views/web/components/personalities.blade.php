@@ -20,13 +20,11 @@
                             <div class="d-flex flex-column h-100">
                                 <!-- Header Section -->
                                 <div class="mb-5">
-                                    <div class="d-flex justify-content-between align-items-start mb-4">
-                                        <div class="me-4">
-                                            <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
-                                            <span class="text-gray-800 fs-1 fw-bold">محمد متولي الشعراوي</span>
-                                        </div>
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
                                         <span class="badge badge-light-danger py-2 px-4 fs-7">لا ننصح به</span>
                                     </div>
+                                    <span class="text-gray-800 fs-1 fw-bold">محمد متولي الشعراوي</span>
                                 </div>
 
                                 <!-- Book Description -->
@@ -101,13 +99,13 @@
                             <div class="d-flex flex-column h-100">
                                 <!-- Header Section -->
                                 <div class="mb-5">
-                                    <div class="d-flex justify-content-between align-items-start mb-4">
-                                        <div class="me-4">
-                                            <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
-                                            <span class="text-gray-800 fs-1 fw-bold">محمد متولي الشعراوي</span>
-                                        </div>
-                                        <span class="badge badge-light-danger py-2 px-4 fs-7">لا ننصح به</span>
+                                </div>
+                                <div class="mb-5">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
+                                        <span class="badge badge-light-primary py-2 px-4 fs-7">ننصح به</span>
                                     </div>
+                                    <span class="text-gray-800 fs-1 fw-bold">محمد بن شمس الدين</span>
                                 </div>
 
                                 <!-- Book Description -->
