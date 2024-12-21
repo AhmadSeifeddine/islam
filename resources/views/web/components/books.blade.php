@@ -3,13 +3,13 @@
     <div class="row g-5">
         <!-- First Card -->
         <div class="col-xl-6 col-lg-12">
-            <div class="card h-100 shadow-sm">
+            <div class="card shadow-sm">
                 <div class="card-body p-5">
-                    <div class="row g-5 h-100">
+                    <div class="row g-5">
                         <!-- Image Column -->
                         <div class="col-sm-6 mb-4 mb-sm-0">
-                            <div class="card-rounded min-h-400px min-h-sm-100 h-100" style="display: flex; justify-content: center; align-items: center; border-radius: 8px; overflow: hidden;">
-                                <img src="{{ asset('vendor/img/logo/1.jpg') }}" alt="صورة الكتاب" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden; aspect-ratio: 3/4;">
+                                <img src="{{ asset('vendor/img/logo/1.jpg') }}" alt="صورة الكتاب" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
 
@@ -96,11 +96,11 @@
         <div class="col-xl-6 col-lg-12">
             <div class="card h-100 shadow-sm">
                 <div class="card-body p-5">
-                    <div class="row g-5 h-100">
+                    <div class="row g-5">
                         <!-- Image Column -->
                         <div class="col-sm-6 mb-4 mb-sm-0">
-                            <div class="card-rounded min-h-400px min-h-sm-100 h-100" style="display: flex; justify-content: center; align-items: center; border-radius: 8px; overflow: hidden;">
-                                <img src="{{ asset('vendor/img/logo/2.webp') }}" alt="صورة الكتاب" style="width: 100%; height: auto; object-fit: cover;">
+                            <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden; aspect-ratio: 3/4;">
+                                <img src="{{ asset('vendor/img/logo/2.webp') }}" alt="صورة الكتاب" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
 

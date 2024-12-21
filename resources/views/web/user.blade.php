@@ -61,6 +61,7 @@
 <link href="{{ url('vendor/css/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ url('vendor/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ asset('css/preferences.css', true) }}">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 @stack('styles')
 
 <style>
@@ -182,6 +183,7 @@
         <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
         <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
         <script src="{{ url('js/app.js') }}"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         @stack('scripts')
 </body>
 
