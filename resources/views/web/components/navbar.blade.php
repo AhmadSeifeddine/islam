@@ -2,11 +2,11 @@
     data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize"
     data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false" style="border-bottom: 0px !important; background-color: var(--background); padding-top: 0px;">
     <!--begin::Header container-->
-    <div class=" container-xl d-flex align-items-stretch justify-content-between"
+    <div class="container d-flex align-items-stretch justify-content-between pt-2"
         id="kt_app_header_container" style="height: 1000px !important">
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <span>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center gap-3">
                     {{-- <img alt="Logo" src="{{ asset('vendor/img/logo/logoCropped.svg') }}"
                         class="w-75px app-sidebar-logo-default me-1"> --}}
                     @include('web.components.logo')

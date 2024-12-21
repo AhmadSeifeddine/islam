@@ -1,6 +1,6 @@
-<div class="container py-10">
+<div class="container mb-20 pb-10">
     <h1 class="section-title mb-10">مقترحات الشخصيات</h1>
-    <div class="row g-5">
+    <div class="row g-5 g-lg-8">
         <!-- First Card -->
         <div class="col-xl-6 col-lg-12">
             <div class="card h-100 shadow-sm">
@@ -57,7 +57,7 @@
 
                                 <!-- Actions -->
                                 <div class="mt-5 d-flex justify-content-between align-items-center">
-                                    <button class="btn btn-bg-logo">عرض الشخصية</button>
+                                    <button class="btn-bg-logo">عرض الشخصية</button>
 
                                     <div class="d-flex gap-2">
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="readLater"
@@ -138,7 +138,7 @@
 
                                 <!-- Actions -->
                                 <div class="mt-5 d-flex justify-content-between align-items-center">
-                                    <button class="btn btn-bg-logo">عرض الشخصية</button>
+                                    <button class="btn-bg-logo">عرض الشخصية</button>
 
                                     <div class="d-flex gap-2">
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="readLater"

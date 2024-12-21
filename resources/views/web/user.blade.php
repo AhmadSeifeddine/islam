@@ -69,8 +69,8 @@
         display: inline-block;
         overflow: hidden;
         white-space: nowrap;
-        border-right: 0.15em solid var(--gold);
-        animation: typing 2s steps(30, end), blink-caret 0.75s step-end 0s infinite;
+        border-left: 0.8rem solid var(--gold);
+        animation: typing 1.8s steps(20, end), blink-caret 0.75s step-end 0s infinite;
         direction: rtl;
     }
 
@@ -173,6 +173,7 @@
                 @include('web.components.books')
                 @include('web.components.personalities')
                 @include('web.components.youtube')
+                @include('web.components.aboutUs')
                 @include('web.components.faq')
                 @include('web.components.contact')
                 @include('web.components.footer')

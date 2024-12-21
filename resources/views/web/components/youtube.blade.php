@@ -1,6 +1,6 @@
-<div class="container py-10">
+<div class="container mb-20 pb-10">
     <h1 class="section-title mb-10">مقترحات الفيديوهات</h1>
-    <div class="row g-5">
+    <div class="row g-5 g-lg-8">
         <!-- First Card -->
         <div class="col-xl-6 col-lg-12">
             <div class="card shadow rounded-4 overflow-hidden">
@@ -27,7 +27,7 @@
                             <div>
                                 <h5 class="fw-bold mb-1">الشيخ محمد بن شمس الدين</h5>
                             </div>
-                            <button class="btn btn-bg-logo px-4 rounded-3">الملف الشخصي</button>
+                            <button class="btn-bg-logo px-4 rounded-3">الملف الشخصي</button>
                         </div>
                     </div>
 
@@ -110,7 +110,7 @@
                             <div>
                                 <h5 class="fw-bold mb-1">الشيخ ابو جعفر عبد الله الخليفي</h5>
                             </div>
-                            <button class="btn btn-bg-logo">الملف الشخصي</button>
+                            <button class="btn-bg-logo">الملف الشخصي</button>
                         </div>
                     </div>
 

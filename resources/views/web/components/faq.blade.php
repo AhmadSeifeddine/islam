@@ -1,8 +1,8 @@
-<div class="container card-body p-lg-15">
+<div class="container card-body">
     <!--begin::Classic content-->
-    <div class="mb-13">
+    <div class="mb-20 pb-10">
         <!--begin::Intro-->
-        <div class="mb-15">
+        <div class="mb-10">
             <!--begin::Title-->
             <h4 class="section-title">
                 الأسئلة المتكررة

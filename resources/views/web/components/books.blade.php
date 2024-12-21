@@ -1,8 +1,8 @@
-<div class="container py-10">
+<div class="container mb-20 pb-10">
     <h1 class="section-title mb-10">مقترحات الكتب</h1>
-    <div class="row g-5">
+    <div class="row g-5 g-lg-8">
         <!-- First Card -->
-        <div class="col-xl-6 col-lg-12">
+        <div class="col-12 col-xl-6">
             <div class="card shadow-sm">
                 <div class="card-body p-5">
                     <div class="row g-5">
@@ -67,7 +67,7 @@
 
                                 <!-- Actions -->
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <button class="btn btn-bg-logo">عرض الكتاب</button>
+                                    <button class="btn-bg-logo">عرض الكتاب</button>
 
                                     <div class="d-flex gap-2">
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="readLater"
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div class="col-xl-6 col-lg-12">
+        <div class="col-12 col-xl-6">
             <div class="card h-100 shadow-sm">
                 <div class="card-body p-5">
                     <div class="row g-5">
@@ -155,7 +155,7 @@
 
                                 <!-- Actions -->
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
-                                    <button class="btn btn-bg-logo">عرض الكتاب</button>
+                                    <button class="btn-bg-logo">عرض الكتاب</button>
 
                                     <div class="d-flex gap-2">
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="readLater"
