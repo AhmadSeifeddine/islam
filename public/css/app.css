@@ -127,6 +127,29 @@ body {
     text-align: right;
 }
 
+.separatorModal {
+    text-align: center;
+    position: relative;
+}
+
+.separatorModal::before,
+.separatorModal::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #e4e6ef;
+}
+
+.separatorModal::before {
+    left: 0;
+}
+
+.separatorModal::after {
+    right: 0;
+}
+
 @media screen and (max-width: 767px) {
     .footer-logo {
         text-align: center;

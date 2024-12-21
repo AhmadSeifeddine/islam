@@ -1,4 +1,4 @@
-<div class="container p-lg-17">
+<div class="container p-lg-10">
     <h1 class="section-title mb-10">تواصل معنا</h1>
 
     <!--begin::Row-->

@@ -64,37 +64,38 @@
 @stack('styles')
 
 <style>
-                    .typing-animation {
-                        display: inline-block;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        border-right: 0.15em solid var(--gold);
-                        animation: typing 2s steps(30, end), blink-caret 0.75s step-end 0s infinite;
-                        direction: rtl;
-                    }
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid var(--gold);
+        animation: typing 2s steps(30, end), blink-caret 0.75s step-end 0s infinite;
+        direction: rtl;
+    }
 
-                    @keyframes typing {
-                        from {
-                            width: 0;
-                        }
+    @keyframes typing {
+        from {
+            width: 0;
+        }
 
-                        to {
-                            width: 100%;
-                        }
-                    }
+        to {
+            width: 100%;
+        }
+    }
 
-                    @keyframes blink-caret {
-                        from,
-                        to {
-                            border-color: transparent;
-                        }
+    @keyframes blink-caret {
 
-                        50% {
-                            border-color: var(--gold);
-                        }
-                    }
+        from,
+        to {
+            border-color: transparent;
+        }
 
-                </style>
+        50% {
+            border-color: var(--gold);
+        }
+    }
+
+</style>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -116,7 +117,7 @@
     data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load-->
     <script>
-        var defaultThemeMode = "light";
+        var defaultThemeMode = "dark";
         var themeMode;
         if (document.documentElement) {
             if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
@@ -152,12 +153,13 @@
                                 <div id="kt_app_content_container" class="text-center">
                                     <section class="landing-page py-5">
                                         <div class="container text-center">
-                                            <h1 class="display-2 mb-4"
-                                                style="color: var(--gold);">
-                                                <span class="typing-animation huge-font">وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُفْلِحُونَ</span>
+                                            <h1 class="display-2 mb-4" style="color: var(--gold);">
+                                                <span class="typing-animation huge-font">وَاتَّقُوا اللَّهَ لَعَلَّكُمْ
+                                                    تُفْلِحُونَ</span>
                                             </h1>
                                             <p class="lead mb-5" style="color: var(--text);">
-                                                <span class="big-font">لا نجاة إلا بالإعتصام بالقرآن والسنة بفهم سلف الأمة </span>
+                                                <span class="big-font">لا نجاة إلا بالإعتصام بالقرآن والسنة بفهم سلف
+                                                    الأمة </span>
                                             </p>
                                         </div>
                                     </section>
@@ -167,7 +169,9 @@
                     </div>
                 </div>
                 <!-- About us -->
-
+                @include('web.components.books')
+                @include('web.components.personalities')
+                @include('web.components.youtube')
                 @include('web.components.faq')
                 @include('web.components.contact')
                 @include('web.components.footer')
