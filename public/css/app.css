@@ -29,6 +29,10 @@ body {
     direction: rtl;
 }
 
+.gold{
+    color: var(--gold);
+}
+
 .navbar {
     background-color: var(--background) !important;
 }

@@ -1,5 +1,11 @@
 <div class="container mb-20 pb-10">
-    <h1 class="section-title mb-10">مقترحات الفيديوهات</h1>
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center mb-5">
+            <h2 class="display-3 fw-bold mb-4">مقترحات <span class="gold">الفيديوهات</span></h2>
+            <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
+                متحدثي اللغة العربية</p>
+        </div>
+    </div>
     <div class="row g-5 g-lg-8">
         <!-- First Card -->
         <div class="col-xl-6 col-lg-12">
@@ -209,9 +215,3 @@
 
 
 <script src="{{ asset('js/collectionModal.js') }}"></script>
-
-
-
-
-
-

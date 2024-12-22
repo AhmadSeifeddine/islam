@@ -1,15 +1,24 @@
 <div class="container mb-20 pb-10">
-    <h1 class="section-title mb-10">مقترحات الكتب</h1>
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center mb-5">
+            <h2 class="display-3 fw-bold mb-4">مقترحات <span class="gold">الكتب</span></h2>
+            <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
+                متحدثي اللغة العربية</p>
+        </div>
+    </div>
     <div class="row g-5 g-lg-8">
         <!-- First Card -->
         <div class="col-12 col-xl-6">
-            <div class="card shadow-sm">
+            <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
-                    <div class="row g-5">
+                    <div class="row g-5 align-items-stretch">
                         <!-- Image Column -->
-                        <div class="col-sm-6 mb-4 mb-sm-0">
-                            <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden; aspect-ratio: 3/4;">
-                                <img src="{{ asset('vendor/img/logo/1.jpg') }}" alt="صورة الكتاب" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="col-sm-6">
+                            <div class="position-relative h-100">
+                                <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden;">
+                                    <img src="{{ asset('vendor/img/logo/1.jpg') }}" alt="صورة الكتاب"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
                             </div>
                         </div>
 
@@ -18,25 +27,25 @@
                             <div class="d-flex flex-column h-100">
                                 <!-- Header Section -->
                                 <div class="mb-5">
-                                    <div class="d-flex justify-content-between align-items-start mb-4">
-                                        <div class="me-4">
-                                            <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
-                                            <span class="text-gray-800 fs-1 fw-bold">صحيح البخاري</span>
-                                        </div>
-                                        <span class="badge badge-light-primary py-2 px-4 fs-7">حديث</span>
+                                    <div class="mb-4">
+                                        <span class="text-primary fw-bold fs-7 mb-2 d-block">
+                                            الإسم
+                                        </span>
+                                        <h2 class="display-6 fw-bolder mb-0">صحيح البخاري</h2>
                                     </div>
 
                                     <!-- Author Info -->
-                                    <div class="d-flex flex-column gap-4 mt-4">
+                                    <div
+                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-primary">
                                         <div class="d-flex align-items-center">
-                                            <div class="symbol symbol-30px symbol-circle me-3">
-                                                <img src="/api/placeholder/30/30" alt="author" class="rounded-circle"
-                                                    style="display: none;">
-                                            </div>
                                             <div>
-                                                <span class="text-gray-500 fs-8 d-block">الكاتب</span>
-                                                <a href="#" class="text-gray-800 text-hover-primary fs-7 fw-bold">محمد
-                                                    بن إسماعيل البخاري</a>
+                                                <span class="text-primary fs-8 fw-bold d-block">
+                                                    الكاتب
+                                                </span>
+                                                <a href="#" class="text-decoration-none fs-6 fw-bold"
+                                                    style="color: var(--text)">
+                                                    محمد بن إسماعيل البخاري
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -44,23 +53,30 @@
 
                                 <!-- Book Description -->
                                 <div class="mb-5">
-                                    <p class="text-gray-600 fs-6 mb-4">
+                                    <p class="text-gray fs-6 mb-4 lh-lg">
                                         صحيح البخاري هو أحد أهم كتب الحديث النبوي وأصحها، جمعه الإمام محمد بن إسماعيل
                                         البخاري ويضم أحاديث صحيحة مرتبة وفق الموضوعات الفقهية. يُعد مرجعًا رئيسيًا في
                                         السنة النبوية بعد القرآن الكريم.
                                     </p>
 
-                                    <div class="d-flex gap-4">
-                                        <div class="border border-gray-300 border-dashed rounded p-4 flex-grow-1">
-                                                                                    <div class="text-gray-500">تاريخ النشر:</div>
-
-                                            <span class="d-block text-gray-700 fw-bold mb-1">6 فبراير 2021</span>
+                                    <div class="row g-4">
+                                        <div class="col-6">
+                                            <div
+                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                <div class="text-success fw-semibold mb-2">
+                                                    تاريخ النشر:
+                                                </div>
+                                                <div class="fw-bold">6 فبراير 2021</div>
+                                            </div>
                                         </div>
-
-                                        <div class="border border-gray-300 border-dashed rounded p-4 flex-grow-1">
-                                                                                    <div class="text-gray-500">عدد الصفحات:</div>
-
-                                            <span class="d-block text-gray-700 fw-bold mb-1">7249</span>
+                                        <div class="col-6">
+                                            <div
+                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                <div class="text-danger fw-semibold mb-2">
+                                                    عدد الصفحات:
+                                                </div>
+                                                <div class="fw-bold">7249</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +97,8 @@
                                         </button>
 
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="collection"
-                                            data-bs-toggle="tooltip" title="إضافة إلى مجموعة">
+                                            data-bs-toggle="tooltip" title="إضافة إلى مجموعة" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
                                             <i class="fas fa-folder-plus fs-5" style="padding: 0px"></i>
                                         </button>
                                     </div>
@@ -93,14 +110,18 @@
             </div>
         </div>
 
+
         <div class="col-12 col-xl-6">
-            <div class="card h-100 shadow-sm">
+            <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
-                    <div class="row g-5">
+                    <div class="row g-5 align-items-stretch">
                         <!-- Image Column -->
-                        <div class="col-sm-6 mb-4 mb-sm-0">
-                            <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden; aspect-ratio: 3/4;">
-                                <img src="{{ asset('vendor/img/logo/2.webp') }}" alt="صورة الكتاب" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="col-sm-6">
+                            <div class="position-relative h-100">
+                                <div class="card-rounded h-100" style="border-radius: 8px; overflow: hidden;">
+                                    <img src="{{ asset('vendor/img/logo/2.webp') }}" alt="صورة الكتاب"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
                             </div>
                         </div>
 
@@ -109,24 +130,25 @@
                             <div class="d-flex flex-column h-100">
                                 <!-- Header Section -->
                                 <div class="mb-5">
-                                    <div class="d-flex justify-content-between align-items-start mb-4">
-                                        <div class="me-4">
-                                            <span class="text-gray-500 fs-7 fw-bold d-block mb-2">الإسم</span>
-                                            <span class="text-gray-800 fs-1 fw-bold">عقيدة السلف وأصحاب الحديث للصابوني </span>
-                                        </div>
-                                        <span class="badge badge-light-primary py-2 px-4 fs-7">عقيدة</span>
+                                    <div class="mb-4">
+                                        <span class="text-primary fw-bold fs-7 mb-2 d-block">
+                                            الإسم
+                                        </span>
+                                        <h2 class="display-6 fw-bolder mb-0">صحيح البخاري</h2>
                                     </div>
 
                                     <!-- Author Info -->
-                                    <div class="d-flex flex-column gap-4 mt-4">
+                                    <div
+                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-primary">
                                         <div class="d-flex align-items-center">
-                                            <div class="symbol symbol-30px symbol-circle me-3">
-                                                <img src="/api/placeholder/30/30" alt="author" class="rounded-circle"
-                                                    style="display: none;">
-                                            </div>
                                             <div>
-                                                <span class="text-gray-500 fs-8 d-block">الكاتب</span>
-                                                <a href="#" class="text-gray-800 text-hover-primary fs-7 fw-bold">أبو عثمان الصابوني</a>
+                                                <span class="text-primary fs-8 fw-bold d-block">
+                                                    الكاتب
+                                                </span>
+                                                <a href="#" class="text-decoration-none fs-6 fw-bold"
+                                                    style="color: var(--text)">
+                                                    محمد بن إسماعيل البخاري
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -134,21 +156,30 @@
 
                                 <!-- Book Description -->
                                 <div class="mb-5">
-                                    <p class="text-gray-600 fs-6 mb-4">
-                                        يذكر مجمل اعتقاد أهل السنّة في المسألة، ثم يعقبه بدليله من الوحي، ثم يذكُرُ الآثارَ عن السَّلَف، أو الأئمة.
+                                    <p class="text-gray fs-6 mb-4 lh-lg">
+                                        صحيح البخاري هو أحد أهم كتب الحديث النبوي وأصحها، جمعه الإمام محمد بن إسماعيل
+                                        البخاري ويضم أحاديث صحيحة مرتبة وفق الموضوعات الفقهية. يُعد مرجعًا رئيسيًا في
+                                        السنة النبوية بعد القرآن الكريم.
                                     </p>
 
-                                    <div class="d-flex gap-4">
-                                        <div class="border border-gray-300 border-dashed rounded p-4 flex-grow-1">
-                                                                                        <div class="text-gray-500">تاريخ النشر:</div>
-
-                                            <span class="d-block text-gray-700 fw-bold mb-1">6 فبراير 2021</span>
+                                    <div class="row g-4">
+                                        <div class="col-6">
+                                            <div
+                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                <div class="text-success fw-semibold mb-2">
+                                                    تاريخ النشر:
+                                                </div>
+                                                <div class="fw-bold">6 فبراير 2021</div>
+                                            </div>
                                         </div>
-
-                                        <div class="border border-gray-300 border-dashed rounded p-4 flex-grow-1">
-                                                                                    <div class="text-gray-500">عدد الصفحات:</div>
-
-                                            <span class="d-block text-gray-700 fw-bold mb-1">202</span>
+                                        <div class="col-6">
+                                            <div
+                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                <div class="text-danger fw-semibold mb-2">
+                                                    عدد الصفحات:
+                                                </div>
+                                                <div class="fw-bold">7249</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +200,8 @@
                                         </button>
 
                                         <button class="btn btn-light action-btn p-3 rounded-3" data-action="collection"
-                                            data-bs-toggle="tooltip" title="إضافة إلى مجموعة">
+                                            data-bs-toggle="tooltip" title="إضافة إلى مجموعة" data-bs-toggle="modal"
+                                            data-bs-target="#collectionModal">
                                             <i class="fas fa-folder-plus fs-5" style="padding: 0px"></i>
                                         </button>
                                     </div>
@@ -180,6 +212,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

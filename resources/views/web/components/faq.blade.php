@@ -1,139 +1,119 @@
-<div class="container card-body">
-    <!--begin::Classic content-->
-    <div class="mb-20 pb-10">
-        <!--begin::Intro-->
-        <div class="mb-10">
-            <!--begin::Title-->
-            <h4 class="section-title">
-                الأسئلة المتكررة
-            </h4>
-            <!--end::Title-->
-
-            <!--begin::Text-->
-            <p class="section-text">
-                الإجابة عن بعض الأسئلة التي قد تخطر في بالك حول من نحن، وما نقدمه، ولماذا نسعى لنشر العلم </p>
-            <!--end::Text-->
+<div class="container py-5 mb-10">
+     <!-- Main Header with Decorative Elements -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="display-3 fw-bold mb-4">بعض من <span class="gold">الأسئلة المتكرّرة</span></h2>
+                <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
+                    متحدثي اللغة العربية</p>
+            </div>
         </div>
-        <!--end::Intro-->
 
-        <!--begin::Row-->
-        <div class="">
-            <!--begin::Section-->
-            <div class="m-0">
-                <!--begin::Heading-->
-                <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
-                    data-bs-target="#kt_job_4_2">
-                    <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
-                        <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
-                                class="path1"></span><span class="path2"></span></i>
-                        <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span
-                                class="path2"></span><span class="path3"></span></i>
+    <!-- FAQ Accordion -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="accordion accordion-flush" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-light rounded section-text" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <i class="fas fa-question-circle me-2" style="color: var(--gold)"></i>
+                            <span class="fw-bold me-2 fs-3">كم يكلف الترخيص الممتد؟</span>
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light fs-4">
+                            لا، القالب الإداري سهل الاستخدام ومصمم ليكون بديهيًا دون الحاجة إلى مصمم.
+                        </div>
                     </div>
-                    <!--end::Icon-->
-
-                    <!--begin::Title-->
-                    <h4 class="section-text cursor-pointer mb-0 px-3">
-                        هل أحتاج إلى مصمم لاستخدام القالب الإداري؟
-                    </h4>
-                    <!--end::Title-->
                 </div>
-                <!--end::Heading-->
 
-                <!--begin::Body-->
-                <div id="kt_job_4_2" class="collapse fs-6 ms-1">
-                    <!--begin::Text-->
-                    <div class="mb-4 section-text text-muted fw-semibold ps-10">
-                        لا، يمكنك استخدام القالب الإداري بسهولة دون الحاجة إلى مصمم، حيث أنه مصمم ليكون سهل الاستخدام.
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-light rounded section-text" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            <i class="fas fa-question-circle me-2" style="color: var(--gold)"></i>
+                            <span class="fw-bold me-2 fs-3">ماذا أحتاج للقيام به لبدء البيع؟</span>
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light fs-4">
+                            لإنشاء حساب وبدء البيع، ما عليك سوى التسجيل، إكمال معلوماتك، ثم إضافة منتجاتك.
+                        </div>
                     </div>
-                    <!--end::Text-->
                 </div>
-                <!--end::Content-->
 
-                <!--begin::Separator-->
-                <div class="separator separator-dashed"></div>
-                <!--end::Separator-->
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-light rounded section-text" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            <i class="fas fa-question-circle me-2" style="color: var(--gold)"></i>
+                            <span class="fw-bold me-2 fs-3">كم يكلف الترخيص الممتد؟</span>
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light fs-4">
+                            تبدأ تكلفة الترخيص الممتد من 49 دولارًا شهريًا، حسب الخطة التي تختارها.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-light rounded section-text" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            <i class="fas fa-question-circle me-2" style="color: var(--gold)"></i>
+                            <span class="fw-bold me-2 fs-3">كم يكلف الترخيص الممتد؟</span>
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light fs-4">
+                            تبدأ تكلفة الترخيص الممتد من 49 دولارًا شهريًا، حسب الخطة التي تختارها.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item border-0 mb-3 shadow-sm rounded">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-light rounded section-text" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            <i class="fas fa-question-circle me-2" style="color: var(--gold)"></i>
+                            <span class="fw-bold me-2 fs-3">كم يكلف الترخيص الممتد؟</span>
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body bg-light fs-4">
+                            تبدأ تكلفة الترخيص الممتد من 49 دولارًا شهريًا، حسب الخطة التي تختارها.
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--end::Section-->
-
-            <!--begin::Section-->
-            <div class="m-0">
-                <!--begin::Heading-->
-                <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
-                    data-bs-target="#kt_job_4_3">
-                    <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
-                        <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
-                                class="path1"></span><span class="path2"></span></i>
-                        <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span
-                                class="path2"></span><span class="path3"></span></i>
-                    </div>
-                    <!--end::Icon-->
-
-                    <!--begin::Title-->
-                    <h4 class="section-text fw-bold cursor-pointer mb-0 px-3">
-                        ماذا أحتاج للقيام به لبدء البيع؟
-                    </h4>
-                    <!--end::Title-->
-                </div>
-                <!--end::Heading-->
-
-                <!--begin::Body-->
-                <div id="kt_job_4_3" class="collapse fs-6 ms-1">
-                    <!--begin::Text-->
-                    <div class="mb-4 section-text text-muted fw-semibold ps-10">
-                        تحتاج إلى التسجيل في الموقع ورفع المنتجات الخاصة بك لتبدأ في البيع.
-                    </div>
-                    <!--end::Text-->
-                </div>
-                <!--end::Content-->
-
-                <!--begin::Separator-->
-                <div class="separator separator-dashed"></div>
-                <!--end::Separator-->
-            </div>
-            <!--end::Section-->
-
-            <!--begin::Section-->
-            <div class="m-0">
-                <!--begin::Heading-->
-                <div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse"
-                    data-bs-target="#kt_job_4_4">
-                    <!--begin::Icon-->
-                    <div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-3">
-                        <i class="ki-duotone ki-minus-square toggle-on text-primary fs-1"><span
-                                class="path1"></span><span class="path2"></span></i>
-                        <i class="ki-duotone ki-plus-square toggle-off fs-1"><span class="path1"></span><span
-                                class="path2"></span><span class="path3"></span></i>
-                    </div>
-                    <!--end::Icon-->
-
-                    <!--begin::Title-->
-                    <h4 class="section-text fw-bold cursor-pointer mb-0 px-3">
-                        كم يكلف الترخيص الممتد؟
-                    </h4>
-                    <!--end::Title-->
-                </div>
-                <!--end::Heading-->
-
-                <!--begin::Body-->
-                <div id="kt_job_4_4" class="collapse fs-6 ms-1">
-                    <!--begin::Text-->
-                    <div class="mb-4 section-text text-muted fw-semibold ps-10">
-                        تكلفة الترخيص الممتد تعتمد على نوع المنتج الذي ترغب في بيعه، لذا يُفضل مراجعة التفاصيل على
-                        الموقع.
-                    </div>
-                    <!--end::Text-->
-                </div>
-                <!--end::Content-->
-
-                <div class="separator separator-dashed"></div>
-
-            </div>
-            <!--end::Section-->
         </div>
-        <!--end::Col-->
     </div>
-    <!--end::Row-->
 </div>
-<!--end::Classic content-->
+
+<!-- Custom Styles -->
+<style>
+    .accordion-button:not(.collapsed) {
+        background-color: #fff;
+        color: #ffc107;
+        box-shadow: none;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0,0,0,.125);
+    }
+
+    .accordion-button::after {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .accordion-item {
+        transition: all 0.3s ease;
+    }
+
+    .accordion-item:hover {
+        transform: translateY(-2px);
+    }
+</style>
