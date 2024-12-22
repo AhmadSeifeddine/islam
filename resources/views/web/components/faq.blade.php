@@ -2,7 +2,7 @@
      <!-- Main Header with Decorative Elements -->
         <div class="row justify-content-center mb-5">
             <div class="col-lg-8 text-center mb-5">
-                <h2 class="display-3 fw-bold mb-4">بعض من <span class="gold">الأسئلة المتكرّرة</span></h2>
+                <h2 class="display-3 fw-bold mb-4">بعض  <span class="gold">الأسئلة المتكرّرة</span></h2>
                 <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
                     متحدثي اللغة العربية</p>
             </div>

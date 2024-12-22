@@ -139,38 +139,35 @@
     </script>
 
     <div class="d-flex flex-column app-bg flex-root app-root" id="kt_app_root">
-        <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-            <main class="app-page flex-column flex-column-fluid" id="kt_app_page">
-                <!-- Navbar -->
-                @include('web.components.navbar')
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <main class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <!-- Navbar -->
+            @include('web.components.navbar')
 
-                <!-- Landing -->
-                <div class="app-wrapper flex-column flex-row-fluid position-relative overflow-hidden"
-                    id="kt_app_wrapper">
-
-                    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                        <div class="landing-vh d-flex flex-column flex-column-fluid justify-content-center align-items-center">
-                                @include('web.components.landing')
+            <!-- Main content -->
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <!-- Remove landing-vh class and adjust the structure -->
+                    <div class="d-flex flex-column flex-row-fluid">
+                        <div class="flex-row-fluid">
+                            @include('web.components.personalityCategory')
                         </div>
                     </div>
                 </div>
+            </div>
 
-                @include('web.components.books')
-                @include('web.components.personalities')
-                @include('web.components.youtube')
-                @include('web.components.aboutUs')
-                @include('web.components.faq')
-                @include('web.components.contact')
-                @include('web.components.footer')
-            </main>
-        </div>
+            <!-- Footer -->
+            @include('web.components.footer')
+        </main>
+    </div>
+</div>
 
-        <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
-        <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
-        <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
-        <script src="{{ url('js/app.js') }}"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        @stack('scripts')
+    <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
+    <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
+    <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
+    <script src="{{ url('js/app.js') }}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    @stack('scripts')
 </body>
 
 </html>

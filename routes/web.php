@@ -24,6 +24,8 @@ Route::get('logout', [LoginController::class, 'logout'])->middleware('auth')->na
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/personalities', [App\Http\Controllers\PersonalitiesController::class, 'index'])->name('personalities');
+
 
 include __DIR__ . DIRECTORY_SEPARATOR . 'dashboard.php';
 

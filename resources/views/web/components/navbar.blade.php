@@ -68,8 +68,7 @@
                         </div>
 
                         <div class="menu-item px-3">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
-                                class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
+                            <a href="{{ route('personalities') }}" class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;">
                                 {{ __('شخصيات') }}
                             </a>
                         </div>
