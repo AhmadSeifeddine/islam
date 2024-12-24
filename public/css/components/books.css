@@ -1,0 +1,294 @@
+/* Islamic/Arabic Theme for Books Component */
+.books-section {
+    background: linear-gradient(rgba(var(--background), 0.97), rgba(var(--background), 0.97)),
+        url('../img/patterns/arabesque.png');
+    background-attachment: fixed;
+    padding: 4rem 0;
+}
+
+.books-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.books-title::before,
+.books-title::after {
+    content: '☘️';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.books-title::before {
+    right: calc(50% + 8rem);
+}
+
+.books-title::after {
+    left: calc(50% + 8rem);
+}
+
+.book-card {
+    background: linear-gradient(135deg, rgba(var(--background), 0.9), rgba(var(--background), 0.95));
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.book-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../img/patterns/islamic-pattern.png') center/150px;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.book-image-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+}
+
+.book-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(var(--gold), 0.2), transparent);
+}
+
+.book-category-badge {
+    background: var(--gold);
+    color: var(--background);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-family: 'Amiri', serif;
+    box-shadow: 0 3px 10px rgba(var(--gold), 0.3);
+}
+
+.book-title {
+    font-family: 'Amiri', serif;
+    color: var(--text);
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.book-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.author-card {
+    background: linear-gradient(135deg, rgba(var(--gold), 0.1), transparent);
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.author-name {
+    font-family: 'Amiri', serif;
+    color: var(--text);
+    font-size: 1.2rem;
+}
+
+.book-stats-item {
+    background: rgba(var(--background), 0.8);
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.book-stats-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(var(--gold), 0.2);
+}
+
+.action-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--gold), 0.2), transparent);
+    transition: 0.5s;
+}
+
+.action-btn:hover::before {
+    left: 100%;
+}
+
+.action-btn:hover {
+    background: var(--gold);
+    color: var(--background);
+    transform: translateY(-3px);
+}
+
+/* Modal Islamic Theme */
+.islamic-modal .modal-content {
+    background-color: var(--background);
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.islamic-modal .modal-header {
+    border-bottom: 1px solid var(--gold);
+    padding: 1.25rem;
+    position: relative;
+}
+
+.islamic-modal .modal-title {
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    padding-right: 1rem;
+}
+
+.islamic-modal .btn-close {
+    background-color: transparent;
+    border: none;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.islamic-modal .btn-close:hover {
+    opacity: 1;
+}
+
+.islamic-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.islamic-modal .form-label {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.islamic-modal .form-select,
+.islamic-modal .form-control {
+    background-color: var(--background);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    color: var(--text);
+    padding: 0.75rem 1rem;
+}
+
+.islamic-modal .form-select:focus,
+.islamic-modal .form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+    outline: none;
+}
+
+.islamic-modal .separatorModal {
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.islamic-modal .separatorModal::before,
+.islamic-modal .separatorModal::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--gold);
+}
+
+.islamic-modal .separatorModal::before {
+    margin-left: 1rem;
+}
+
+.islamic-modal .separatorModal::after {
+    margin-right: 1rem;
+}
+
+.islamic-modal .modal-footer {
+    border-top: 1px solid var(--gold);
+    padding: 1.25rem;
+}
+
+.islamic-modal .btn-primary {
+    background-color: var(--gold);
+    border: none;
+    color: var(--background);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.islamic-modal .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.islamic-modal .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    color: var(--text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.islamic-modal .btn-secondary:hover {
+    background-color: var(--gold);
+    color: var(--background);
+}
+
+/* Placeholder color */
+.islamic-modal .form-control::placeholder {
+    color: var(--text);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+
+    .books-title::before,
+    .books-title::after {
+        display: none;
+    }
+
+    .book-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Add Amiri font for Arabic text */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');

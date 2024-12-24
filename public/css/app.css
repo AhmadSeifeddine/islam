@@ -29,7 +29,7 @@ body {
     direction: rtl;
 }
 
-.gold{
+.gold {
     color: var(--gold);
 }
 
@@ -61,7 +61,7 @@ body {
     padding: 5px;
 }
 
-.section-text{
+.section-text {
     font-size: 1.3rem;
     color: var(--text);
 }
@@ -217,11 +217,11 @@ body {
     font-weight: bold;
 }
 
-.big-font{
+.big-font {
     font-size: 4.5rem;
 }
 
-.landing-vh{
+.landing-vh {
     height: 90vh;
 }
 
@@ -238,7 +238,7 @@ body {
         font-size: 3rem;
     }
 
-    .huge-font{
+    .huge-font {
         font-size: 4.5rem;
     }
 }
@@ -248,7 +248,7 @@ body {
         font-size: 2.5rem;
     }
 
-    .huge-font{
+    .huge-font {
         font-size: 4rem;
     }
 }
@@ -258,11 +258,11 @@ body {
         font-size: 2rem;
     }
 
-    .huge-font{
+    .huge-font {
         font-size: 3.5rem;
     }
 
-    .landing-vh{
+    .landing-vh {
         height: 50vh;
     }
 }
@@ -272,7 +272,7 @@ body {
         font-size: 1.5rem;
     }
 
-    .huge-font{
+    .huge-font {
         font-size: 2.5rem;
     }
 }
@@ -282,7 +282,7 @@ body {
         font-size: 1.265rem;
     }
 
-    .huge-font{
+    .huge-font {
         font-size: 2.1rem;
     }
 }
@@ -296,10 +296,268 @@ body {
         padding-right: 10px;
     }
 
-    .section-text{
+    .section-text {
         font-size: 1.3rem;
         color: var(--text);
         padding-right: 10px;
         padding-left: 10px;
     }
+}
+
+/* Book Card Styles */
+.book-card {
+    transition: transform 0.3s ease;
+    background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.book-image-wrapper:hover .book-image {
+    transform: scale(1.05);
+}
+
+.book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.book-category-badge {
+    background: rgba(var(--bs-primary-rgb), 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+.book-label {
+    color: var(--bs-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.book-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--bs-dark);
+}
+
+.author-card {
+    background: var(--bs-light);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.author-avatar {
+    color: var(--bs-primary);
+}
+
+.author-label {
+    font-size: 0.75rem;
+    color: var(--bs-gray-600);
+    display: block;
+}
+
+.author-name {
+    color: var(--bs-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.book-description {
+    margin-bottom: 1.5rem;
+}
+
+.description-text {
+    color: var(--bs-gray-600);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.book-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.stat-item {
+    background: var(--bs-light);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-icon {
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--bs-gray-600);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--bs-dark);
+}
+
+.book-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-view-book {
+    background: var(--bs-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-view-book:hover {
+    background: var(--bs-primary-dark);
+    transform: translateY(-2px);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: var(--bs-light);
+    color: var(--bs-gray-600);
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: var(--bs-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 16px;
+    background-color: var(--background);
+    border: 1px solid var(--gold);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--gold);
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--gold);
+    padding: 1.5rem;
+}
+
+.collection-section,
+.new-collection-section {
+    padding: 1.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.form-select,
+.form-control {
+    background-color: var(--background);
+    border: 1px solid var(--gold);
+    color: var(--text);
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.separatorModal {
+    color: var(--text);
+}
+
+.separatorModal::before,
+.separatorModal::after {
+    background-color: var(--gold);
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--background);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--background);
 }

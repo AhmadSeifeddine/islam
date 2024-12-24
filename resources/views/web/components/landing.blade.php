@@ -1,77 +1,337 @@
 <div class="container-fluid px-0">
     <div class="row g-0 justify-content-center">
         <div class="col-12 col-xl-8">
-            <!-- Decorative Top Border -->
-            <div class="d-flex justify-content-center mb-5">
-                <div class="position-relative">
-                    <div class="border-bottom border-warning border-3 position-absolute start-50 translate-middle-x"
-                        style="width: 300px; top: -30px;"></div>
-                    <div class="border-bottom border-warning border-2 position-absolute start-50 translate-middle-x"
-                        style="width: 500px; top: -20px; opacity: 0.7;"></div>
-                    <div class="border-bottom border-warning border-1 position-absolute start-50 translate-middle-x"
-                        style="width: 700px; top: -10px; opacity: 0.4;"></div>
-                </div>
-            </div>
-
-            <!-- Main Content Container -->
+            <!-- Main Content -->
             <div class="text-center position-relative py-5">
-                <!-- Primary Heading -->
-                <div class="mb-5 position-relative">
-                    <h1 class="display-2 mb-4 position-relative" style="color: var(--gold);">
-                        <span class="position-relative">
-                            <!-- Decorative Side Lines -->
-                            <span
-                                class="position-absolute start-0 top-50 translate-middle-y border-start border-warning border-3 opacity-75"
-                                style="height: 70px; margin-left: -30px;"></span>
-                            <span
-                                class="position-absolute end-0 top-50 translate-middle-y border-end border-warning border-3 opacity-75"
-                                style="height: 70px; margin-right: -30px;"></span>
+                <!-- Islamic Pattern Background -->
+                <div class="pattern-overlay"></div>
 
-                            <!-- Main Text with Enhanced Animation -->
-                            <span class="typing-animation huge-font fw-bold"
-                                style="text-shadow: 0 0 30px rgba(218, 165, 32, 0.2);">
-                                وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُفْلِحُونَ
-                            </span>
-                        </span>
-                    </h1>
-                </div>
+                <!-- Decorative Border -->
+                <div class="islamic-border">
+                    <!-- Corner Ornaments -->
+                    <div class="corner-ornament top-left"></div>
+                    <div class="corner-ornament top-right"></div>
+                    <div class="corner-ornament bottom-left"></div>
+                    <div class="corner-ornament bottom-right"></div>
 
-                <!-- Decorative Middle Element -->
-                <div class="my-5 position-relative">
-                    <div class="d-flex align-items-center justify-content-center gap-4">
-                        <div class="border-bottom border-warning opacity-75" style="width: 100px;"></div>
-                        <div class="position-relative" style="width: 10px; height: 10px;">
-                            <div class="position-absolute top-50 start-50 translate-middle rounded-circle border border-warning"
-                                style="width: 10px; height: 10px;"></div>
-                            <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-warning"
-                                style="width: 4px; height: 4px;"></div>
+                    <!-- Primary Heading -->
+                    <div class="mb-5 position-relative">
+                        <div class="ayah-wrapper">
+                            <!-- Side Decorations -->
+                            <div class="side-decoration left">
+                                <div class="decoration-line"></div>
+                                <div class="decoration-dot"></div>
+                                <div class="decoration-line"></div>
+                            </div>
+                            <div class="side-decoration right">
+                                <div class="decoration-line"></div>
+                                <div class="decoration-dot"></div>
+                                <div class="decoration-line"></div>
+                            </div>
+
+                            <h1 class="display-2 mb-4 reveal-text" style="color: var(--gold);">
+                                <span class="huge-font fw-bold main-text">
+                                    وَاتَّقُوا اللَّهَ لَعَلَّكُمْ تُفْلِحُونَ
+                                </span>
+                            </h1>
                         </div>
-                        <div class="border-bottom border-warning opacity-75" style="width: 100px;"></div>
                     </div>
-                </div>
 
-                <!-- Secondary Text Container -->
-                <div class="position-relative mx-auto" style="max-width: 700px;">
-                    <!-- Secondary Text with Enhanced Typography -->
-                    <p class="lead mb-0 position-relative" style="color: var(--text);">
-                        <span class="big-font fw-normal" style="letter-spacing: 0.5px; line-height: 1.8;">
-                            لا نجاة إلا بالإعتصام بالقرآن والسنة بفهم سلف الأمة
-                        </span>
-                    </p>
-                </div>
-            </div>
+                    <!-- Enhanced Separator -->
+                    <div class="separator-container">
+                        <div class="line shine-effect"></div>
+                        <div class="ornament-container">
+                            <div class="ornament-outer"></div>
+                            <div class="ornament-inner">
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="line shine-effect"></div>
+                    </div>
 
-            <!-- Decorative Bottom Border -->
-            <div class="d-flex justify-content-center mt-5">
-                <div class="position-relative">
-                    <div class="border-top border-warning border-1 position-absolute start-50 translate-middle-x"
-                        style="width: 700px; bottom: -10px; opacity: 0.4;"></div>
-                    <div class="border-top border-warning border-2 position-absolute start-50 translate-middle-x"
-                        style="width: 500px; bottom: -20px; opacity: 0.7;"></div>
-                    <div class="border-top border-warning border-3 position-absolute start-50 translate-middle-x"
-                        style="width: 300px; bottom: -30px;"></div>
+                    <!-- Secondary Text -->
+                    <div class="secondary-text-container fade-in-up">
+                        <p class="lead mb-0" style="color: var(--text);">
+                            <span class="big-font fw-normal">
+                                لا نجاة إلا بالإعتصام بالقرآن والسنة بفهم سلف الأمة
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .pattern-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40z' fill='%23daa520' fill-opacity='0.03'/%3E%3C/svg%3E");
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .islamic-border {
+        position: relative;
+        padding: 3rem 2rem;
+        border: 1px solid rgba(218, 165, 32, 0.2);
+        background: linear-gradient(rgba(218, 165, 32, 0.03), transparent);
+        overflow: hidden;
+    }
+
+    .corner-ornament {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--gold);
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+
+    .corner-ornament::before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+
+    .top-left {
+        top: 10px;
+        left: 10px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .top-right {
+        top: 10px;
+        right: 10px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .bottom-left {
+        bottom: 10px;
+        left: 10px;
+        border-right: none;
+        border-top: none;
+    }
+
+    .bottom-right {
+        bottom: 10px;
+        right: 10px;
+        border-left: none;
+        border-top: none;
+    }
+
+    .islamic-border:hover .corner-ornament {
+        width: 60px;
+        height: 60px;
+        opacity: 0.7;
+    }
+
+    .side-decoration {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .side-decoration.left {
+        left: 0;
+    }
+
+    .side-decoration.right {
+        right: 0;
+    }
+
+    .decoration-line {
+        width: 2px;
+        height: 30px;
+        background: var(--gold);
+        opacity: 0.7;
+        animation: lineHeight 3s ease-in-out infinite;
+    }
+
+    .decoration-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .main-text {
+        position: relative;
+        display: inline-block;
+        padding: 0 4rem;
+        transition: all 0.3s ease;
+    }
+
+    .reveal-text {
+        opacity: 0;
+        animation: revealText 1.5s ease forwards;
+    }
+
+    .separator-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 3rem 0;
+    }
+
+    .line {
+        height: 1px;
+        width: 120px;
+        background: linear-gradient(to right, transparent, var(--gold), transparent);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .shine-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shine 3s infinite;
+    }
+
+    .ornament-container {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        animation: rotate 8s linear infinite;
+    }
+
+    .ornament-outer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--gold);
+        transform: rotate(45deg);
+        animation: pulse 2s infinite;
+    }
+
+    .ornament-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+    }
+
+    .fade-in-up {
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes lineHeight {
+
+        0%,
+        100% {
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        50% {
+            height: 40px;
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: scale(1.2);
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes shine {
+        0% {
+            left: -100%;
+        }
+
+        50%,
+        100% {
+            left: 100%;
+        }
+    }
+
+    @keyframes revealText {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .islamic-border {
+            padding: 2rem 1rem;
+        }
+
+        .main-text {
+            padding: 0 2.5rem;
+        }
+
+        .line {
+            width: 80px;
+        }
+
+        .corner-ornament {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
