@@ -162,6 +162,9 @@
     </div>
 </div>
 
+
+
+
     <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
@@ -171,3 +174,5 @@
 </body>
 
 </html>
+
+

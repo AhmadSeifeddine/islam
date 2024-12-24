@@ -1,97 +1,406 @@
-<div class="categories-section d-flex flex-column flex-column-fluid justify-content-center align-items-center"
-    style="background-color: var(--background);">
+<div class="categories-section gold py-5" style="background-color: var(--background);">
     <div class="container">
-        <!-- Refined Header -->
+        <!-- Header -->
         <div class="text-center mb-5 header-content">
-            <h1 class="main-title">
+            <h1 class="main-title gold">
                 تصنيف الشخصيات
                 <div class="elegant-underline"></div>
             </h1>
-            <p class="elegant-subtitle">اختر التصنيف المناسب للشخصيات التي تبحث عنها</p>
+            <p class="text elegant-subtitle">اختر التصنيف المناسب للشخصيات التي تبحث عنها</p>
         </div>
 
-        <!-- Categories Grid -->
-        <div class="categories-grid">
-            <!-- Religious Category -->
-            <div class="category-container fade-in">
-                <div class="category-wrapper">
-                    <div class="premium-glow"></div>
-                    <div class="main-category text-center mb-5">
-                        <div class="main-icon-wrapper">
-                            <i class="bi bi-book-fill"></i>
-                            <div class="icon-ring"></div>
-                        </div>
-                        <h2 class="text-warning display-6 mb-3">الشخصيات الدينية</h2>
-                        <p class="text-white-50 fs-5">علماء وفقهاء ودعاة الإسلام عبر العصور</p>
-                    </div>
-
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="premium-card recommended">
-                                <div class="card-shine"></div>
-
-                                <h3 class="text-success h3 mb-3">شخصيات موصى بها</h3>
-                                <button class="premium-btn success">
-                                    استعرض القائمة
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="premium-card not-recommended">
-                                <div class="card-shine"></div>
-
-                                <h3 class="text-danger h3 mb-3">شخصيات غير موصى بها</h3>
-                                <button class="premium-btn danger">
-                                    استعرض القائمة
-                                </button>
-                            </div>
-                        </div>
+        <!-- Filters Section -->
+        <div class="container-fluid py-4">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="position-relative">
+                        <select class="form-select form-select-lg border border-2 shadow-sm rounded-3 bg-transparent"
+                            style="height: 60px;">
+                            <option value="all">جميع التصنيفات</option>
+                            <option value="religious">شخصيات دينية</option>
+                            <option value="non-religious">شخصيات غير دينية</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down position-absolute top-50 end-0 translate-middle-y me-3 text-warning"></i>
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="position-relative">
+                        <select class="form-select form-select-lg border border-2 shadow-sm rounded-3 bg-transparent"
+                            style="height: 60px;">
+                            <option value="all">جميع التوصيات</option>
+                            <option value="recommended">موصى به</option>
+                            <option value="not-recommended">غير موصى به</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down position-absolute top-50 end-0 translate-middle-y me-3 text-warning"></i>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="position-relative">
+                        <select class="form-select form-select-lg border border-2 shadow-sm rounded-3 bg-transparent"
+                            style="height: 60px;">
+                            <option value="all">الحالة</option>
+                            <option value="alive">على قيد الحياة</option>
+                            <option value="deceased">متوفى</option>
+                        </select>
+                        <i
+                            class="fas fa-chevron-down position-absolute top-50 end-0 translate-middle-y me-3 text-warning"></i>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <button
+                        class="btn btn-warning btn-lg w-100 fw-bold rounded-3 shadow-sm d-flex align-items-center justify-content-center"
+                        style="height: 60px;">
+                        <i class="fas fa-filter me-2"></i>
+                        <span>تطبيق الفلتر</span>
+                    </button>
+                </div>
             </div>
+        </div>
 
-            <!-- Premium Separator -->
-            <div class="premium-separator">
-                <div class="separator-line"></div>
-                <div class="separator-circle">
-                    <i class="bi bi-arrow-left-right text-warning"></i>
+        <!-- Accordion -->
+        <div class="accordion custom-accordion" id="personalitiesAccordion">
+            <!-- Religious Category -->
+            <div class="card shadow-lg border-0 accordion-item category-container mb-4">
+                <div class="category-wrapper" data-bs-toggle="collapse" data-bs-target="#religiousCollapse"
+                    role="button">
+                    <div class="main-category text-center">
+                        <div class="main-icon-wrapper mb-5">
+                            <i class="bi bi-moon-fill fs-1 text-success"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h2 class="gold display-6 mb-3">الشخصيات الدينية</h2>
+                        <p class="text fs-5">علماء وفقهاء ودعاة الإسلام عبر العصور</p>
+                    </div>
+                </div>
+
+                <div id="religiousCollapse" class="collapse">
+                    <div class="row g-4 mt-4">
+                        <!-- Religious Character 1 -->
+                        <div class="col-lg-6 mb-5 px-10">
+                            <div class="card shadow-lg border-0 bg-warning bg-opacity-10">
+                                <div class="card-body p-5">
+                                    <div class="row g-5 align-items-stretch">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('vendor/img/logo/3.jpg') }}"
+                                                class="img-fluid h-100 w-100" alt="الإمام الشافعي"
+                                                style="object-fit: contain;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="mb-5">
+                                                    <div class="mb-4">
+                                                        <span
+                                                            class="text-primary fw-bold fs-7 mb-2 d-block">الإسم</span>
+                                                        <h2 class="display-6 fw-bolder mb-0">الإمام الشافعي</h2>
+                                                    </div>
+                                                    <div
+                                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-success">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <span
+                                                                    class="text-success fs-8 fw-bold d-block">توصية</span>
+                                                                <span class="text-decoration-none fs-6 fw-bold">موصى
+                                                                    به</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-5">
+                                                    <div class="row g-4">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                                <div class="text-success fw-semibold mb-2">تاريخ
+                                                                    الولادة:</div>
+                                                                <div class="fw-bold">150هـ</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                                <div class="text-danger fw-semibold mb-2">تاريخ الوفاة:
+                                                                </div>
+                                                                <div class="fw-bold">204هـ</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                                    <button class="btn-bg-logo">عرض الشخصية</button>
+                                                    <div class="d-flex gap-2">
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="readLater" data-bs-toggle="tooltip"
+                                                            title="قراءة لاحقاً">
+                                                            <i class="fas fa-bookmark fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="favorite" data-bs-toggle="tooltip"
+                                                            title="إضافة للمفضلة">
+                                                            <i class="fas fa-heart fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="collection" data-bs-toggle="tooltip"
+                                                            title="إضافة إلى مجموعة">
+                                                            <i class="fas fa-folder-plus fs-5"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Religious Character 2 -->
+                        <div class="col-lg-6 mb-5 px-10">
+                            <div class="card shadow-lg border-0 bg-warning bg-opacity-10">
+                                <div class="card-body p-5">
+                                    <div class="row g-5 align-items-stretch">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('vendor/img/logo/3.jpg') }}"
+                                                class="img-fluid h-100 w-100" alt="الإمام البخاري"
+                                                style="object-fit: contain;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="mb-5">
+                                                    <div class="mb-4">
+                                                        <span
+                                                            class="text-primary fw-bold fs-7 mb-2 d-block">الإسم</span>
+                                                        <h2 class="display-6 fw-bolder mb-0">الإمام البخاري</h2>
+                                                    </div>
+                                                    <div
+                                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-success">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <span
+                                                                    class="text-success fs-8 fw-bold d-block">توصية</span>
+                                                                <span class="text-decoration-none fs-6 fw-bold">موصى
+                                                                    به</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-5">
+                                                    <div class="row g-4">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                                <div class="text-success fw-semibold mb-2">تاريخ
+                                                                    الولادة:</div>
+                                                                <div class="fw-bold">194هـ</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                                <div class="text-danger fw-semibold mb-2">تاريخ الوفاة:
+                                                                </div>
+                                                                <div class="fw-bold">256هـ</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                                    <button class="btn-bg-logo">عرض الشخصية</button>
+                                                    <div class="d-flex gap-2">
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="readLater" data-bs-toggle="tooltip"
+                                                            title="قراءة لاحقاً">
+                                                            <i class="fas fa-bookmark fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="favorite" data-bs-toggle="tooltip"
+                                                            title="إضافة للمفضلة">
+                                                            <i class="fas fa-heart fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="collection" data-bs-toggle="tooltip"
+                                                            title="إضافة إلى مجموعة">
+                                                            <i class="fas fa-folder-plus fs-5"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Non-Religious Category -->
-            <div class="category-container fade-in">
-                <div class="category-wrapper">
-                    <div class="premium-glow"></div>
-                    <div class="main-category text-center mb-5">
-                        <div class="main-icon-wrapper">
-                            <i class="bi bi-lightbulb-fill"></i>
+            <div class="card shadow-lg border-0 accordion-item category-container">
+                <div class="category-wrapper" data-bs-toggle="collapse" data-bs-target="#nonReligiousCollapse"
+                    role="button">
+                    <div class="main-category text-center">
+                        <div class="main-icon-wrapper mb-5">
+                            <i class="bi bi-person-fill fs-1 text-danger"></i>
                             <div class="icon-ring"></div>
                         </div>
-                        <h2 class="text-warning display-6 mb-3">الشخصيات غير الدينية</h2>
-                        <p class="text-white-50 fs-5">مفكرون وعلماء في مختلف المجالات</p>
+                        <h2 class="gold display-6 mb-3">الشخصيات غير الدينية</h2>
+                        <p class="text fs-5">مفكرون وعلماء في مختلف المجالات</p>
                     </div>
+                </div>
 
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="premium-card">
-                                <div class="card-shine"></div>
-
-                                <h3 class="text-info h3 mb-3">علماء العلوم</h3>
-                                <button class="premium-btn info">
-                                    استعرض القائمة
-                                </button>
+                <div id="nonReligiousCollapse" class="collapse">
+                    <div class="row g-4 mt-4">
+                        <!-- Non-Religious Character 1 -->
+                        <div class="col-lg-6 mb-5 px-10">
+                            <div class="card shadow-lg border-0 bg-warning bg-opacity-10">
+                                <div class="card-body p-5">
+                                    <div class="row g-5 align-items-stretch">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('vendor/img/logo/3.jpg') }}"
+                                                class="img-fluid h-100 w-100" alt="ابن سينا"
+                                                style="object-fit: contain;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="mb-5">
+                                                    <div class="mb-4">
+                                                        <span
+                                                            class="text-primary fw-bold fs-7 mb-2 d-block">الإسم</span>
+                                                        <h2 class="display-6 fw-bolder mb-0">ابن سينا</h2>
+                                                    </div>
+                                                    <div
+                                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-success">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <span
+                                                                    class="text-success fs-8 fw-bold d-block">توصية</span>
+                                                                <span class="text-decoration-none fs-6 fw-bold">موصى
+                                                                    به</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-5">
+                                                    <div class="row g-4">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                                <div class="text-success fw-semibold mb-2">تاريخ
+                                                                    الولادة:</div>
+                                                                <div class="fw-bold">370هـ</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                                <div class="text-danger fw-semibold mb-2">تاريخ الوفاة:
+                                                                </div>
+                                                                <div class="fw-bold">428هـ</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                                    <button class="btn-bg-logo">عرض الشخصية</button>
+                                                    <div class="d-flex gap-2">
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="readLater" data-bs-toggle="tooltip"
+                                                            title="قراءة لاحقاً">
+                                                            <i class="fas fa-bookmark fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="favorite" data-bs-toggle="tooltip"
+                                                            title="إضافة للمفضلة">
+                                                            <i class="fas fa-heart fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="collection" data-bs-toggle="tooltip"
+                                                            title="إضافة إلى مجموعة">
+                                                            <i class="fas fa-folder-plus fs-5"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="premium-card">
-                                <div class="card-shine"></div>
-
-                                <h3 class="text-primary h3 mb-3">الأدباء والمفكرون</h3>
-                                <button class="premium-btn primary">
-                                    استعرض القائمة
-                                </button>
+                        <!-- Non-Religious Character 2 -->
+                        <div class="col-lg-6 mb-5 px-10">
+                            <div class="card shadow-lg border-0 bg-warning bg-opacity-10">
+                                <div class="card-body p-5">
+                                    <div class="row g-5 align-items-stretch">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('vendor/img/logo/3.jpg') }}"
+                                                class="img-fluid h-100 w-100" alt="الخوارزمي"
+                                                style="object-fit: contain;">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column h-100">
+                                                <div class="mb-5">
+                                                    <div class="mb-4">
+                                                        <span
+                                                            class="text-primary fw-bold fs-7 mb-2 d-block">الإسم</span>
+                                                        <h2 class="display-6 fw-bolder mb-0">الخوارزمي</h2>
+                                                    </div>
+                                                    <div
+                                                        class="bg-light bg-opacity-75 rounded-4 p-4 mt-4 border-start border-5 border-danger">
+                                                        <div class="d-flex align-items-center">
+                                                            <div>
+                                                                <span
+                                                                    class="text-danger fs-8 fw-bold d-block">توصية</span>
+                                                                <span class="text-decoration-none fs-6 fw-bold">غير موصى
+                                                                    به</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-5">
+                                                    <div class="row g-4">
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
+                                                                <div class="text-success fw-semibold mb-2">تاريخ
+                                                                    الولادة:</div>
+                                                                <div class="fw-bold">164هـ</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div
+                                                                class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
+                                                                <div class="text-danger fw-semibold mb-2">تاريخ الوفاة:
+                                                                </div>
+                                                                <div class="fw-bold">235هـ</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                                    <div class="d-flex gap-2">
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="readLater" data-bs-toggle="tooltip"
+                                                            title="قراءة لاحقاً">
+                                                            <i class="fas fa-bookmark fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="favorite" data-bs-toggle="tooltip"
+                                                            title="إضافة للمفضلة">
+                                                            <i class="fas fa-heart fs-5"></i>
+                                                        </button>
+                                                        <button class="btn btn-light action-btn p-3 rounded-3"
+                                                            data-action="collection" data-bs-toggle="tooltip"
+                                                            title="إضافة إلى مجموعة">
+                                                            <i class="fas fa-folder-plus fs-5"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,31 +410,59 @@
     </div>
 </div>
 
+
+<!-- Collection Modal -->
+<div class="modal fade" id="collectionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header justify-content-between">
+                <h5 class="modal-title">إضافة إلى مجموعة</h5>
+                <button type="button" class="btn-close ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <label class="form-label">المجموعات الموجودة</label>
+                    <select class="form-select" id="existingCollections">
+                        <option value="">اختر مجموعة</option>
+                        <option value="1">كتب الحديث</option>
+                        <option value="2">المراجع الأساسية</option>
+                        <option value="3">كتب التفسير</option>
+                    </select>
+                </div>
+
+                <div class="separatorModal pb-5">أو</div>
+
+                <div class="mb-3">
+                    <label class="form-label">إنشاء مجموعة جديدة</label>
+                    <input type="text" class="form-control mb-3" placeholder="اسم المجموعة الجديدة">
+                    <input type="text" class="form-control" placeholder="وصف المجموعة (اختياري)">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="button" class="btn btn-primary" id="saveCollection">حفظ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <style>
-    /* Refined Base Styles */
     .categories-section {
-        background: #000000;
         min-height: 100vh;
-        position: relative;
-        overflow: hidden;
     }
 
-    /* Enhanced Header */
     .main-title {
         font-size: 4.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         position: relative;
         margin-bottom: 2rem;
-        text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
     }
 
     .elegant-underline {
         height: 3px;
         width: 0;
-        background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
         position: absolute;
         bottom: -10px;
         left: 0;
@@ -134,29 +471,22 @@
 
     .elegant-subtitle {
         font-size: 1.8rem;
-        color: rgba(255, 255, 255, 0.7);
         margin-top: 2rem;
         font-weight: 300;
-        letter-spacing: 1px;
     }
 
-    /* Premium Grid Layout */
-    .categories-grid {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        gap: 3rem;
-        margin-top: 4rem;
-    }
-
-    /* Enhanced Category Container */
     .category-wrapper {
-        background: rgba(20, 20, 40, 0.6);
         border-radius: 2rem;
         padding: 3rem;
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(255, 215, 0, 0.1);
         transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+    .category-wrapper:hover {
+        border-color: rgba(255, 215, 0, 0.3);
+        transform: translateY(-5px);
     }
 
     .premium-glow {
@@ -165,14 +495,10 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(255, 215, 0, 0.5),
-                transparent);
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
         animation: shimmerEffect 2s infinite;
     }
 
-    /* Refined Icon Styles */
     .main-icon-wrapper {
         width: 140px;
         height: 140px;
@@ -193,114 +519,11 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        border: 2px solid rgba(255, 215, 0, 0.2);
+        border: 2px solid var(--gold);
         animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
     }
 
-    /* Premium Cards */
-    .premium-card {
-        background: rgba(30, 30, 60, 0.4);
-        border-radius: 1.5rem;
-        padding: 3rem;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .premium-card:hover {
-        transform: translateY(-10px);
-        background: rgba(40, 40, 80, 0.4);
-        border-color: rgba(255, 215, 0, 0.2);
-    }
-
-    .card-shine {
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent);
-        transition: 0.5s;
-    }
-
-    .premium-card:hover .card-shine {
-        left: 100%;
-        transition: 0.5s;
-    }
-
-    /* Enhanced Buttons */
-    .premium-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        padding: 1.2rem 2rem;
-        width: 100%;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .premium-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        border-color: rgba(255, 215, 0, 0.3);
-    }
-
-    .premium-btn::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        transform: scale(0);
-        transition: transform 0.5s ease;
-    }
-
-    .premium-btn:hover::after {
-        transform: scale(1);
-    }
-
-    /* Premium Separator */
-    .premium-separator {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        position: relative;
-        padding: 2rem 0;
-    }
-
-    .separator-line {
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(180deg,
-                transparent,
-                rgba(255, 215, 0, 0.3),
-                transparent);
-    }
-
-    .separator-circle {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 215, 0, 0.05);
-        border: 2px solid rgba(255, 215, 0, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        animation: glowPulse 2s infinite alternate;
-    }
-
-    /* Refined Animations */
+    /* Animations */
     @keyframes expandLine {
         to {
             width: 100%;
@@ -334,80 +557,51 @@
         }
     }
 
-    @keyframes glowPulse {
-        0% {
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-        }
-
-        100% {
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-        }
-    }
-
-    /* Responsive Enhancements */
-    @media (max-width: 991px) {
-        .categories-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .premium-separator {
-            display: none;
-        }
-
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
         .main-title {
             font-size: 3rem;
         }
 
+        .elegant-subtitle {
+            font-size: 1.4rem;
+        }
+
         .category-wrapper {
-            margin-bottom: 2rem;
+            padding: 2rem;
+        }
+
+        .main-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            font-size: 2.5rem;
         }
     }
 
-    @media (min-width: 992px) {
-        .category-wrapper:hover {
-            transform: translateZ(20px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .premium-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    /* Card Specific Styles */
+    .card {
+        transition: transform 0.3s ease;
     }
 
-    .success {
-        color: #00ff9d;
+    .card:hover {
+        transform: translateY(-5px);
     }
 
-    .danger {
-        color: #ff4d4d;
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
-    .info {
-        color: #4deefd;
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.5em 1em;
     }
 
-    .primary {
-        color: #4d79ff;
-    }
-
-    .premium-btn.success:hover {
-        background: rgba(0, 255, 157, 0.1);
-    }
-
-    .premium-btn.danger:hover {
-        background: rgba(255, 77, 77, 0.1);
-    }
-
-    .premium-btn.info:hover {
-        background: rgba(77, 238, 253, 0.1);
-    }
-
-    .premium-btn.primary:hover {
-        background: rgba(77, 121, 255, 0.1);
+    /* Image container specific styles */
+    .col-md-4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 </style>

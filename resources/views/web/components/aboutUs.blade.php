@@ -87,69 +87,73 @@
             </div>
 
             <!-- Vision Banner -->
-<div class="col-12">
-    <div class="card border-0 bg-gradient bg-warning bg-opacity-10 overflow-hidden position-relative">
+            <div class="col-12">
+                <div class="card border-0 bg-gradient bg-warning bg-opacity-10 overflow-hidden position-relative">
 
 
-        <div class="card-body p-5">
-            <div class="row align-items-center position-relative">
-                <div class="col-lg-8">
-                    <!-- Header Section -->
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="bg-warning bg-opacity-25 rounded-circle p-3 hover-scale transition-all">
-                            <i class="fas fa-lightbulb text-warning fs-3"></i>
-                        </div>
-                        <div class="me-5">
-                            <h4 class="display-6 fw-bold mb-1">رؤيتنا للمستقبل</h4>
-                            <p class="text-body-secondary mb-0">نحو مستقبل رقمي للمحتوى العربي</p>
-                        </div>
-                    </div>
+                    <div class="card-body p-5">
+                        <div class="row align-items-center position-relative">
+                            <div class="col-lg-8">
+                                <!-- Header Section -->
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-warning bg-opacity-25 rounded-circle p-3 hover-scale transition-all">
+                                        <i class="fas fa-lightbulb text-warning fs-3"></i>
+                                    </div>
+                                    <div class="me-5">
+                                        <h4 class="display-6 fw-bold mb-1">رؤيتنا للمستقبل</h4>
+                                        <p class="text-body-secondary mb-0">نحو مستقبل رقمي للمحتوى العربي</p>
+                                    </div>
+                                </div>
 
-                    <!-- Main Content -->
-                    <div class="ps-4 border-start border-4 border-warning">
-                        <p class="fs-5 text-body-secondary lh-lg mb-4">
-                            نطمح إلى بناء أكبر مكتبة رقمية عربية تضم مختلف المجالات والتخصصات، لنكون مرجعاً موثوقاً لكل باحث عن المعرفة باللغة العربية.
-                        </p>
+                                <!-- Main Content -->
+                                <div class="ps-4 border-start border-4 border-warning">
+                                    <p class="fs-5 text-body-secondary lh-lg mb-4">
+                                        نطمح إلى بناء أكبر مكتبة رقمية عربية تضم مختلف المجالات والتخصصات، لنكون مرجعاً
+                                        موثوقاً لكل باحث عن المعرفة باللغة العربية.
+                                    </p>
 
-                        <!-- Feature Icons -->
-                        <div class="row g-4 mt-2">
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
-                                    <div>
-                                        <h5 class="fw-bold mb-0 text-primary">تطور مستمر</h5>
+                                    <!-- Feature Icons -->
+                                    <div class="row g-4 mt-2">
+                                        <div class="col-md-4">
+                                            <div
+                                                class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
+                                                <div>
+                                                    <h5 class="fw-bold mb-0 text-primary">تطور مستمر</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div
+                                                class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
+                                                <div>
+                                                    <h5 class="fw-bold mb-0 text-success">انتشار عالمي</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div
+                                                class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
+                                                <div>
+                                                    <h5 class="fw-bold mb-0 text-danger">محتوى موثوق</h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
-                                    <div>
-                                        <h5 class="fw-bold mb-0 text-success">انتشار عالمي</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-center bg-warning bg-opacity-5 rounded-3 p-4 border border-warning border-opacity-25 border-2 border-dashed hover-shadow transition-all">
-                                    <div>
-                                        <h5 class="fw-bold mb-0 text-danger">محتوى موثوق</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Decorative Element -->
-                <div class="col-lg-4 d-none d-lg-block text-center">
-                    <div class="position-relative">
-                        <div class="position-absolute top-50 start-50 translate-middle">
-                            <i class="fas fa-brain text-warning opacity-15" style="font-size: 180px;"></i>
+                            <!-- Decorative Element -->
+                            <div class="col-lg-4 d-none d-lg-block text-center">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-brain text-warning opacity-15" style="font-size: 180px;"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
         </div>
     </div>
 </section>
