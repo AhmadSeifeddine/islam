@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PersonalitiesController extends Controller
+class ProfileController extends Controller
 {
     public function index()
     {
-        return view('web.personality.personalities');
+        return view('web.user.profile');
     }
 }

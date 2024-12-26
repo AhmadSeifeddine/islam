@@ -25,6 +25,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/personalities', [App\Http\Controllers\PersonalitiesController::class, 'index'])->name('personalities');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::get('/personalities/profile', [App\Http\Controllers\PersonalityProfileController::class, 'index'])->name('personalityProfile');
+
+
+
+
 
 
 include __DIR__ . DIRECTORY_SEPARATOR . 'dashboard.php';

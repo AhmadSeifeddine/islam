@@ -3,6 +3,8 @@
 @push('styles')
     <link href="{{ url('vendor/css/slider.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="{{ asset('css/components/faq.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/components/landing.css') }}" rel="stylesheet" type="text/css" />
 @endpush
 
 
@@ -12,7 +14,7 @@
     </div>
 
     @include('web.components.books')
-    @include('web.components.personalities')
+    @include('web.personality.components.personalities')
     @include('web.components.youtube')
     @include('web.components.aboutUs')
     @include('web.components.faq')

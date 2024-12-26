@@ -96,29 +96,4 @@
     </div>
 </div>
 
-<!-- Custom Styles -->
-<style>
-    .accordion-button:not(.collapsed) {
-        background-color: #fff;
-        color: #ffc107;
-        box-shadow: none;
-    }
 
-    .accordion-button:focus {
-        box-shadow: none;
-        border-color: rgba(0, 0, 0, .125);
-    }
-
-    .accordion-button::after {
-        margin-right: auto;
-        margin-left: 0;
-    }
-
-    .accordion-item {
-        transition: all 0.3s ease;
-    }
-
-    .accordion-item:hover {
-        transform: translateY(-2px);
-    }
-</style>
