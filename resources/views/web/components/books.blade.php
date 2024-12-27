@@ -198,14 +198,12 @@
 
                                         <div class="d-flex gap-2">
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="readLater" data-bs-toggle="tooltip"
-                                                title="قراءة لاحقاً">
+                                                data-action="readLater" data-bs-toggle="tooltip" title="قراءة لاحقاً">
                                                 <i class="fas fa-bookmark fs-5" style="padding: 0px"></i>
                                             </button>
 
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="favorite" data-bs-toggle="tooltip"
-                                                title="إضافة للمفضلة">
+                                                data-action="favorite" data-bs-toggle="tooltip" title="إضافة للمفضلة">
                                                 <i class="fas fa-heart fs-5" style="padding: 0px"></i>
                                             </button>
 
@@ -307,14 +305,12 @@
 
                                         <div class="d-flex gap-2">
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="readLater" data-bs-toggle="tooltip"
-                                                title="قراءة لاحقاً">
+                                                data-action="readLater" data-bs-toggle="tooltip" title="قراءة لاحقاً">
                                                 <i class="fas fa-bookmark fs-5" style="padding: 0px"></i>
                                             </button>
 
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="favorite" data-bs-toggle="tooltip"
-                                                title="إضافة للمفضلة">
+                                                data-action="favorite" data-bs-toggle="tooltip" title="إضافة للمفضلة">
                                                 <i class="fas fa-heart fs-5" style="padding: 0px"></i>
                                             </button>
 
@@ -416,14 +412,12 @@
 
                                         <div class="d-flex gap-2">
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="readLater" data-bs-toggle="tooltip"
-                                                title="قراءة لاحقاً">
+                                                data-action="readLater" data-bs-toggle="tooltip" title="قراءة لاحقاً">
                                                 <i class="fas fa-bookmark fs-5" style="padding: 0px"></i>
                                             </button>
 
                                             <button class="btn btn-light action-btn p-3 rounded-3"
-                                                data-action="favorite" data-bs-toggle="tooltip"
-                                                title="إضافة للمفضلة">
+                                                data-action="favorite" data-bs-toggle="tooltip" title="إضافة للمفضلة">
                                                 <i class="fas fa-heart fs-5" style="padding: 0px"></i>
                                             </button>
 
@@ -480,4 +474,3 @@
         </div>
     </div>
 </div>
-

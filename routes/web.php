@@ -27,8 +27,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/personalities', [App\Http\Controllers\PersonalitiesController::class, 'index'])->name('personalities');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/personalities/profile', [App\Http\Controllers\PersonalityProfileController::class, 'index'])->name('personalityProfile');
-
-
+Route::get('/articles', [App\Http\Controllers\ArticlesController::class, 'index'])->name('articles');
+Route::get('/books', [App\Http\Controllers\BooksController::class, 'index'])->name('books');
+Route::get('/youtube', [App\Http\Controllers\YoutubeController::class, 'index'])->name('youtube');
+Route::get('/fiqh', [App\Http\Controllers\FiqhController::class, 'index'])->name('fiqh');
+Route::get('/akida', [App\Http\Controllers\AkidaController::class, 'index'])->name('akida');
+Route::get('/books/book', [App\Http\Controllers\BooksController::class, 'index2'])->name('book');
 
 
 

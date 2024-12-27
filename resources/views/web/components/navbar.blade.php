@@ -34,34 +34,34 @@
                     id="kt_app_header_menu" data-kt-menu="true">
                     @guest
                         <div class="menu-item px-3">
-                            <a href="/"
+                            <a href="{{ route('articles') }}"
                                 class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('مقالات') }}
                             </a>
                         </div>
                         <div class="menu-item px-3">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                            <a href="{{ route('books') }}"
                                 class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('كتب') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                            <a href="{{ route('akida') }}"
                                 class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('عقيدة') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                            <a href="{{ route('fiqh') }}"
                                 class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('فقه') }}
                             </a>
                         </div>
 
                         <div class="menu-item px-3">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#join-now-modal"
+                            <a href="{{ route('youtube') }}"
                                 class="text-hover menu-link fs-5 fw-bold px-3 py-2" style="color: inherit; transition: color 0.3s;" >
                                 {{ __('فيديوهات') }}
                             </a>

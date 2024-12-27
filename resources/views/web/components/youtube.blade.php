@@ -36,7 +36,6 @@
                                 <div>
                                     <h5 class="fw-bold mb-1">الشيخ محمد بن شمس الدين</h5>
                                 </div>
-                                <button class="btn-bg-logo px-4 rounded-3">الملف الشخصي</button>
                             </div>
                         </div>
 
@@ -120,7 +119,6 @@
                                 <div>
                                     <h5 class="fw-bold mb-1">الشيخ ابو جعفر عبد الله الخليفي</h5>
                                 </div>
-                                <button class="btn-bg-logo">الملف الشخصي</button>
                             </div>
                         </div>
 
