@@ -25,6 +25,7 @@ class Scholar extends Model implements HasMedia
         'telegram_url',
         'x_url',
         'status',
+        'biography',
     ];
 
     public function books()

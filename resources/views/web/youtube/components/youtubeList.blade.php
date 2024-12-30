@@ -261,7 +261,7 @@
             <div class="card shadow rounded-4 overflow-hidden">
                 <!-- Video Container -->
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/0ADmI_jmwOw" title="تفسير سورة البقرة" allowfullscreen
+                    <iframe src="https://www.youtube.com/embed/KQn26WLtiJo?list=PL1GJ09M00J5bXRjU2HtzaEHZ8abF4TAhv" title="تفسير سورة البقرة" allowfullscreen
                         class="rounded-top"></iframe>
                 </div>
 

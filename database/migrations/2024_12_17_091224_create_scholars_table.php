@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nationality')->nullable();
             $table->date('birth_date')->nullable();
             $table->date('death_date')->nullable();
+            $table->text('biography')->nullable();
             $table->string('website_url')->nullable();
             $table->string('youtube_url')->nullable();
             $table->string('facebook_url')->nullable();

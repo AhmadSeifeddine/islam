@@ -44,4 +44,15 @@ class Youtube extends Model implements HasMedia
     {
         return $this->morphMany(Collection_Item::class, 'item');
     }
+
+    public function getEmbedUrlAttribute()
+    {
+        $videoId = '';
+
+        if (preg_match('/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $this->url, $matches)) {
+            $videoId = $matches[1];
+        }
+
+        return 'https://www.youtube.com/embed/' . $videoId;
+    }
 }

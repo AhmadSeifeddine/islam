@@ -24,9 +24,9 @@ Route::get('logout', [LoginController::class, 'logout'])->middleware('auth')->na
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/personalities', [App\Http\Controllers\PersonalitiesController::class, 'index'])->name('personalities');
+Route::get('/personalities', [App\Http\Controllers\ScholarController::class, 'index'])->name('personalities');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-Route::get('/personalities/profile', [App\Http\Controllers\PersonalityProfileController::class, 'index'])->name('personalityProfile');
+Route::get('/personalities/profile', [App\Http\Controllers\ScholarController::class, 'profile'])->name('personalityProfile');
 Route::get('/articles', [App\Http\Controllers\ArticlesController::class, 'index'])->name('articles');
 Route::get('/books', [App\Http\Controllers\BooksController::class, 'index'])->name('books');
 Route::get('/youtube', [App\Http\Controllers\YoutubeController::class, 'index'])->name('youtube');
