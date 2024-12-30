@@ -20,7 +20,10 @@ class YoutubeController extends BaseController
 
     public function update(YoutubeRequest $request, $id)
     {
-        return $this->updateItem(Youtube::class, $id, $request->validated());
+        $data = $request->validated();
+        $data['scholar_id'] = $request->scholar_id;
+
+        return $this->updateItem(Youtube::class, $id, $data);
     }
 
     public function destroy($id)
