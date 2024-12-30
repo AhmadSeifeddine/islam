@@ -38,11 +38,20 @@ class Scholar extends Model implements HasMedia
         return $this->hasMany(Youtube::class);
     }
 
-    public function biographies()
+    public function articles()
     {
-        return $this->hasOne(Biography::class);
+        return $this->hasMany(Article::class);
     }
 
+    public function fiqh()
+    {
+        return $this->hasMany(Fiqh::class);
+    }
+
+    public function akida()
+    {
+        return $this->hasMany(Akida::class);
+    }
 }
 
 
