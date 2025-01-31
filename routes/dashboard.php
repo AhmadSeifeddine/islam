@@ -12,7 +12,7 @@ use App\Http\Controllers\Dashboard\Pages\CategoryController;
 use App\Http\Controllers\Dashboard\Pages\ScholarController;
 use App\Http\Controllers\Dashboard\Pages\ArticleController;
 
-Route::prefix('dashboard')->name('dashboard.')->group(function () {
+Route::prefix('dashboard')->name('dashboard.')->middleware('role:admin')->group(function () {
 
     // Dashboard routes
     Route::controller(DashboardController::class)->group(function () {
