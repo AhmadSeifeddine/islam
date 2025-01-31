@@ -12,7 +12,10 @@ class Book_Explanation extends Model
     protected $fillable = [
         'book_id',
         'youtube_id',
+        'status',
     ];
+
+    protected $table = 'book_explanations';
 
     public function book()
     {
@@ -24,5 +27,5 @@ class Book_Explanation extends Model
         return $this->belongsTo(Youtube::class);
     }
 
-    
+
 }

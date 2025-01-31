@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('cascade');
             $table->string('title');
             $table->string('url');
+            $table->string('duration');
             $table->enum('status', ['show', 'hide'])->default('show');
             $table->timestamps();
         });

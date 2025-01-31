@@ -200,9 +200,9 @@
                                     <div class="d-flex flex-column flex-grow-1">
                                         <div class="d-flex align-items-center mb-1">
                                             <span class="fw-bold fs-5 me-2">Ahmad</span>
-                                            <span class="badge bg-success text-white fs-8 px-2 py-1">
+                                            {{-- <span class="badge bg-success text-white fs-8 px-2 py-1">
                                                 {{ $role == 'student' ? 'Student' : 'admin' }}
-                                            </span>
+                                            </span> --}}
                                         </div>
                                         <span class="text-muted fs-7">Ahmad@gmail.com</span>
                                     </div>

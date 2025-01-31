@@ -15,6 +15,7 @@ class Article extends Model
         'status',
         'scholar_id',
         'category_id',
+        'writing_type',
     ];
 
     public function scholar()

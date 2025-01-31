@@ -15,6 +15,7 @@ class Book extends Model implements HasMedia
         'name',
         'scholar_id',
         'description',
+        'category_id',
         'publication_date',
         'genre',
         'language',

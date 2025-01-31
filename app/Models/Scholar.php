@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Scholar extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'name',
@@ -17,41 +16,20 @@ class Scholar extends Model implements HasMedia
         'nationality',
         'birth_date',
         'death_date',
+        'biography',
         'website_url',
-        'youtube_url',
         'facebook_url',
         'instagram_url',
+        'youtube_url',
         'tiktok_url',
         'telegram_url',
         'x_url',
         'status',
-        'biography',
+        'is_in_homepage'
     ];
 
-    public function books()
+    public function registerMediaCollections(): void
     {
-        return $this->hasMany(Book::class);
-    }
-
-    public function youtubes()
-    {
-        return $this->hasMany(Youtube::class);
-    }
-
-    public function articles()
-    {
-        return $this->hasMany(Article::class);
-    }
-
-    public function fiqh()
-    {
-        return $this->hasMany(Fiqh::class);
-    }
-
-    public function akida()
-    {
-        return $this->hasMany(Akida::class);
+        $this->addMediaCollection('avatar')->singleFile();
     }
 }
-
-

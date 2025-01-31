@@ -29,16 +29,6 @@ class Category extends Model
         return $this->hasMany(Article::class);
     }
 
-    public function fiqh()
-    {
-        return $this->hasMany(Fiqh::class);
-    }
-
-    public function akida()
-    {
-        return $this->hasMany(Akida::class);
-    }
-
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
@@ -48,5 +38,6 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, 'parent_id');
     }
+
 
 }

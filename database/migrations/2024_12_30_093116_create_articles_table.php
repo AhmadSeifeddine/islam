@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('status', ['show', 'hide'])->default('show');
             $table->foreignId('scholar_id')->constrained('scholars')->onDelete('cascade');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->string('writing_type');
             $table->timestamps();
         });
     }

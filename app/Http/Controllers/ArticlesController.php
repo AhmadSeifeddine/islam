@@ -9,7 +9,8 @@ class ArticlesController extends BaseController
 {
     public function index()
     {
-        return view('web.article.articles');
+        $articles = Article::with('scholar', 'category')->get();
+        return view('web.article.articles', compact('articles'));
     }
 
     public function store(ArticleRequest $request)

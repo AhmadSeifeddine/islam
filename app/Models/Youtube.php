@@ -14,8 +14,8 @@ class Youtube extends Model implements HasMedia
     protected $fillable = [
         'title',
         'url',
-        'description',
-        'published_at',
+        'scholar_id',
+        'category_id',
         'duration',
         'status',
     ];

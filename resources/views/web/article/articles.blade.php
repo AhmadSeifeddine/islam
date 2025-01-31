@@ -1,6 +1,11 @@
 @extends('web.layout.master')
 
 @push('styles')
+    <style>
+        .container {
+            background: none !important;
+        }
+    </style>
 @endpush
 
 

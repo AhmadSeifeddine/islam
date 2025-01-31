@@ -26,7 +26,8 @@ return new class extends Migration
             $table->string('tiktok_url')->nullable();
             $table->string('telegram_url')->nullable();
             $table->string('x_url')->nullable();
-            $table->enum('status', ['show', 'hide'])->default('show');
+            $table->boolean('status')->default(false);
+            $table->boolean("is_in_homepage")->default(false);
             $table->timestamps();
         });
 

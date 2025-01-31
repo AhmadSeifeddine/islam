@@ -565,3 +565,354 @@ body {
     border-color: var(--gold);
     color: var(--background);
 }
+
+.card-error {
+    background: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    backdrop-filter: blur(9.5px) !important;
+    -webkit-backdrop-filter: blur(9.5px) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-bs-theme="light"] .skeleton-wrapper {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+[data-bs-theme="light"] .skeleton-header,
+[data-bs-theme="light"] .skeleton-text,
+[data-bs-theme="light"] .skeleton-button {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+[data-bs-theme="light"] .skeleton-header {
+    height: 30px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+[data-bs-theme="light"] .skeleton-text {
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+[data-bs-theme="light"] .skeleton-text:last-of-type {
+    width: 80%;
+}
+
+[data-bs-theme="light"] .skeleton-button {
+    height: 35px;
+    width: 120px;
+    border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .skeleton-wrapper {
+    padding: 20px;
+    background: rgb(21, 23, 28);
+    border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .skeleton-header,
+[data-bs-theme="dark"] .skeleton-text,
+[data-bs-theme="dark"] .skeleton-button {
+    background: linear-gradient(90deg, rgb(31, 33, 38) 25%, rgb(41, 43, 48) 50%, rgb(31, 33, 38) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+[data-bs-theme="dark"] .skeleton-header {
+    height: 30px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+[data-bs-theme="dark"] .skeleton-text {
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+[data-bs-theme="dark"] .skeleton-text:last-of-type {
+    width: 80%;
+}
+
+[data-bs-theme="dark"] .skeleton-button {
+    height: 35px;
+    width: 120px;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (max-width:768px) {
+    .dt-toolbar {
+        margin-top: 50px !important;
+    }
+}
+
+@media (max-width:576px) {
+    .datatable-body {
+        gap: 10px;
+        flex-direction: column !important;
+    }
+}
+
+.lebify-scale-up {
+    transition: transform 0.2s ease-in-out;
+}
+
+.lebify-scale-up:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.02);
+}
+
+.lebify-scale-up:not(:hover) {
+    transform: scale(1);
+}
+
+.lebify-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lebify-slide-in-left:hover {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.lebify-bounce:hover {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.lebify-rotate:hover {
+    animation: rotate 2s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.lebify-pulse:hover {
+    animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.lebify-shake:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="8px"]::before {
+    content: '8px';
+    font-size: 8px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
+    content: '10px';
+    font-size: 10px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"]::before {
+    content: '12px';
+    font-size: 12px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
+    content: '14px';
+    font-size: 14px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="16px"]::before {
+    content: '16px';
+    font-size: 16px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
+    content: '18px';
+    font-size: 18px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="20px"]::before {
+    content: '20px';
+    font-size: 20px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
+    content: '24px';
+    font-size: 24px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="32px"]::before {
+    content: '32px';
+    font-size: 32px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="48px"]::before {
+    content: '48px';
+    font-size: 48px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="100px"]::before {
+    content: '100px';
+    font-size: 100px;
+}
+
+.ql-snow .ql-size-8px {
+    font-size: 8px;
+}
+
+.ql-snow .ql-size-10px {
+    font-size: 10px;
+}
+
+.ql-snow .ql-size-12px {
+    font-size: 12px;
+}
+
+.ql-snow .ql-size-14px {
+    font-size: 14px;
+}
+
+.ql-snow .ql-size-16px {
+    font-size: 16px;
+}
+
+.ql-snow .ql-size-18px {
+    font-size: 18px;
+}
+
+.ql-snow .ql-size-20px {
+    font-size: 20px;
+}
+
+.ql-snow .ql-size-24px {
+    font-size: 24px;
+}
+
+.ql-snow .ql-size-32px {
+    font-size: 32px;
+}
+
+.ql-snow .ql-size-48px {
+    font-size: 48px;
+}
+
+.ql-snow .ql-size-100px {
+    font-size: 100px;
+}
+
+
+.editor-content p,
+.editor-content h1,
+.editor-content h2,
+.editor-content h3,
+.editor-content h4,
+.editor-content h5,
+.editor-content h6,
+.editor-content li,
+.editor-content ul,
+.editor-content ol,
+.editor-content blockquote,
+.editor-content a,
+.editor-content span,
+.editor-content img,
+.editor-content video,
+.editor-content iframe,
+.editor-content table,
+.editor-content td,
+.editor-content th,
+.editor-content code,
+.editor-content pre,
+.editor-content strong,
+.editor-content em,
+.editor-content small,
+.editor-content sub,
+.editor-content sup,
+.editor-content mark,
+.editor-content del {
+    line-height: 1.8;
+}
