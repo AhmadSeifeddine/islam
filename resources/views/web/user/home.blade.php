@@ -13,9 +13,9 @@
         @include('web.components.landing')
     </div>
 
-    @include('web.components.books')
+    @include('web.book.components.books')
     @include('web.personality.components.personalities')
-    @include('web.components.youtube')
+    @include('web.youtube.components.youtube')
     @include('web.components.aboutUs')
     @include('web.components.faq')
     @include('web.components.contact')

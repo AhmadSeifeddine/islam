@@ -17,10 +17,6 @@
             // Ensure filtered content is always shown
             filtered_content.classList.remove('d-none');
 
-            // Update button child visibility
-            islamicBtn.firstElementChild.classList.toggle('d-none', !showIslamic);
-            nonIslamicBtn.firstElementChild.classList.toggle('d-none', showIslamic);
-
             // Update button styles for clicked state
             islamicBtn.classList.toggle('category-wrapper-clicked', showIslamic);
             nonIslamicBtn.classList.toggle('category-wrapper-clicked', !showIslamic);

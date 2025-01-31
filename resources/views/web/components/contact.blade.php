@@ -1,4 +1,4 @@
-<div class="container-fluid px-0 mb-10">
+<div class="container-fluid px-0 mb-15">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
