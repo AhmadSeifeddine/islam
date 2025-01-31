@@ -1,5 +1,5 @@
 <!-- Articles Header Section -->
-<div class="container py-7" dir="rtl">
+<div class="container py-20" dir="rtl">
     <div class="row justify-content-center mb-6">
         <div class="col-lg-8 text-center">
             <h2 class="display-2 fw-bold mb-4">مقالات <span class="gold">إسلامية</span></h2>

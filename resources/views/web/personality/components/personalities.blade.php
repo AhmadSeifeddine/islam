@@ -66,8 +66,8 @@
                                         <div class="row g-4">
                                             <div class="col-6">
                                                 <div
-                                                    class="bg-success bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-success">
-                                                    <div class="text-success fw-semibold mb-2">
+                                                    class="bg-primary bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-primary">
+                                                    <div class="text-primary fw-semibold mb-2">
                                                         تاريخ الولادة:
                                                     </div>
                                                     <div class="fw-bold">1329هـ</div>
@@ -75,8 +75,8 @@
                                             </div>
                                             <div class="col-6">
                                                 <div
-                                                    class="bg-danger bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-danger">
-                                                    <div class="text-danger fw-semibold mb-2">
+                                                    class="bg-primary bg-opacity-10 rounded-4 p-4 h-100 border-start border-3 border-primary">
+                                                    <div class="text-primary fw-semibold mb-2">
                                                         تاريخ الوفاة:
                                                     </div>
                                                     <div class="fw-bold">1419هـ</div>

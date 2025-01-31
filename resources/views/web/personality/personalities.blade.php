@@ -6,8 +6,6 @@
 
 
 @section('section')
-
-
     @include('web.personality.components.personalityCategory')
 @endsection
 
