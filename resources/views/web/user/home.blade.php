@@ -13,7 +13,7 @@
         @include('web.components.landing')
     </div>
 
-    @include('web.book.components.books')
+    @include('web.book.books')
     @include('web.personality.components.personalities')
     @include('web.youtube.components.youtube')
     @include('web.components.aboutUs')

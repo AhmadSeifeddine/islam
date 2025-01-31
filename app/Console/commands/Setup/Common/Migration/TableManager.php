@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Setup\Common\Migration\R;
+namespace App\Console\Commands\Setup\Common\Migration;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
