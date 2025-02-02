@@ -1,15 +1,9 @@
 <div class="container py-5 mb-10">
     <!-- Main Header with Decorative Elements -->
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center mb-5">
-            <h2 class="display-3 fw-bold mb-4">بعض <span class="gold">الأسئلة المتكرّرة</span></h2>
-            <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
-                متحدثي اللغة العربية</p>
-        </div>
-    </div>
+    <x-title title="بعض" coloredTitle="الأسئلة المتكرّرة" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
 
     <!-- FAQ Accordion -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-6">
         <div class="col-lg-12">
             <div class="accordion accordion-flush" id="faqAccordion">
                 <!-- FAQ Item 1 -->

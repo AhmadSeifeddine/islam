@@ -1,14 +1,8 @@
 <div class="container mb-20 pb-10">
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-8 text-center mb-5">
-            <h2 class="display-3 fw-bold mb-4">مقترحات <span class="gold">الكتب</span></h2>
-            <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
-                متحدثي اللغة العربية</p>
-        </div>
-    </div>
+    <x-title title="مقترحات" coloredTitle="الكتب" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
 
     <!-- Swiper -->
-    <div class="swiper booksSwiper">
+    <div class="swiper booksSwiper mt-6">
         <div class="swiper-wrapper">
             <!-- First Card -->
             <div class="swiper-slide">

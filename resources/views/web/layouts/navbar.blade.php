@@ -9,7 +9,8 @@
                 <div class="d-flex align-items-center gap-3">
                     {{-- <img alt="Logo" src="{{ asset('vendor/img/logo/logoCropped.svg') }}"
                         class="w-75px app-sidebar-logo-default me-1"> --}}
-                    @include('web.components.logo')
+                    {{-- @include('web.components.logo') --}}
+                    <x-logo />
                     <div class="d-flex flex-column">
                         <span class="fs-2 fw-bold d-none d-lg-block">أهل الحديث</span>
                         <span class="text-muted fs-8 d-none d-lg-block">أحمد ورافع</span>
@@ -168,9 +169,7 @@
                 <!--end::Theme mode-->
                 @guest
                     <div class="menu-item ps-3 ps-lg-0 pe-2 d-flex align-items-center justify-content-center flex-lg-grow-1">
-                        <a href="" class="btn-bg-logo">
-                            {{ __('تسجيل الدخول') }}
-                        </a>
+                        <x-button href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</x-button>
                     </div>
                 @endguest
                 {{-- End Language --}}

@@ -1,18 +1,9 @@
 <div class="container-fluid px-0 mb-15">
     <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <!-- Main Header with Decorative Elements -->
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-8 text-center mb-5">
-                        <h2 class="display-2 fw-bold mb-4">تواصل <span class="gold">معنا</span></h2>
-                        <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row justify-content-center">
+       <x-title title="تواصل" coloredTitle="معنا" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة" />
+
+        <div class="row justify-content-center mt-6">
             <div class="col-xl-10">
                 <div class="card border-0 shadow-lg position-relative overflow-hidden">
                     <div class="position-absolute top-0 start-0 w-100 h-100"

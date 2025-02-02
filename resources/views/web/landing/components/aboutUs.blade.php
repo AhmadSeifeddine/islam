@@ -1,16 +1,10 @@
 <section class="py-5 mb-20">
     <div class="container">
         <!-- Main Header with Decorative Elements -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="display-3 fw-bold mb-4">معلومات عن الموقع <span class="gold">والقائمين عليه</span></h2>
-                <p class="lead text-body-secondary">نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل
-                    متحدثي اللغة العربية</p>
-            </div>
-        </div>
+        <x-title title="معلومات عن الموقع " coloredTitle="والقائمين عليه" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
 
         <!-- Content Cards with Enhanced Design -->
-        <div class="row g-4 align-items-stretch">
+        <div class="row g-4 align-items-stretch mt-6">
             <!-- Main Info Card -->
             <div class="col-lg-7">
                 <div class="card h-100 border-0 shadow-lg hover-shadow-lg transition-all">

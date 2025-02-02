@@ -8,7 +8,7 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-4 col-xl-4  mt-3 text-center">
                     <div class="footer-logo mb-4">
-                        @include('web.components.logo', ['width' => '170px'])
+                        <x-logo width="170px" />
                     </div>
 
                 </div>

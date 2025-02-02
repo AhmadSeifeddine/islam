@@ -103,24 +103,25 @@
         <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
             <main class="app-page flex-column flex-column-fluid" id="kt_app_page">
                 <!-- Navbar -->
-                @include('web.components.navbar')
+                @include('web.layouts.navbar')
 
                 <!-- Landing -->
                 <div class="app-wrapper flex-column flex-row-fluid position-relative overflow-hidden"
                     id="kt_app_wrapper">
                     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                         @yield('section')
-                        @include('web.components.footer')
+                        @include('web.layouts.footer')
                     </div>
                 </div>
             </main>
         </div>
+    </div>
 
-        <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
-        <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
-        <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
-        @stack('scripts')
+    <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
+    <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
+    <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>

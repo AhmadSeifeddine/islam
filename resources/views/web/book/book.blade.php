@@ -1,4 +1,4 @@
-@extends('web.layout.master')
+@extends('web.layouts.master')
 
 @push('styles')
 @endpush
