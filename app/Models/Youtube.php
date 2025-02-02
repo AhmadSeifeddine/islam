@@ -18,6 +18,7 @@ class Youtube extends Model implements HasMedia
         'category_id',
         'duration',
         'status',
+        'created_by'
     ];
 
     public function scholar()

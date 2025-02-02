@@ -13,6 +13,7 @@ class Book_Explanation extends Model
         'book_id',
         'youtube_id',
         'status',
+        'created_by'
     ];
 
     protected $table = 'book_explanations';

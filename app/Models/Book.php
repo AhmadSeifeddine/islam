@@ -20,6 +20,7 @@ class Book extends Model implements HasMedia
         'genre',
         'language',
         'status',
+        'created_by'
     ];
 
     public function scholar()

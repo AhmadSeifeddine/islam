@@ -20,7 +20,17 @@ import { ModalLoader } from '../../core/global/advanced/advanced.js';
  * @function reloadDataTable - Refreshes the DataTable after operations
  * @function buildApiUrl - Constructs API endpoints for scholar operations
  *--------------------------------------------------------------------------*/
-const defaultErrorHandler = (err) => console.error('Error:', err);
+const defaultErrorHandler = (err, callback = null) => {
+    if (err.response.status === 403) {
+        // Close any open modals
+        $('.modal').modal('hide');
+        SweetAlert.error('Access Denied', "Unfortunately, you don't have permission to perform this action. Please contact your administrator if you believe this is a mistake.");
+        if (callback) {
+            callback();
+        }
+    }
+};
+
 const reloadDataTable = () => scholarTable.reload();
 const buildApiUrl = (path) => `${DASHBOARD_URL}/scholars/${path}`;
 
@@ -141,20 +151,28 @@ const userActionHandlers = {
 
     homepage: function (id) {
         this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/homepage`), (response) => {
-            // 
+            //
         }, (error) => {
-            console.log(error.response.status)
             if (error.response.status == "400") {
                 SweetAlert.error("", "You can only select 1 scholar for the home page");
-                const checkbox = document.querySelector(`.homepage-toggle[data-id="${id}"]`);
+                const checkbox = document.querySelector(`.is_in_homepage_${id}`);
                 checkbox.checked = false;
             }
+            defaultErrorHandler(error, () => {
+                const checkbox = document.getElementById(`is_in_homepage_${id}`);
+                checkbox.checked ? checkbox.checked = false : checkbox.checked = true;
+            });
         });
     },
 
     status: function (id) {
         this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/status`), (response) => {
             console.log(response);
+        }, (error) => {
+            defaultErrorHandler(error, () => {
+                const checkbox = document.getElementById(`status_${id}`);
+                checkbox.checked ? checkbox.checked = false : checkbox.checked = true;
+            });
         });
     }
 };

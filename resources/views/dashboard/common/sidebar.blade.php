@@ -43,7 +43,8 @@
                 <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu"
                     data-kt-menu="true" data-kt-menu-expand="false">
                     <!--begin:Menu item-->
-                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                    <div data-kt-menu-trigger="click"
+                        class="menu-item {{ request()->routeIs('dashboard.welcome') ? 'here show' : '' }} menu-accordion">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
@@ -58,11 +59,12 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link active" href="index.html">
+                                <a class="menu-link {{ request()->routeIs('dashboard.welcome') ? 'active' : '' }}"
+                                    href="{{ route('dashboard.welcome') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Dashboard</span>
+                                    <span class="menu-title">Welcome</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -82,61 +84,121 @@
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <div data-kt-menu-trigger="{{ $sidebarData['roles']['is_admin'] ? 'click' : '' }}"
+                        class="menu-item menu-accordion {{ !$sidebarData['roles']['is_admin'] ? 'opacity-50 pe-none' : '' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
                                 <i class="bi bi-person-lines-fill fs-2"></i>
                             </span>
                             <span class="menu-title">Users</span>
-                            <span class="menu-arrow"></span>
+                            @if (auth()->user()->hasRole(['admin', 'super_admin']))
+                                <span class="menu-arrow"></span>
+                            @else
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            @endif
                         </span>
                         <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.users.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">{{ __('common.dashboard.overview') }}</span>
-                                </a>
-                                <!--end:Menu link-->
+                        @if (auth()->user()->hasRole(['admin', 'super_admin']))
+                            <div class="menu-sub menu-sub-accordion">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ request()->routeIs('dashboard.users.index') ? 'active' : '' }}"
+                                        href="{{ route('dashboard.users.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">{{ __('common.dashboard.overview') }}</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                             </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        </div>
-                        <!--end:Menu sub-->
+                        @endif
                     </div>
                     <!--end:Menu item-->
-                    <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                            href="{{ route('dashboard.writing.index') }}"><span class="menu-icon"><i
-                                    class="bi bi-file-earmark-text fs-2"></i></span><span
-                                class="menu-title">Writing</span></a>
-                        <!--end:Menu link-->
+                    <div class="menu-item">
+                        @if (!$sidebarData['permissions']['writing_view'])
+                            <p class="menu-link pb-0 {{ !$sidebarData['permissions']['writing_view'] ? 'opacity-50' : '' }}"
+                                href="{{ route('dashboard.writing.index') }}"><span class="menu-icon">
+                                    <i class="bi bi-file-earmark-text fs-2"></i>
+                                </span>
+                                <span class="menu-title">Writing</span>
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            </p>
+                        @else
+                            <a class="menu-link {{ request()->routeIs('dashboard.writing.index') ? 'active' : '' }}"
+                                href="{{ route('dashboard.writing.index') }}"><span class="menu-icon">
+                                    <i class="bi bi-file-earmark-text fs-2"></i>
+                                </span>
+                                <span class="menu-title">Writing</span>
+                            </a>
+                        @endif
                     </div>
-                    <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                            href="{{ route('dashboard.categories.index') }}"><span class="menu-icon"><i
-                                    class="bi bi-tags fs-2"></i></span><span class="menu-title">Categories</span></a>
-                        <!--end:Menu link-->
+
+                    <div class="menu-item">
+                        @if (!$sidebarData['permissions']['categories_view'])
+                            <p class="menu-link pb-0 {{ !$sidebarData['permissions']['categories_view'] ? 'opacity-50' : '' }}"
+                                href="{{ route('dashboard.categories.index') }}"><span class="menu-icon">
+                                    <i class="bi bi-tags fs-2"></i>
+                                </span>
+                                <span class="menu-title">Categories</span>
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            </p>
+                        @else
+                            <a class="menu-link {{ request()->routeIs('dashboard.categories.index') ? 'active' : '' }}"
+                                href="{{ route('dashboard.categories.index') }}">
+                                <span class="menu-icon">
+                                    <i class="bi bi-tags fs-2"></i>
+                                </span>
+                                <span class="menu-title">Categories</span>
+                            </a>
+                        @endif
                     </div>
                     <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="{{ route('dashboard.scholars.index') }}">
-                            <span class="menu-icon"><i class="bi bi-person fs-2"></i></span><span
-                                class="menu-title">Scholars</span>
-                        </a>
-                        <!--end:Menu link-->
+                        @if (!$sidebarData['permissions']['scholars_view'])
+                            <p class="menu-link pb-0 {{ !$sidebarData['permissions']['scholars_view'] ? 'opacity-50' : '' }}"
+                                href="{{ route('dashboard.scholars.index') }}"><span class="menu-icon">
+                                    <i class="bi bi-person fs-2"></i>
+                                </span>
+                                <span class="menu-title">Scholars</span>
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            </p>
+                        @else
+                            <a class="menu-link {{ request()->routeIs('dashboard.scholars.index') ? 'active' : '' }}"
+                                href="{{ route('dashboard.scholars.index') }}">
+                                <span class="menu-icon"><i class="bi bi-person fs-2"></i></span><span
+                                    class="menu-title">Scholars</span>
+                            </a>
+                        @endif
                     </div>
                     <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="{{ route('dashboard.youtubes.index') }}">
-                            <span class="menu-icon"><i class="bi bi-youtube fs-2"></i></span><span
-                                class="menu-title">Youtube</span>
-                        </a>
-                        <!--end:Menu link-->
+                        @if (!$sidebarData['permissions']['youtubes_view'])
+                            <p class="menu-link pb-0 {{ !$sidebarData['permissions']['youtubes_view'] ? 'opacity-50' : '' }}"
+                                href="{{ route('dashboard.youtubes.index') }}"><span class="menu-icon">
+                                    <i class="bi bi-youtube fs-2"></i>
+                                </span>
+                                <span class="menu-title">Youtube</span>
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            </p>
+                        @else
+                            <a class="menu-link {{ request()->routeIs('dashboard.youtubes.index') ? 'active' : '' }}"
+                                href="{{ route('dashboard.youtubes.index') }}">
+                                <span class="menu-icon"><i class="bi bi-youtube fs-2"></i></span><span
+                                    class="menu-title">Youtube</span>
+                            </a>
+                        @endif
                     </div>
                     <div class="menu-item pt-5">
                         <!--begin:Menu content-->
@@ -145,14 +207,21 @@
                         </div>
                         <!--end:Menu content-->
                     </div>
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <div data-kt-menu-trigger="click"
+                        class="menu-item menu-accordion {{ !$sidebarData['permissions']['books_view'] ? 'opacity-50 pe-none' : '' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
                                 <i class="bi bi-book fs-2"></i>
                             </span>
                             <span class="menu-title">Books</span>
-                            <span class="menu-arrow"></span>
+                            @if (auth()->user()->isAbleTo('books_view'))
+                                <span class="menu-arrow"></span>
+                            @else
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            @endif
                         </span>
                         <!--end:Menu link-->
                         <!--begin:Menu sub-->
@@ -160,7 +229,8 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.books.index') }}">
+                                <a class="menu-link {{ request()->routeIs('dashboard.books.index') ? 'active' : '' }}"
+                                    href="{{ route('dashboard.books.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -171,7 +241,8 @@
                             <!--end:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.books.explanations.index') }}">
+                                <a class="menu-link {{ request()->routeIs('dashboard.books.explanations.index') ? 'active' : '' }}"
+                                    href="{{ route('dashboard.books.explanations.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -193,80 +264,90 @@
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+
+                    <div data-kt-menu-trigger="{{ $sidebarData['roles']['is_super_admin'] ? 'click' : '' }}"
+                        class="menu-item menu-accordion {{ !$sidebarData['roles']['is_super_admin'] ? 'opacity-50 pe-none' : '' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
                                 <i class="bi bi-person-lines-fill fs-2"></i>
                             </span>
                             <span class="menu-title">Privileges</span>
-                            <span class="menu-arrow"></span>
+                            @if (auth()->user()->hasRole('super_admin'))
+                                <span class="menu-arrow"></span>
+                            @else
+                                <span class="menu-location">
+                                    <i class="bi bi-lock-fill fs-2"></i>
+                                </span>
+                            @endif
                         </span>
                         <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.roles.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Roles</span>
-                                </a>
-                                <!--end:Menu link-->
+                        @if (auth()->user()->hasRole('super_admin'))
+                            <!--begin:Menu sub-->
+                            <div class="menu-sub menu-sub-accordion">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('dashboard.roles.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Roles</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('dashboard.permissions.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Permissions</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('dashboard.roles.users.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Roles Users</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('dashboard.permissions.users.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Permissions Users</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('dashboard.permission-role.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">Permissions Roles</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                             </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.permissions.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Permissions</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.roles.users.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Roles Users</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.permissions.users.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Permissions Users</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{{ route('dashboard.permission-role.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Permissions Roles</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                        </div>
-                        <!--end:Menu sub-->
+                            <!--end:Menu sub-->
+                        @endif
                     </div>
                 </div>
 

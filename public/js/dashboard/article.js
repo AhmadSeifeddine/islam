@@ -21,7 +21,17 @@ import { initSelect2 } from '../../core/global/utils/functions.js';
  * @function reloadDataTable - Refreshes the DataTable after operations
  * @function buildApiUrl - Constructs API endpoints for article operations
  *--------------------------------------------------------------------------*/
-const defaultErrorHandler = (err) => console.error('Error:', err);
+const defaultErrorHandler = (err, callback = null) => {
+    if (err.response.status === 403) {
+        // Close any open modals
+        $('.modal').modal('hide');
+        SweetAlert.error('Access Denied', "Unfortunately, you don't have permission to perform this action. Please contact your administrator if you believe this is a mistake.");
+        if (callback) {
+            callback();
+        }
+    }
+};
+
 const reloadDataTable = () => articleTable.reload();
 const buildApiUrl = (path) => `${DASHBOARD_URL}/writing/${path}`;
 
@@ -86,12 +96,12 @@ const apiOperations = {
         }
     },
 
-    _PATCH_: async (endpoint, onSuccess) => {
+    _PATCH_: async (endpoint, onSuccess, onError) => {
         try {
             const response = await HttpRequest.patch(endpoint);
             onSuccess(response);
         } catch (error) {
-            defaultErrorHandler(error);
+            onError(error);
         }
     },
 
@@ -176,17 +186,19 @@ const userActionHandlers = {
                 height: '300px',
             });
 
-            quill.on('text-change', function () {
-                const content = quill.root.innerHTML;
-                console.log(content)
-                textarea.value = content;
-            });
+            const content = quill.root.innerHTML;
+            console.log(content)
+            textarea.value = content;
         });
     },
 
     status: function (id) {
         this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/status`), (response) => {
-            // Handler for successful status update operation
+        }, (error) => {
+            defaultErrorHandler(error, () => {
+                const toggle = document.querySelector(`#status_${id}`);
+                toggle.checked = !toggle.checked;
+            });
         });
     }
 };

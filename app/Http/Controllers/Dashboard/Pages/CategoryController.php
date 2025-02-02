@@ -11,6 +11,14 @@ use function App\Helpers\getBreadcrumbs;
 
 class CategoryController extends BaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:categories_view', ['only' => ['index', 'datatable']]);
+        $this->middleware('permission:categories_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:categories_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:categories_delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -40,7 +48,10 @@ class CategoryController extends BaseController
             'parent_id' => 'nullable|exists:categories,id'
         ]);
 
-        Category::create($request->all());
+        Category::create([
+            ...$request->all(),
+            'created_by' => auth()->user()->id
+        ]);
 
         return $this->modalToastResponse('Category created successfully');
     }

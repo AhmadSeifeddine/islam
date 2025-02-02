@@ -12,6 +12,16 @@ use Yajra\DataTables\Facades\DataTables;
 
 class BookController extends BaseController
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:books_view', ['only' => ['index']]);
+        $this->middleware('permission:books_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:books_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:books_delete', ['only' => ['destroy']]);
+        $this->middleware('permission:books_status', ['only' => ['status']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -38,12 +48,16 @@ class BookController extends BaseController
     {
         $request->validate([
             'name' => 'required|string',
-            'scholar_id' => 'required'
+            'scholar_id' => 'required',
+            'category_id' => 'required'
         ]);
 
         DB::beginTransaction();
         try {
-            $book = Book::create($request->except('image'));
+            $book = Book::create([
+                ...$request->except('image'),
+                'created_by' => auth()->user()->id
+            ]);
 
             if ($request->hasFile('image')) {
                 $book->addMediaFromRequest('image')

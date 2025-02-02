@@ -25,7 +25,9 @@ class Scholar extends Model implements HasMedia
         'telegram_url',
         'x_url',
         'status',
-        'is_in_homepage'
+        'is_in_homepage',
+        'is_recommended',
+        'created_by'
     ];
 
     public function registerMediaCollections(): void

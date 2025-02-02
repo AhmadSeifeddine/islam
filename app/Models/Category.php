@@ -12,6 +12,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'parent_id',
+        'created_by'
     ];
 
     public function books()

@@ -40,7 +40,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
 
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -54,75 +54,6 @@
         <link href="{{ url('core/vendor/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     @endif
     @stack('styles')
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
-
-        .arabic-text {
-            font-family: 'Cairo', sans-serif !important;
-        }
-
-        :lang(ar) {
-            font-family: 'Cairo', sans-serif !important;
-        }
-
-        :lang(ar) .dt-orderable-desc {
-            text-align: start;
-        }
-
-
-        .datatable-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .data-table-action-edit {
-            background-color: #0d6dfd1d !important;
-            box-shadow: 0 2px 4px rgba(13, 109, 253, 0.2), 0 1px 2px rgba(13, 109, 253, 0.1) !important;
-            transition: all 0.3s ease;
-        }
-
-        .data-table-action-edit:hover {
-            background-color: #0d6dfd61 !important;
-            color: #fff !important;
-            box-shadow: 0 4px 8px rgba(13, 109, 253, 0.3), 0 2px 4px rgba(13, 109, 253, 0.2) !important;
-            transform: translateY(-1px);
-        }
-
-        .data-table-action-show {
-            background-color: #1987541d !important;
-            box-shadow: 0 2px 4px rgba(25, 135, 84, 0.2), 0 1px 2px rgba(25, 135, 84, 0.1) !important;
-            transition: all 0.3s ease;
-        }
-
-        .data-table-action-show:hover {
-            background-color: #19875461 !important;
-            box-shadow: 0 4px 8px rgba(25, 135, 84, 0.3), 0 2px 4px rgba(25, 135, 84, 0.2) !important;
-            transform: translateY(-1px);
-        }
-
-        .data-table-action-delete {
-            background-color: #dc35451d !important;
-            box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2), 0 1px 2px rgba(220, 53, 69, 0.1) !important;
-            transition: all 0.3s ease;
-        }
-
-        .data-table-action-delete:hover {
-            background-color: #dc354561 !important;
-            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3), 0 2px 4px rgba(220, 53, 69, 0.2) !important;
-            transform: translateY(-1px);
-        }
-
-        .select-info {
-            display: none !important;
-        }
-
-        .datatable-body {
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: space-between !important;
-        }
-    </style>
 </head>
 <!--end::Head-->
 <!--begin::Body-->

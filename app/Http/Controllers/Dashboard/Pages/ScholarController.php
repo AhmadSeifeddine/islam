@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class ScholarController extends BaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:scholars_view', ['only' => ['index', 'datatable']]);
+        $this->middleware('permission:scholars_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:scholars_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:scholars_delete', ['only' => ['destroy']]);
+        $this->middleware('permission:scholars_status', ['only' => ['status', 'homepage']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -41,7 +50,10 @@ class ScholarController extends BaseController
 
         DB::beginTransaction();
         try {
-            $scholar = Scholar::create($request->except('image'));
+            $scholar = Scholar::create([
+                ...$request->except('image'),
+                'created_by' => auth()->user()->id
+            ]);
 
             if ($request->hasFile('image')) {
                 $scholar->addMediaFromRequest('image')

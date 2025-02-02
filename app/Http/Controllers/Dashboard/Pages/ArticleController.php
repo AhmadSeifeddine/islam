@@ -11,6 +11,17 @@ use App\Models\Category;
 
 class ArticleController extends BaseController
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:writing_view', ['only' => ['index']]);
+        $this->middleware('permission:writing_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:writing_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:writing_delete', ['only' => ['destroy']]);
+        $this->middleware('permission:writing_status', ['only' => ['status']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -43,7 +54,10 @@ class ArticleController extends BaseController
             'writing_type' => 'required|string',
         ]);
 
-        Article::create($request->all());
+        Article::create([
+            ...$request->all(),
+            'created_by' => auth()->user()->id
+        ]);
         return $this->modalToastResponse('Article created successfully');
     }
 

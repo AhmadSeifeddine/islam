@@ -16,7 +16,7 @@ Route::controller(RoleController::class)
     ->prefix('roles')
     ->name('roles.')
     ->group(function () {
-        Route::post('/update', 'update')->name('update');
+        Route::post('/update', 'upd ate')->name('update');
         Route::get('/{id}/show', 'show')->name('show');
         Route::get('/datatable', 'datatable')->name('datatable');
         Route::get('/{id}/attach-permissions-modal', 'attachPermissionsModal')->name('attachPermissionsModal');

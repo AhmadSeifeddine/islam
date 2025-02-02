@@ -11,6 +11,14 @@ use Yajra\DataTables\Facades\DataTables;
 
 class YoutubeController extends BaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:youtubes_view', ['only' => ['index', 'datatable']]);
+        $this->middleware('permission:youtubes_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:youtubes_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:youtubes_delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -42,7 +50,10 @@ class YoutubeController extends BaseController
             'duration' => 'required'
         ]);
 
-        Youtube::create($request->all());
+        Youtube::create([
+            ...$request->all(),
+            'created_by' => auth()->user()->id
+        ]);
         return $this->modalToastResponse('Youtube created successfully');
     }
 

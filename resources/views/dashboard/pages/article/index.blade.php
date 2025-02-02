@@ -29,6 +29,7 @@
 <!---------------------------
     Main Content
 ---------------------------->
+
 @section('content')
     <x-lebify-table id="articleTable" :columns="$columns"
     {{-- create="true"                         // BY DEFAULT TRUE

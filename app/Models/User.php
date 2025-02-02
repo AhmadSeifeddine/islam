@@ -56,4 +56,34 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(Collection::class);
     }
+
+    public function adminWelcomeStatistics()
+    {
+        $models = [
+            'scholars' => Scholar::query(),
+            'categories' => Category::query(),
+            'books' => Book::query(),
+            'articles' => Article::query(),
+            'youtubes' => Youtube::query(),
+            'book_explanations' => Book_Explanation::query()
+        ];
+
+        $stats = [];
+        $today = now()->format('Y-m-d');
+
+        foreach ($models as $key => $query) {
+            $baseQuery = $query->select('id')
+                ->where('created_by', auth()->id());
+
+            // Get total count
+            $stats[$key] = (clone $baseQuery)->count();
+
+            // Get today's count
+            $stats['today_' . $key] = (clone $baseQuery)
+                ->whereDate('created_at', $today)
+                ->count();
+        }
+
+        return $stats;
+    }
 }

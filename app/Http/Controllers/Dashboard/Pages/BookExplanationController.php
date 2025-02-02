@@ -12,6 +12,16 @@ use Yajra\DataTables\Facades\DataTables;
 
 class BookExplanationController extends BaseController
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:books_view', ['only' => ['index']]);
+        $this->middleware('permission:books_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:books_edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:books_delete', ['only' => ['destroy']]);
+        $this->middleware('permission:books_status', ['only' => ['status']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -41,7 +51,10 @@ class BookExplanationController extends BaseController
             'book_id' => 'required'
         ]);
 
-        Book_Explanation::create($request->all());
+        Book_Explanation::create([
+            ...$request->all(),
+            'created_by' => auth()->user()->id
+        ]);
         return $this->modalToastResponse('Book_Explanation created successfully');
     }
 
