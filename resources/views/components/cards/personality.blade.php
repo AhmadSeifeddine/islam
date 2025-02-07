@@ -7,7 +7,7 @@
             {{-- ? personality Image --}}
             <div class="col-md-6 col-lg-12 col-xl-6">
                 <div class="d-flex align-items-center justify-content-center w-100 py-2 py-md-0 py-lg-2 py-xl-0 bg-light rounded-3 h-100">
-                    <img class="w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100 rounded-3" src="{{ asset($data['media'][0]->getUrl()) }}" alt="صورة الكتاب"
+                    <img class="w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100 rounded-3" src="{{ asset($data['media'][0]->getUrl()) ?? asset('vendor/img/logo/3.jpg') }}" alt="صورة الكتاب"
                     style="object-fit: cover">
                 </div>
             </div>
