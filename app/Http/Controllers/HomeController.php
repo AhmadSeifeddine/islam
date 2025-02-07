@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $books = Book::with(['scholar', 'category', 'explanations'])->get();
-        $personalities = Scholar::get();
+        $personalities = Scholar::with('media')->get();
         $youtube = Youtube::with(['scholar', 'category'])->get();
 
         return view('web.landing.index')->with([

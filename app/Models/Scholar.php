@@ -35,4 +35,9 @@ class Scholar extends Model implements HasMedia
     {
         $this->addMediaCollection('avatar')->singleFile();
     }
+
+    public function getAvatarAttribute()
+    {
+        return $this->getFirstMediaUrl('avatar');
+    }
 }
