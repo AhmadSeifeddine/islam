@@ -17,12 +17,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-            'name' => 'Rafeh Saifan',
-            'email' => 'rafeh@athari.site',
-            'password' => Hash::make('rafehsaifan@123@123'),
-            'email_verified_at' => now(),
-        ])->addRole('super_admin');
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Rafeh Saifan',
+        //     'email' => 'rafeh@athari.site',
+        //     'password' => Hash::make('rafehsaifan@123@123'),
+        //     'email_verified_at' => now(),
+        // ])->addRole('super_admin');
+
+        User::where('id', 2)->update([
+            'password' => Hash::make('12345678')
+        ]);
 
         // $this->call([
         //     RolePermission::class,
