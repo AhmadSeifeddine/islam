@@ -6,11 +6,11 @@
 
 
 @section('section')
-    <div class="categories-section py-20 d-flex flex-column flex-column-fluid justify-content-center align-items-center"
+    <div class="categories-section d-flex flex-column flex-column-fluid justify-content-center align-items-center"
         style="background-color: var(--background);">
         <div class="container">
             <!-- Refined Header -->
-            <div class="text-center mb-5 header-content">
+            <div class="text-center mb-16 header-content">
                 <h1 class="main-title">
                     تصنيف الشخصيات
                     <div class="elegant-underline"></div>
@@ -18,8 +18,8 @@
                 <p class="text elegant-subtitle">اختر التصنيف المناسب للشخصيات التي تبحث عنها</p>
             </div>
 
-            <!-- Categories Grid -->
-            <div class="row mt-10 g-5">
+            <!-- Persons Type Grid -->
+            <div class="row g-6">
                 <!-- Religious Category -->
                 <div class="category-container col-12 col-lg-6 fade-in islamic_pers">
                     <button class="category-wrapper w-100 p-5 rounded-3">
@@ -56,7 +56,7 @@
 
             <div
                 class="islamic_filter mt-10 options-animate hidden
-            d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
+                d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
                 <div class="d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
                     <button class="premium-btn bg-success text-success bg-opacity-15 rounded-3 py-3 px-4 text-center">
                         الكل
@@ -90,7 +90,7 @@
 
             <div
                 class="not_islamic_filter mt-10 options-animate hidden
-            d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
+                d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
                 <div class="d-flex align-items-center flex-wrap justify-content-center justify-content-lg-between gap-4">
                     <select name="" id="" class="px-4 py-2 rounded-3">
                         <option value="">الكل</option>
@@ -117,7 +117,7 @@
             <div class="filtered_content d-none mt-5">
                 <hr>
 
-                <div class="row g-5 g-lg-8">
+                <div class="row g-6">
                     <!-- First Card -->
                     <div class="col-12 col-xl-6">
                         <div class="card shadow">

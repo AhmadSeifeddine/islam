@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Scholar;
+use App\Models\Youtube;
 use Illuminate\Http\Request;
+
+use function App\Helpers\dateFormat;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.landing.index');
+        $books = Book::with(['scholar', 'category', 'explanations'])->get();
+        $personalities = Scholar::get();
+        $youtube = Youtube::with(['scholar', 'category'])->get();
+
+        return view('web.landing.index')->with([
+            'youtube' => $youtube,
+            'books' => $books,
+            'personalities' => $personalities
+        ]);;
     }
 }

@@ -1,10 +1,10 @@
-<section class="py-5 mb-20">
+<section class="aboutUs">
     <div class="container">
         <!-- Main Header with Decorative Elements -->
         <x-title title="معلومات عن الموقع " coloredTitle="والقائمين عليه" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
 
         <!-- Content Cards with Enhanced Design -->
-        <div class="row g-4 align-items-stretch mt-6">
+        <div class="row g-6 align-items-stretch">
             <!-- Main Info Card -->
             <div class="col-lg-7">
                 <div class="card h-100 border-0 shadow-lg hover-shadow-lg transition-all">

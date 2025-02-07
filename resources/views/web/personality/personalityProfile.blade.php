@@ -34,7 +34,7 @@
 
 @section('section')
     <!-- Profile Container -->
-    <div class="container py-20" dir="rtl">
+    <div class="container" dir="rtl">
         <!-- Profile Card -->
         <div class="mb-15">
             <div class="card p-4 shadow border-0">

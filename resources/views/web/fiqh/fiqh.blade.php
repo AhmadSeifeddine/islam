@@ -6,7 +6,7 @@
 
 @section('section')
     <!-- Figh Header Section -->
-    <div class="container py-20" dir="rtl">
+    <div class="container" dir="rtl">
         <x-title title="فتاوى" coloredTitle="إسلامية" subTitle="اكتشف مجموعة متنوعة من الفتاوى الإسلامية الموثوقة من علماء" />
 
         <!-- Figh Grid -->

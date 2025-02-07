@@ -1,10 +1,17 @@
-<div class="container mb-20 pb-10">
-    <x-title title="مقترحات" coloredTitle="الشخصيات" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
+<div class="container">
+    <x-title title="مقترحات" coloredTitle="الشخصيات"
+        subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
 
     <!-- Swiper -->
-    <div class="swiper personalitiesSwiper mt-6">
+    <div class="swiper personalitiesSwiper">
         <div class="swiper-wrapper">
-            <!-- First Card -->
+
+            @foreach ($personalities as $item)
+                <div class="swiper-slide">
+                    <x-cards.personality :data="$item" :isSwiper="true" />
+                </div>
+            @endforeach
+            {{-- <!-- First Card -->
             <div class="swiper-slide">
                 <div class="card shadow-lg border-0">
                     <div class="card-body p-5">
@@ -213,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -254,4 +261,3 @@
         </div>
     </div>
 </div>
-

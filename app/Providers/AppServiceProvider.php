@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+
+use function App\Helpers\dateFormat;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        View::composer('*', function ($view) {
+            $view->with('dateFormat', function ($date) {
+                return dateFormat($date);
+            });
+        });
     }
 }

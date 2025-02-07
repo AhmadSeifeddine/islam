@@ -107,29 +107,6 @@ body {
     color: var(--gold) !important;
 }
 
-.btn-bg-logo {
-    background: linear-gradient(135deg, var(--gold-color) 0%, #FFA500 100%) !important;
-    color: #000;
-    text-decoration: none !important;
-    padding: 0.8rem 1.5rem;
-    border-radius: 10px;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    transform: translateY(0);
-    border: 0 !important;
-    width: auto;
-    min-width: 120px;
-    text-align: center;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    line-height: 1.5;
-    white-space: nowrap;
-    cursor: pointer;
-}
 
 .footer-logo {
     text-align: right;
@@ -166,12 +143,6 @@ body {
 
 /* Media queries for responsive design */
 @media screen and (max-width: 991px) {
-    .btn-bg-logo {
-        padding: 0.7rem 1.8rem;
-        min-width: 100px;
-        font-size: 1rem;
-    }
-
     .Header-wrapper-menu {
         flex-grow: 0 !important;
     }
@@ -181,40 +152,7 @@ body {
     }
 }
 
-.btn-bg-logo:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: all 0.5s ease-in-out;
-}
-
-.btn-bg-logo:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(255, 215, 0, 0.4);
-    border-color: rgba(255, 215, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-
-.btn-bg-logo:hover:before {
-    left: 100%;
-}
-
-.btn-bg-logo:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
-}
-
 /* Touch device optimizations */
-@media (hover: none) {
-    .btn-bg-logo:hover {
-        transform: none;
-        box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
-    }
-}
 
 .huge-font {
     font-size: 6rem;
@@ -226,7 +164,7 @@ body {
 }
 
 .landing-vh {
-    height: 90vh;
+    height: 78vh;
 }
 
 
@@ -239,11 +177,11 @@ body {
 
 @media screen and (max-width: 1400px) {
     .big-font {
-        font-size: 3rem;
+        font-size: 3.8rem;
     }
 
     .huge-font {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 }
 
@@ -917,5 +855,11 @@ body {
     line-height: 1.8;
 }
 
+[data-bs-theme="dark"] .loading-screen-bg {
+    background-color: var(--background-dark);
+}
 
+[data-bs-theme="light"] .loading-screen-bg {
+    background-color: var(--background-light);
+}
 

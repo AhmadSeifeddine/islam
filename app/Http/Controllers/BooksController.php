@@ -10,7 +10,15 @@ class BooksController extends BaseController
 {
     public function index()
     {
-        return view('web.book.books');
+        $books = Book::with(['scholar', 'category', 'explanations'])->get();
+
+        return view('web.book.books', compact('books'));
+    }
+
+    public function BookShow($id) {
+        $book = Book::where('id', $id)->with(['scholar', 'category', 'explanations'])->get();
+
+        return view('web.book.BookShow', compact('book'));
     }
 
     /**

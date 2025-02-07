@@ -6,12 +6,12 @@
 
 @section('section')
     <!-- Akida Header Section -->
-    <div class="container py-20" dir="rtl">
+    <div class="container" dir="rtl">
         <x-title title="العقيدة" coloredTitle="الإسلامية"
             subTitle="تعرف على أصول العقيدة الإسلامية الصحيحة وفق منهج أهل السنة والجماعة من خلال كتابات العلماء الموثوقين" />
 
         <!-- Akida Grid -->
-        <div class="row g-5 mt-6">
+        <div class="row g-6">
             <!-- Article Card Template (repeated for each article) -->
             <div class="col-lg-4 col-md-6">
                 <div class="card shadow border-0 h-100 rounded-3">

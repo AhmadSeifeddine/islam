@@ -1,270 +1,270 @@
-    .pattern-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40z' fill='%23daa520' fill-opacity='0.03'/%3E%3C/svg%3E");
-        opacity: 0.3;
-        pointer-events: none;
-    }
+.pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40z' fill='%23daa520' fill-opacity='0.03'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+}
 
-    .islamic-border {
-        position: relative;
-        padding: 3rem 2rem;
-        border: 1px solid rgba(218, 165, 32, 0.2);
-        background: linear-gradient(rgba(218, 165, 32, 0.03), transparent);
-        overflow: hidden;
-    }
+.islamic-border {
+    position: relative;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    background: linear-gradient(rgba(218, 165, 32, 0.03), transparent);
+    overflow: hidden;
+}
 
-    .corner-ornament {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border: 2px solid var(--gold);
-        opacity: 0.5;
-        transition: all 0.3s ease;
-    }
+.corner-ornament {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--gold);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
 
-    .corner-ornament::before {
-        content: '';
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background: var(--gold);
-        border-radius: 50%;
-        opacity: 0.7;
-    }
+.corner-ornament::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.7;
+}
 
-    .top-left {
-        top: 10px;
-        left: 10px;
-        border-right: none;
-        border-bottom: none;
-    }
+.top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
 
-    .top-right {
-        top: 10px;
-        right: 10px;
-        border-left: none;
-        border-bottom: none;
-    }
+.top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
 
-    .bottom-left {
-        bottom: 10px;
-        left: 10px;
-        border-right: none;
-        border-top: none;
-    }
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
 
-    .bottom-right {
-        bottom: 10px;
-        right: 10px;
-        border-left: none;
-        border-top: none;
-    }
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
 
-    .islamic-border:hover .corner-ornament {
-        width: 60px;
-        height: 60px;
-        opacity: 0.7;
-    }
+.islamic-border:hover .corner-ornament {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+}
 
-    .side-decoration {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+.side-decoration {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
 
-    .side-decoration.left {
-        left: 0;
-    }
+.side-decoration.left {
+    left: 0;
+}
 
-    .side-decoration.right {
-        right: 0;
-    }
+.side-decoration.right {
+    right: 0;
+}
 
-    .decoration-line {
-        width: 2px;
+.decoration-line {
+    width: 2px;
+    height: 30px;
+    background: var(--gold);
+    opacity: 0.7;
+    animation: lineHeight 3s ease-in-out infinite;
+}
+
+.decoration-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.main-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 4rem;
+    transition: all 0.3s ease;
+}
+
+.reveal-text {
+    opacity: 0;
+    animation: revealText 1.5s ease forwards;
+}
+
+.separator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.line {
+    height: 1px;
+    width: 120px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 3s infinite;
+}
+
+.ornament-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    animation: rotate 8s linear infinite;
+}
+
+.ornament-outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    transform: rotate(45deg);
+    animation: pulse 2s infinite;
+}
+
+.ornament-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes lineHeight {
+
+    0%,
+    100% {
         height: 30px;
-        background: var(--gold);
         opacity: 0.7;
-        animation: lineHeight 3s ease-in-out infinite;
     }
 
-    .decoration-dot {
-        width: 6px;
-        height: 6px;
-        background: var(--gold);
-        border-radius: 50%;
+    50% {
+        height: 40px;
+        opacity: 0.4;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
         opacity: 0.7;
-        animation: pulse 2s ease-in-out infinite;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .islamic-border {
+        padding: 2rem 1rem;
     }
 
     .main-text {
-        position: relative;
-        display: inline-block;
-        padding: 0 4rem;
-        transition: all 0.3s ease;
-    }
-
-    .reveal-text {
-        opacity: 0;
-        animation: revealText 1.5s ease forwards;
-    }
-
-    .separator-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        margin: 3rem 0;
+        padding: 0 2.5rem;
     }
 
     .line {
-        height: 1px;
-        width: 120px;
-        background: linear-gradient(to right, transparent, var(--gold), transparent);
-        position: relative;
-        overflow: hidden;
+        width: 80px;
     }
 
-    .shine-effect::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        animation: shine 3s infinite;
+    .corner-ornament {
+        width: 40px;
+        height: 40px;
     }
-
-    .ornament-container {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        animation: rotate 8s linear infinite;
-    }
-
-    .ornament-outer {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 1px solid var(--gold);
-        transform: rotate(45deg);
-        animation: pulse 2s infinite;
-    }
-
-    .ornament-inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 12px;
-        height: 12px;
-        border: 1px solid var(--gold);
-        border-radius: 50%;
-    }
-
-    .fade-in-up {
-        opacity: 0;
-        animation: fadeInUp 1s ease forwards;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes lineHeight {
-
-        0%,
-        100% {
-            height: 30px;
-            opacity: 0.7;
-        }
-
-        50% {
-            height: 40px;
-            opacity: 0.4;
-        }
-    }
-
-    @keyframes pulse {
-
-        0%,
-        100% {
-            transform: scale(1);
-            opacity: 0.7;
-        }
-
-        50% {
-            transform: scale(1.2);
-            opacity: 0.4;
-        }
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes shine {
-        0% {
-            left: -100%;
-        }
-
-        50%,
-        100% {
-            left: 100%;
-        }
-    }
-
-    @keyframes revealText {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .islamic-border {
-            padding: 2rem 1rem;
-        }
-
-        .main-text {
-            padding: 0 2.5rem;
-        }
-
-        .line {
-            width: 80px;
-        }
-
-        .corner-ornament {
-            width: 40px;
-            height: 40px;
-        }
-    }
+}

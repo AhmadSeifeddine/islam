@@ -72,3 +72,29 @@ if (!function_exists('getBreadcrumbs')) {
     }
 }
 
+if (!function_exists('dateFormat')) {
+    function dateFormat($date) {
+        $time = strtotime($date);
+        $now = time();
+        $diff = $now - $time;
+
+        if ($diff < 60) {
+            return 'منذ لحظات';
+        } elseif ($diff < 3600) {
+            $minutes = round($diff / 60);
+            return 'منذ ' . $minutes . ' دقيقة';
+        } elseif ($diff < 86400) {
+            $hours = round($diff / 3600);
+            return 'منذ ' . $hours . ' ساعة';
+        } elseif ($diff < 604800) {
+            $days = round($diff / 86400);
+            return 'منذ ' . $days . ' يوم';
+        } elseif ($diff < 2592000) {
+            $weeks = round($diff / 604800);
+            return 'منذ ' . $weeks . ' اسبوع';
+        } else {
+            $months = round($diff / 2592000);
+            return 'منذ ' . $months . ' شهر';
+        }
+    }
+}

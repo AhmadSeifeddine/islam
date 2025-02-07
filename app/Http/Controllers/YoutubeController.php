@@ -9,7 +9,9 @@ class YoutubeController extends BaseController
 {
     public function index()
     {
-        return view('web.youtube.youtube');
+        $data = Youtube::with('scholar')->with('category')->get();
+
+        return view('web.youtube.youtube', compact('data'));
     }
 
     public function edit($id)
