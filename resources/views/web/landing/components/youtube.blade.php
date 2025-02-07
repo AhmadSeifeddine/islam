@@ -51,5 +51,3 @@
         </div>
     </div>
 </div>
-
-<script src="{{ asset('js/collectionModal.js') }}"></script>

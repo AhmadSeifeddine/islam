@@ -79,7 +79,7 @@
 <body id="kt_app_body" data-kt-app-layout="light-header" data-kt-app-header-fixed="true"
     data-kt-app-toolbar-enabled="true" class="app-default">
 
-    <x-loading-screen />
+    <x-loading-screen />
 
     <!--begin::Theme mode setup on page load-->
     <script>
@@ -125,7 +125,6 @@
     <script src="{{ url('vendor/js/plugins.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/scripts.bundle.js') }}"></script>
     <script src="{{ url('vendor/js/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
     @stack('scripts')
 </body>
 
