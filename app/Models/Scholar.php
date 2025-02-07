@@ -40,4 +40,14 @@ class Scholar extends Model implements HasMedia
     {
         return $this->getFirstMediaUrl('avatar');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', true);
+    }
+
+    public function isInHomepage($query)
+    {
+        return $query->where('is_in_homepage', true);
+    }
 }

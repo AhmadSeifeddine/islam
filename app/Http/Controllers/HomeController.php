@@ -29,13 +29,23 @@ class HomeController extends Controller
     public function index()
     {
         $books = Book::with(['scholar', 'category', 'explanations'])->get();
-        $personalities = Scholar::with('media')->get();
+        $personalities = Scholar::active()->isInHomepage()->with('media')->get()->map(function ($scholar) {
+            return [
+                'id' => $scholar->id,
+                'nickname' => $scholar->nickname,
+                'biography' => $scholar->biography,
+                'birth_date' => $scholar->birth_date,
+                'death_date' => $scholar->death_date,
+                'isRecomanded' => $scholar->isRecomanded,
+                'image' => $scholar->getFirstMediaUrl('avatar') ?: 'images/default-personality.jpg'
+            ];
+        });
         $youtube = Youtube::with(['scholar', 'category'])->get();
 
         return view('web.landing.index')->with([
             'youtube' => $youtube,
             'books' => $books,
             'personalities' => $personalities
-        ]);;
+        ]);
     }
 }
