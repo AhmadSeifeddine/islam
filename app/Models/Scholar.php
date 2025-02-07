@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use GeniusTS\HijriDate\Hijri;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -28,7 +29,6 @@ class Scholar extends Model implements HasMedia
         'is_in_homepage',
         'recommended_score',
         'created_by',
-
     ];
 
     public function registerMediaCollections(): void
@@ -49,5 +49,27 @@ class Scholar extends Model implements HasMedia
     public function scopeIsInHomepage($query)
     {
         return $query->where('is_in_homepage', true);
+    }
+
+    public function transformDateToHijri($date)
+    {
+        if (!$date) return null;
+
+        try {
+            $hijri = Hijri::convertToHijri($date);
+            return $hijri->year;
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    public function getBirthDateAttribute($value)
+    {
+        return $this->transformDateToHijri($value);
+    }
+
+    public function getDeathDateAttribute($value)
+    {
+        return $this->transformDateToHijri($value);
     }
 }

@@ -32,15 +32,14 @@
 
                 {{-- ? personality Description --}}
                 <div class="description mt-3">
-                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ Str::words($data['biography'], 20) }}
+                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ Str::words($data['biography'], 30) }}
                     </p>
                 </div>
 
                 {{-- ? personality Info --}}
                 <div class="d-flex align-items-center justify-content-between gap-3">
-                    <x-box.highlight class="w-50" text="تاريخ الولادة:" :data="$data['birth_date']" />
-
-                    <x-box.highlight class="w-50" text="تاريخ الوفاة:" :data="$data['death_date']" />
+                    <x-box.highlight class="w-50" text="تاريخ الولادة:" :data="$data['birth_date'] ?? 'غير معروف'" />
+                    <x-box.highlight class="w-50" text="تاريخ الوفاة:" :data="$data['death_date'] ?? 'على قيد الحياة'" />
                 </div>
 
                 {{-- ? personality Actions --}}
