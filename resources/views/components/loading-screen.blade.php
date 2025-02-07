@@ -110,6 +110,14 @@
             transform: translateY(0);
         }
     }
+
+    [data-bs-theme="dark"] .loading-screen-bg {
+        background-color: var(--background-dark);
+    }
+
+    [data-bs-theme="light"] .loading-screen-bg {
+        background-color: var(--background-light);
+    }
 </style>
 
 <script>

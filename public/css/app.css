@@ -855,11 +855,3 @@ body {
     line-height: 1.8;
 }
 
-[data-bs-theme="dark"] .loading-screen-bg {
-    background-color: var(--background-dark);
-}
-
-[data-bs-theme="light"] .loading-screen-bg {
-    background-color: var(--background-light);
-}
-
