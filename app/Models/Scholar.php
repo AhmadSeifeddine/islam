@@ -46,7 +46,7 @@ class Scholar extends Model implements HasMedia
         return $query->where('status', true);
     }
 
-    public function isInHomepage($query)
+    public function scopeIsInHomepage($query)
     {
         return $query->where('is_in_homepage', true);
     }
