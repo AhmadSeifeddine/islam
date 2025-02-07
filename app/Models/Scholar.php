@@ -57,7 +57,7 @@ class Scholar extends Model implements HasMedia
 
         try {
             $hijri = Hijri::convertToHijri($date);
-            return $hijri->year;
+            return (int) $hijri->year;
         } catch (\Exception $e) {
             return null;
         }
