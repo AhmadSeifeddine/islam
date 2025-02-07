@@ -139,10 +139,12 @@ class ScholarController extends BaseController
             'nickname',
             'nationality',
             'death_date',
+            'visit_count',
             'status',
             'is_in_homepage',
             'created_at'
         )
+            ->with('media')
             ->when($value, function ($query) use ($value) {
                 return $query->where(function ($query) use ($value) {
                     $query->where('nickname', 'like', '%' . $value . '%')
@@ -163,13 +165,7 @@ class ScholarController extends BaseController
 
         return DataTables::of($scholars->get())
             ->addColumn('avatar', function ($scholar) {
-
-                return $scholar->getMedia('avatar')->first()?->getUrl();
-
-                if ($media = $scholar->getMedia('avatar')->first()) {
-                    return $media->getUrl();
-                }
-                return null;
+                return $scholar->getFirstMediaUrl('avatar');
             })
             ->editColumn('status', function ($scholar) {
                 return $scholar->status ? 'Active' : 'Inactive';

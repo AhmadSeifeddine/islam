@@ -214,6 +214,10 @@ const tableColumns = [
         "title": "Nationality"
     },
     {
+        "data": "visit_count",
+        "title": "Views"
+    },
+    {
         "data": "status",
         "title": "Status"
     },
@@ -237,12 +241,17 @@ const tableColumnDefinitions = [
 
     {
         targets: [4],
+        htmlType: 'badge',
+        badgeClass: 'badge-primary'
+    },
+    {
+        targets: [5],
         htmlType: 'toggle',
         dataClassName: 'status-toggle',
     },
 
     {
-        targets: [5],
+        targets: [6],
         htmlType: 'toggle',
         dataClassName: 'homepage-toggle',
     },
@@ -266,10 +275,10 @@ const tableColumnDefinitions = [
                 type: 'modal',
                 modalTarget: '#show-modal',
                 color: 'info',
-                showIf: (row) => {
-                    const isShow = row.status == "Active";
-                    return isShow;
-                }
+                // showIf: (row) => {
+                //     const isShow = row.status == "Active";
+                //     return isShow;
+                // }
             },
             divider2: { divider: true },
             delete: {

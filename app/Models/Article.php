@@ -16,7 +16,8 @@ class Article extends Model
         'scholar_id',
         'category_id',
         'writing_type',
-        'created_by'
+        'created_by',
+        'home_page',
     ];
 
     public function scholar()

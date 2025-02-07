@@ -26,8 +26,9 @@ class Scholar extends Model implements HasMedia
         'x_url',
         'status',
         'is_in_homepage',
-        'is_recommended',
-        'created_by'
+        'recommended_score',
+        'created_by',
+
     ];
 
     public function registerMediaCollections(): void

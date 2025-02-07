@@ -117,6 +117,7 @@ class YoutubeController extends BaseController
             'category_id',
             'duration',
             'status',
+            'home_page',
             'created_at',
         )
             ->when($value, function ($query) use ($value) {
@@ -156,5 +157,23 @@ class YoutubeController extends BaseController
             $youtube->update(['status' => 'show']);
         }
         return response()->json(['message' => 'Youtube status updated successfully']);
+    }
+
+    public function homepage(string $id)
+    {
+        $youtube = Youtube::find($id);
+
+        if ($youtube->home_page == true) {
+            $youtube->update(['home_page' => false]);
+            return $this->successResponse(['message' => 'Youtube homepage updated successfully']);
+        }
+
+        $count = Youtube::where('home_page', true)->count();
+        if ($count > 1) {
+            return $this->errorResponse(['message' => 'You can only select 1 youtube for the homepage']);
+        } else {
+            $youtube->update(['home_page' => !$youtube->home_page]);
+            return $this->successResponse(['message' => 'Youtube homepage updated successfully']);
+        }
     }
 }

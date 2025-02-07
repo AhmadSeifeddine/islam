@@ -55,13 +55,18 @@ class BookController extends BaseController
         DB::beginTransaction();
         try {
             $book = Book::create([
-                ...$request->except('image'),
+                ...$request->except('image', 'pdf'),
                 'created_by' => auth()->user()->id
             ]);
 
             if ($request->hasFile('image')) {
                 $book->addMediaFromRequest('image')
                     ->toMediaCollection('avatar');
+            }
+
+            if ($request->hasFile('pdf')) {
+                $book->addMediaFromRequest('pdf')
+                    ->toMediaCollection('pdf');
             }
 
             DB::commit();
@@ -105,12 +110,18 @@ class BookController extends BaseController
         DB::beginTransaction();
         try {
             $book = Book::find($request->id);
-            $book->update($request->except('image'));
+            $book->update($request->except('image', 'pdf'));
 
             if ($request->hasFile('image')) {
                 $book->clearMediaCollection('avatar');
                 $book->addMediaFromRequest('image')
                     ->toMediaCollection('avatar');
+            }
+
+            if ($request->hasFile('pdf')) {
+                $book->clearMediaCollection('pdf');
+                $book->addMediaFromRequest('pdf')
+                    ->toMediaCollection('pdf');
             }
 
             DB::commit();
@@ -137,17 +148,18 @@ class BookController extends BaseController
         $search = request()->get('search');
         $value = isset($search['value']) ? $search['value'] : null;
 
-        $books = Book::with('scholar', 'category')->select(
-            'id',
-            'name',
-            'category_id',
-            'scholar_id',
-            'publication_date',
-            'genre',
-            'language',
-            'status',
-            'created_at',
-        )
+        $books = Book::with(['scholar', 'category', 'media'])
+            ->select(
+                'id',
+                'name',
+                'category_id',
+                'scholar_id',
+                'visit_count',
+                'download_count',
+                'home_page',
+                'status',
+                'created_at',
+            )
             ->when($value, function ($query) use ($value) {
                 return $query->where(function ($query) use ($value) {
                     $query->where('name', 'like', '%' . $value . '%')
@@ -157,9 +169,7 @@ class BookController extends BaseController
                         ->orWhereHas('category', function ($query) use ($value) {
                             $query->where('name', 'like', '%' . $value . '%');
                         })
-                        ->orWhere('publication_date', 'like', '%' . $value . '%')
-                        ->orWhere('genre', 'like', '%' . $value . '%')
-                        ->orWhere('language', 'like', '%' . $value . '%');
+                        ->orWhere('page_number', 'like', '%' . $value . '%');
                 });
             });
 
@@ -168,13 +178,7 @@ class BookController extends BaseController
                 return $book->category->name;
             })
             ->addColumn('avatar', function ($book) {
-
-                return $book->getMedia('avatar')->first()?->getUrl();
-
-                if ($media = $book->getMedia('avatar')->first()) {
-                    return $media->getUrl();
-                }
-                return null;
+                return $book->getFirstMediaUrl('avatar');
             })
             ->addColumn('scholar', function ($book) {
                 return $book->scholar->nickname;
@@ -194,5 +198,12 @@ class BookController extends BaseController
             $book->update(['status' => 'show']);
         }
         return response()->json(['message' => 'Book status updated successfully']);
+    }
+
+    public function homepage(string $id)
+    {
+        $book = Book::find($id);
+        $book->update(['home_page' => !$book->home_page]);
+        return response()->json(['message' => 'Book homepage updated successfully']);
     }
 }

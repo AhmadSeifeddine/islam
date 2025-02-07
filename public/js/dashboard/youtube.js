@@ -144,6 +144,12 @@ const userActionHandlers = {
         this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/status`), (response) => {
             console.log(response);
         });
+    },
+
+    homepage: function (id) {
+        this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/home-page`), (response) => {
+            console.log(response);
+        });
     }
 };
 
@@ -160,6 +166,7 @@ const uiEventListeners = [
     { event: 'click', selector: '.btn-show', handler: userActionHandlers.show },
     { event: 'click', selector: '.btn-edit', handler: userActionHandlers.edit },
     { event: 'click', selector: '.btn-status', handler: userActionHandlers.status },
+    { event: 'change', selector: '.homepage-toggle', handler: userActionHandlers.homepage }
 ];
 
 /*---------------------------------------------------------------------------
@@ -195,6 +202,10 @@ const tableColumns = [
         "title": "Status"
     },
     {
+        "data": "home_page",
+        "title": "Home Page"
+    },
+    {
         "data": null,
         "title": "Action"
     }
@@ -214,6 +225,11 @@ const tableColumnDefinitions = [
     },
     {
         targets: [6], orderable: false, htmlType: "toggle", dataClassName: 'btn-status',
+    },
+    {
+        targets: [7],
+        htmlType: 'toggle',
+        dataClassName: 'homepage-toggle',
     },
 
     {

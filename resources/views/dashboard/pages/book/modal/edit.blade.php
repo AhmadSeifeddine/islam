@@ -26,10 +26,10 @@
 
     <div class="row mb-3">
         <div class="col-md-6">
-            <label for="publication_date" class="form-label">Publication Date</label>
-            <input type="date" feedback-id="publication_date-feedback" class="form-control" name="publication_date"
-                id="publication_date" value="{{ $book->publication_date }}">
-            <div id="publication_date-feedback" class="invalid-feedback"></div>
+            <label for="page_number" class="form-label">Page Number</label>
+            <input type="number" feedback-id="page_number-feedback" class="form-control" name="page_number"
+                id="page_number" value="{{ $book->page_number }}">
+            <div id="page_number-feedback" class="invalid-feedback"></div>
         </div>
         <div class="col-md-6">
             <label for="language" class="form-label">Language</label>
@@ -47,19 +47,9 @@
 
     <div class="row mb-3">
         <div class="col-md-6">
-            <label for="genre" class="form-label">Genre</label>
-            <select feedback-id="genre-feedback" class="form-select" name="genre" id="genre_select"
-                data-control="select2" data-placeholder="Select genre">
-                <option value="">Select Genre</option>
-                <option value="fiction" {{ $book->genre == 'fiction' ? 'selected' : '' }}>Fiction</option>
-                <option value="non-fiction" {{ $book->genre == 'non-fiction' ? 'selected' : '' }}>Non-Fiction</option>
-                <option value="biography" {{ $book->genre == 'biography' ? 'selected' : '' }}>Biography</option>
-                <option value="history" {{ $book->genre == 'history' ? 'selected' : '' }}>History</option>
-                <option value="religious" {{ $book->genre == 'religious' ? 'selected' : '' }}>Religious</option>
-                <option value="educational" {{ $book->genre == 'educational' ? 'selected' : '' }}>Educational</option>
-                <!-- Add more genres as needed -->
-            </select>
-            <div id="genre-feedback" class="invalid-feedback"></div>
+            <label for="pdf" class="form-label">PDF</label>
+            <input type="file" feedback-id="pdf-feedback" class="form-control" name="pdf" id="pdf">
+            <div id="pdf-feedback" class="invalid-feedback"></div>
         </div>
         <div class="col-md-6">
             <label for="status" class="form-label">Category</label>

@@ -1407,6 +1407,7 @@ export class $DatatableController {
                                 type = null,
                                 modalTarget,
                                 url,
+                                callback,
                                 color = 'primary',
                                 divider = false
                             } = config;
@@ -1416,9 +1417,11 @@ export class $DatatableController {
                             }
 
                             let additionalAttrs = '';
+                            let finalClass = customClass; // Create mutable class variable
+
                             if (type) {
-                                if (type !== 'modal' && type !== 'redirect') {
-                                    console.error(`Invalid type "${type}" for action "${action}". Only "modal", "redirect", or null are allowed.`);
+                                if (type !== 'modal' && type !== 'redirect' && type !== 'callback') {
+                                    console.error(`Invalid type "${type}" for action "${action}". Only "modal", "redirect", "callback" or null are allowed.`);
                                     return '';
                                 }
 
@@ -1435,12 +1438,24 @@ export class $DatatableController {
                                     }
                                     const finalUrl = typeof url === 'function' ? url(row) : url;
                                     additionalAttrs = `href="${finalUrl}"`;
+                                } else if (type === 'callback') {
+                                    if (!callback || typeof callback !== 'function') {
+                                        console.error(`callback function is required for callback action "${action}"`);
+                                        return '';
+                                    }
+                                    const callbackId = `callback_${action}_${Math.random().toString(36).substr(2, 9)}`;
+                                    window[callbackId] = {
+                                        callback,
+                                        rowData: row
+                                    };
+                                    additionalAttrs = `data-callback-id="${callbackId}"`;
+                                    finalClass += ' callback-action'; // Use mutable variable
                                 }
                             }
 
                             return `
                                 <div class="menu-item px-3 ${menuItemClass}">
-                                    <a class="menu-link px-3 ${customClass}"
+                                    <a class="menu-link px-3 ${finalClass}"
                                        data-id="${data.id}"
                                        ${additionalAttrs}
                                        style="cursor: pointer"
@@ -1483,6 +1498,20 @@ export class $DatatableController {
                     };
                     break;
             }
+
+            // Add event listener for callback actions using event delegation
+            document.addEventListener('click', function (e) {
+                if (e.target.closest('.callback-action')) {
+                    const link = e.target.closest('.callback-action');
+                    const callbackId = link.getAttribute('data-callback-id');
+                    if (callbackId && window[callbackId]) {
+                        const { callback, rowData } = window[callbackId];
+                        callback(rowData);
+                        // Clean up
+                        delete window[callbackId];
+                    }
+                }
+            }, { capture: true });
 
             return {
                 targets: targets,

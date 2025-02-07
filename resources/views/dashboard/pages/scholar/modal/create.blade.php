@@ -98,6 +98,18 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <label for="recommended_score" class="form-label">Recommended Score</label>
+            <select feedback-id="recommended_score-feedback" class="form-select" name="recommended_score"
+                id="recommended_score" data-control="select2" data-placeholder="Select recommended score">
+                @for ($i = 1; $i <= 10; $i++)
+                    <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            </select>
+        </div>
+    </div>
+
     <div>
         <label for="image" class="form-label">Image</label>
         <input type="file" feedback-id="image-feedback" class="form-control" name="image" id="image"

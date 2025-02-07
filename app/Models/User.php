@@ -10,9 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Laratrust\Traits\HasRolesAndPermissions;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Laratrust\Contracts\LaratrustUser;
 
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia, LaratrustUser
 {
     use HasApiTokens, HasFactory, Notifiable, HasRolesAndPermissions, InteractsWithMedia;
 

@@ -200,6 +200,21 @@ const userActionHandlers = {
                 toggle.checked = !toggle.checked;
             });
         });
+    },
+
+    homepage: function (id) {
+        this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/home-page`), (response) => {
+        }, (error) => {
+            if (error.response.status == "400") {
+                SweetAlert.error("", "You can only select 1 article for the home page");
+                const checkbox = document.getElementById(`home_page_${id}`);
+                checkbox.checked = false;
+            }
+            defaultErrorHandler(error, () => {
+                const checkbox = document.getElementById(`home_page_${id}`);
+                checkbox.checked ? checkbox.checked = false : checkbox.checked = true;
+            });
+        });
     }
 };
 
@@ -215,7 +230,8 @@ const uiEventListeners = [
     { event: 'click', selector: '.delete-btn', handler: userActionHandlers.delete },
     { event: 'click', selector: '.btn-show', handler: userActionHandlers.show },
     { event: 'click', selector: '.btn-edit', handler: userActionHandlers.edit },
-    { event: 'change', selector: '.status-toggle', handler: userActionHandlers.status }
+    { event: 'change', selector: '.status-toggle', handler: userActionHandlers.status },
+    { event: 'change', selector: '.homepage-toggle', handler: userActionHandlers.homepage }
 ];
 
 /*---------------------------------------------------------------------------
@@ -243,8 +259,16 @@ const tableColumns = [
         "title": "Writing Type"
     },
     {
+        "data": "visit_count",
+        "title": "Visit Count"
+    },
+    {
         "data": "status",
         "title": "Status"
+    },
+    {
+        "data": "home_page",
+        "title": "Home Page"
     },
     {
         "data": null
@@ -256,8 +280,18 @@ const tableColumnDefinitions = [
     { targets: [4], orderable: false, htmlType: 'badge', badgeClass: 'badge-primary' },
     {
         targets: [5],
+        htmlType: 'badge',
+        badgeClass: 'badge-success',
+    },
+    {
+        targets: [6],
         htmlType: 'toggle',
         dataClassName: 'status-toggle',
+    },
+    {
+        targets: [7],
+        htmlType: 'toggle',
+        dataClassName: 'homepage-toggle',
     },
     {
         targets: [-1],

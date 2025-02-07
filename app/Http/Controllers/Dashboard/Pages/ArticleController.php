@@ -121,6 +121,8 @@ class ArticleController extends BaseController
             'scholar_id',
             'writing_type',
             'status',
+            'visit_count',
+            'home_page',
             'created_at',
         )
             ->when($value, function ($query) use ($value) {
@@ -152,5 +154,23 @@ class ArticleController extends BaseController
             $article->update(['status' => 'show']);
         }
         return response()->json(['message' => 'Article status updated successfully']);
+    }
+
+    public function homepage(string $id)
+    {
+        $article = Article::find($id);
+
+        if ($article->home_page == true) {
+            $article->update(['home_page' => false]);
+            return $this->successResponse(['message' => 'Article homepage updated successfully']);
+        }
+
+        $count = Article::where('home_page', true)->count();
+        if ($count > 0) {
+            return $this->errorResponse(['message' => 'You can only select 1 article for the homepage']);
+        } else {
+            $article->update(['home_page' => !$article->home_page]);
+            return $this->successResponse(['message' => 'Article homepage updated successfully']);
+        }
     }
 }

@@ -17,10 +17,12 @@ class Book extends Model implements HasMedia
         'description',
         'category_id',
         'publication_date',
-        'genre',
         'language',
         'status',
-        'created_by'
+        'created_by',
+        'home_page',
+        'page_number',
+        'pdf',
     ];
 
     public function scholar()
@@ -48,4 +50,8 @@ class Book extends Model implements HasMedia
         return $this->morphMany(Collection_Item::class, 'item');
     }
 
+    public function getPdfUrlAttribute()
+    {
+        return $this->getFirstMediaUrl('pdf');
+    }
 }

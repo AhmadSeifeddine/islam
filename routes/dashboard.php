@@ -47,6 +47,7 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
             Route::get('/{id}/show', 'show');
             Route::get('/datatable', 'datatable');
             Route::patch('/{id}/status', 'status')->name('status');
+            Route::patch('/{id}/home-page', 'homepage')->name('homepage');
         });
 
     Route::resource('writing', ArticleController::class)
@@ -109,7 +110,7 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
             Route::get('/{id}/show', 'show')->name('show');
             Route::get('/datatable', 'datatable')->name('datatable');
             Route::patch('/{id}/status', 'status')->name('status');
-
+            Route::patch('/{id}/home-page', 'homepage')->name('homepage');
             // ======================================================================= //
             // ====================== START BOOK_EXPLANATION DATATABLE =========================== //
             // ======================================================================= //
@@ -151,6 +152,7 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
             Route::get('/{id}/show', 'show')->name('show');
             Route::get('/datatable', 'datatable')->name('datatable');
             Route::patch('/{id}/status', 'toggleStatus')->name('toggleStatus');
+            Route::patch('/{id}/home-page', 'homepage')->name('homepage');
         });
 
     Route::resource('youtubes', YoutubeController::class)

@@ -39,6 +39,25 @@ const createModalLoader = (config) => new ModalLoader({
     onError: config.onError || defaultErrorHandler
 });
 
+const downloadPdf = (row) => {
+    const pdfFile = row.media.find(file => file.mime_type === 'application/pdf');
+
+    if (pdfFile && pdfFile.original_url) {
+        const link = document.createElement('a');
+        link.href = pdfFile.original_url;
+        link.target = '_blank';
+        link.download = `${row.name}.pdf`;
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        SweetAlert.error('No PDF file available for download');
+    }
+}
+
+
+
 /*=============================================================================
  * API Operation Handlers
  * Manages all HTTP requests with consistent error handling and response processing
@@ -146,6 +165,18 @@ const userActionHandlers = {
         this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/status`), (response) => {
             console.log(response);
         });
+    },
+
+    homePage: function (id) {
+        this.callCustomFunction('_PATCH_', buildApiUrl(`${id}/home-page`), (response) => {
+            console.log(response);
+        }, (error) => {
+            if (error.response.status == "400") {
+                SweetAlert.error("", "You can only select 1 book for the home page");
+                const checkbox = document.getElementById(`home_page_${id}`);
+                checkbox.checked = false;
+            }
+        });
     }
 };
 
@@ -162,6 +193,7 @@ const uiEventListeners = [
     { event: 'click', selector: '.btn-show', handler: userActionHandlers.show },
     { event: 'click', selector: '.btn-edit', handler: userActionHandlers.edit },
     { event: 'click', selector: '.status-toggle', handler: userActionHandlers.status },
+    { event: 'click', selector: '.home-page-toggle', handler: userActionHandlers.homePage },
 ];
 
 /*---------------------------------------------------------------------------
@@ -178,36 +210,38 @@ const tableColumns = [
     },
     {
         "data": "name",
-        "title": "Name"
+        "title": "Title"
     },
     {
         "data": "scholar",
-        "title": "Scholar"
+        "title": "Author"
     },
     {
         "data": "category",
-        "title": "Category"
+        "title": "Type"
     },
     {
-        "data": "publication_date",
-        "title": "Publication Date"
+        "data": "visit_count",
+        "title": "Views"
     },
     {
-        "data": "genre",
-        "title": "Genre"
+        "data": "download_count",
+        "title": "Downloads"
     },
     {
-        "data": "language",
-        "title": "Language"
+        "data": "home_page",
+        "title": "Link"
     },
     {
         "data": "status",
-        "title": "Status"
+        "title": "State",
     },
     {
         "data": null,
-        "title": "Action"
+        "title": "Actions",
+        "className": "text-end"
     }
+
 ];
 
 const tableColumnDefinitions = [
@@ -220,11 +254,6 @@ const tableColumnDefinitions = [
         targets: [3],
         htmlType: 'text',
         dataClassName: 'fw-bold'
-    },
-    {
-        targets: [7],
-        htmlType: 'badge',
-        badgeClass: 'badge-secondary'
     },
     {
         targets: [4],
@@ -242,17 +271,55 @@ const tableColumnDefinitions = [
         badgeClass: 'badge-warning'
     },
     {
+        targets: [7],
+        htmlType: 'toggle',
+        dataClassName: 'home-page-toggle',
+    },
+    {
         targets: [8],
         htmlType: 'toggle',
         dataClassName: 'status-toggle',
-    }, {
+    },
+    {
         targets: [-1],
-        htmlType: 'actions',
-        className: 'text-end',
+        htmlType: 'dropdownActions',
+        orderable: false,
         actionButtons: {
-            edit: true,
-            delete: { type: 'null' },
-            view: true
+            edit: {
+                icon: 'bi bi-pencil',
+                text: 'Edit',
+                type: 'modal',
+                class: 'btn-edit',
+                modalTarget: '#edit-modal',
+                color: 'primary'
+            },
+            view: {
+                icon: 'bi bi-eye',
+                text: 'View Details',
+                class: 'btn-show',
+                type: 'modal',
+                modalTarget: '#show-modal',
+                color: 'info',
+            },
+            divider1: { divider: true },
+            download: {
+                icon: 'bi bi-download',
+                text: 'Download',
+                class: 'btn-download',
+                color: 'success',
+                type: 'callback',
+                callback: (row) => {
+                    downloadPdf(row);
+                }
+            },
+
+            divider2: { divider: true },
+            delete: {
+                icon: 'bi bi-trash',
+                text: 'Delete',
+                class: 'delete-btn',
+                color: 'danger'
+            }
         }
     },
 ];

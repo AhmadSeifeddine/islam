@@ -41,6 +41,19 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <label for="type" class="form-label">Type</label>
+            <select feedback-id="type-feedback" class="form-select" name="type" id="type_select"
+                data-control="select2" data-placeholder="Select a type">
+                <option value="">Select Type</option>
+                <option value="video">Video</option>
+                <option value="audio">Audio</option>
+            </select>
+            <div id="type-feedback" class="invalid-feedback"></div>
+        </div>
+    </div>
+
     <div class="mb-3">
         <label for="url" class="form-label">Url</label>
         <input type="text" feedback-id="url-feedback" class="form-control" name="url" id="url"
