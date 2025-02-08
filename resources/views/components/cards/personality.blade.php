@@ -6,22 +6,24 @@
 
             {{-- ? personality Image --}}
             <div class="col-md-6 col-lg-12 col-xl-6">
-                <div class="d-flex align-items-center justify-content-center w-100 py-2 py-md-0 py-lg-2 py-xl-0 bg-light rounded-3 h-100">
-                    @if($data['isRecomanded'] < 5)
-                        <div class="position-relative w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100">
+                <div
+                    class="d-flex align-items-center justify-content-center w-100 py-2 py-md-0 py-lg-2 py-xl-0 bg-light rounded-3 h-100">
+                    @if ($data['isRecomanded'] < 5)
+                        <div
+                            class="position-relative w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100">
                             {{-- Base image with stronger grayscale --}}
-                            <img class="w-100 h-100 rounded-3"
-                                src="{{ asset('vendor/img/logo/3.jpg') }}"
-                                alt="صورة الشخصية"
-                                style="object-fit: cover; filter: grayscale(100%) brightness(0.8);">
+                            <img class="w-100 h-100 rounded-3" src="{{ asset('vendor/img/logo/3.jpg') }}"
+                                alt="صورة الشخصية" style="object-fit: cover; filter: grayscale(100%) brightness(0.8);">
 
                             {{-- Red warning overlay --}}
                             <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
-                                style="background: linear-gradient(135deg, rgba(255,0,0,0.3) 0%, rgba(255,0,0,0.1) 100%);"></div>
+                                style="background: linear-gradient(135deg, rgba(255,0,0,0.3) 0%, rgba(255,0,0,0.1) 100%);">
+                            </div>
 
                             {{-- Warning icon --}}
                             <div class="position-absolute top-0 end-0 p-2">
-                                <i class="fas fa-exclamation-triangle text-danger" style="font-size: 1.5rem; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));"></i>
+                                <i class="fas fa-exclamation-triangle text-danger"
+                                    style="font-size: 1.5rem; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));"></i>
                             </div>
 
                             {{-- Warning text banner --}}
@@ -32,9 +34,7 @@
                         </div>
                     @else
                         <img class="w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100 rounded-3"
-                            src="{{ asset('vendor/img/logo/3.jpg') }}"
-                            alt="صورة الشخصية"
-                            style="object-fit: cover">
+                            src="{{ $data['image'] }}" alt="صورة الشخصية" style="object-fit: cover">
                     @endif
                 </div>
             </div>
@@ -59,7 +59,8 @@
 
                 {{-- ? personality Description --}}
                 <div class="description mt-3">
-                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ Str::limit($data['biography'], 150) }}
+                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">
+                        {{ Str::limit($data['biography'], 150) }}
                     </p>
                 </div>
 
