@@ -63,13 +63,13 @@ class Scholar extends Model implements HasMedia
         }
     }
 
-    public function getBirthDateAttribute($value)
+    public function getBirthDateHijri()
     {
-        return $this->transformDateToHijri($value);
+        return $this->transformDateToHijri($this->birth_date);
     }
 
-    public function getDeathDateAttribute($value)
+    public function getDeathDateHijri()
     {
-        return $this->transformDateToHijri($value);
+        return $this->transformDateToHijri($this->death_date);
     }
 }

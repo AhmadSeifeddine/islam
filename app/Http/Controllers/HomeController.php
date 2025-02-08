@@ -35,8 +35,8 @@ class HomeController extends Controller
                 'nickname' => $scholar->nickname,
                 'biography' => $scholar->biography,
                 'nationality' => $scholar->nationality,
-                'birth_date' => $scholar->birth_date,
-                'death_date' => $scholar->death_date,
+                'birth_date' => $scholar->getBirthDateHijri(),
+                'death_date' => $scholar->getDeathDateHijri(),
                 'isRecomanded' => $scholar->recommended_score,
                 'image' => $scholar->getFirstMediaUrl('avatar') ?: 'images/default-personality.jpg'
             ];
