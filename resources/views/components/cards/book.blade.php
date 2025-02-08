@@ -26,7 +26,7 @@
                 </div>
 
                 {{-- ? Book Owner --}}
-                <x-box.highlight class="w-100" text="الكاتب" :data="$data['scholar']['name']" />
+                {{-- <x-box.highlight class="w-100" text="الكاتب" :data="$data['scholar']['name']" /> --}}
 
                 {{-- ? Book Description --}}
                 <div class="description mt-3">

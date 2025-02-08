@@ -34,9 +34,10 @@ class HomeController extends Controller
                 'id' => $scholar->id,
                 'nickname' => $scholar->nickname,
                 'biography' => $scholar->biography,
+                'nationality' => $scholar->nationality,
                 'birth_date' => $scholar->birth_date,
                 'death_date' => $scholar->death_date,
-                'isRecomanded' => $scholar->isRecomanded,
+                'isRecomanded' => $scholar->recommended_score,
                 'image' => $scholar->getFirstMediaUrl('avatar') ?: 'images/default-personality.jpg'
             ];
         });

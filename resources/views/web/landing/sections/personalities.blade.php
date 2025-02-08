@@ -11,6 +11,7 @@
                     <x-cards.personality :data="$item" :isSwiper="true" />
                 </div>
             @endforeach
+
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>

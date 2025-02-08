@@ -77,12 +77,12 @@
             </div>
         </div>
 
-        @include('web.landing.components.books')
-        @include('web.landing.components.personalities')
-        @include('web.landing.components.youtube')
-        @include('web.landing.components.aboutUs')
-        @include('web.landing.components.faq')
-        @include('web.landing.components.contact')
+        @include('web.landing.sections.books')
+        @include('web.landing.sections.personalities')
+        @include('web.landing.sections.youtube')
+        @include('web.landing.sections.aboutUs')
+        @include('web.landing.sections.faq')
+        @include('web.landing.sections.contact')
     </div>
 @endsection
 
