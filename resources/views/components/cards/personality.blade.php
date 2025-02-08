@@ -12,8 +12,8 @@
                         <div
                             class="position-relative w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100">
                             {{-- Base image with stronger grayscale --}}
-                            <img class="w-100 h-100 rounded-3" src="{{ asset('vendor/img/logo/3.jpg') }}"
-                                alt="صورة الشخصية" style="object-fit: cover; filter: grayscale(100%) brightness(0.8);">
+                            <img class="w-100 h-100 rounded-3" src="{{ $data['image'] }}" alt="صورة الشخصية"
+                                style="object-fit: cover; filter: grayscale(100%) brightness(0.8);">
 
                             {{-- Red warning overlay --}}
                             <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
