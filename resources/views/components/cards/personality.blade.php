@@ -60,7 +60,7 @@
                 {{-- ? personality Description --}}
                 <div class="description mt-3">
                     <p class="fs-7 text-gray lh-lg" style="text-align: justify">
-                        {{ Str::limit($data['biography'], 150) }}
+                        {{ Str::limit($data['biography'], 200) }}
                     </p>
                 </div>
 
