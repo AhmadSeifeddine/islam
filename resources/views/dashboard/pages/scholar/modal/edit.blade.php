@@ -26,8 +26,10 @@
         </div>
         <div class="col-md-6">
             <label for="birth_date" class="form-label">Birth Date</label>
-            <input type="date" value="{{ $scholar->birth_date }}" feedback-id="birth_date-feedback"
-                class="form-control" name="birth_date" id="birth_date" placeholder="Select birth date">
+            <input type="date"
+                value="{{ $scholar->birth_date ? date('Y-m-d', strtotime($scholar->birth_date)) : '' }}"
+                feedback-id="birth_date-feedback" class="form-control" name="birth_date" id="birth_date"
+                placeholder="Select birth date">
             <div id="birth_date-feedback" class="invalid-feedback"></div>
         </div>
     </div>
@@ -35,8 +37,10 @@
     <div class="row mb-3">
         <div class="col-md-6">
             <label for="death_date" class="form-label">Death Date</label>
-            <input type="date" value="{{ $scholar->death_date }}" feedback-id="death_date-feedback"
-                class="form-control" name="death_date" id="death_date" placeholder="Select death date">
+            <input type="date"
+                value="{{ $scholar->death_date ? date('Y-m-d', strtotime($scholar->death_date)) : '' }}"
+                feedback-id="death_date-feedback" class="form-control" name="death_date" id="death_date"
+                placeholder="Select death date">
             <div id="death_date-feedback" class="invalid-feedback"></div>
         </div>
         <div class="col-md-6">
