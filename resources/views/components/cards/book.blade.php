@@ -2,7 +2,7 @@
 
 <div class="card shadow">
     <div class="card-body p-3 border-0">
-        <div class="row g-4">
+        <div class="row g-6">
 
             {{-- ? Book Image --}}
             <div class="col-md-6 col-lg-12 col-xl-6">
@@ -26,18 +26,18 @@
                 </div>
 
                 {{-- ? Book Owner --}}
-                {{-- <x-box.highlight class="w-100" text="الكاتب" :data="$data['scholar']['name']" /> --}}
+                <x-box.highlight class="w-100" text="الكاتب" :data="$data['scholar']['name']" />
 
                 {{-- ? Book Description --}}
                 <div class="description mt-3">
-                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ $data['description'] }}</p>
+                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ Str::limit($data['description'], 150) }}</p>
                 </div>
 
                 {{-- ? Book Info --}}
                 <div class="d-flex align-items-center justify-content-between gap-3">
                     <x-box.highlight class="w-50" text="تاريخ النشر:" :data="$dateFormat($data['created_at'])" />
 
-                    <x-box.highlight class="w-50" text="عدد الصفحات:" :data="800" />
+                    <x-box.highlight class="w-50" text="عدد الصفحات:" :data="$data['page_number']" />
                 </div>
 
                 {{-- ? Book Actions --}}

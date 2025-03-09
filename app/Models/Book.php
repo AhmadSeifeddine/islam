@@ -54,4 +54,14 @@ class Book extends Model implements HasMedia
     {
         return $this->getFirstMediaUrl('pdf');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'show');
+    }
+
+    public function scopeIsInHomepage($query)
+    {
+        return $query->where('home_page', true);
+    }
 }

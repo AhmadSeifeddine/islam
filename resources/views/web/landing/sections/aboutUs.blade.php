@@ -1,7 +1,7 @@
 <section class="aboutUs">
     <div class="container">
         <!-- Main Header with Decorative Elements -->
-        <x-title title="معلومات عن الموقع " coloredTitle="والقائمين عليه" subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
+        <x-title title="معلومات عن الموقع " coloredTitle="والقائمين عليه" subTitle="من نحن، وما سبب إنشاء الموقع؟" />
 
         <!-- Content Cards with Enhanced Design -->
         <div class="row g-6 align-items-stretch">
@@ -53,7 +53,7 @@
                             </div>
                             <div class="me-5">
                                 <h3 class="display-6 fw-bold mb-1">القائمون على الموقع</h3>
-                                <p class="text-body-secondary mb-0">فريقنا المتخصص</p>
+                                <p class="text-body-secondary mb-0"> من نحنا؟</p>
                             </div>
                         </div>
                         <div class="border-start border-4 border-warning ps-4 mb-4">

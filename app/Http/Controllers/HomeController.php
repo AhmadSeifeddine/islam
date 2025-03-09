@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $books = Book::with(['scholar', 'category', 'explanations'])->get();
+        $books = Book::active()->isInHomepage()->with(['scholar', 'category', 'explanations', 'media'])->get();
         $personalities = Scholar::active()->isInHomepage()->with('media')->get()->map(function ($scholar) {
             return [
                 'id' => $scholar->id,

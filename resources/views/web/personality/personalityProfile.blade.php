@@ -49,48 +49,32 @@
                             <div class="col-12 d-flex flex-column justify-content-between gap-5">
                                 <div class="person_header d-flex align-items-start justify-content-between flex-wrap gap-4">
                                     <div class="person_name">
-                                        <span class="p-0 m-0 text-primary">الإسم:</span>
-                                        <h1 class="display-5 fw-bold fw-light profile-name" style="letter-spacing: -1px;">
-                                            يوسف القرضاوي
+                                        <span class="p-0 m-0 text-info">الإسم:</span>
+                                        <h1 class="pt-1 display-5 fw-bold fw-light profile-name" style="letter-spacing: -1px;">
+                                               {{ $scholar['nickname'] }}
                                         </h1>
                                     </div>
 
-                                    <div class="bg-danger bg-opacity-10 rounded-3 py-2 px-4 text-danger fs-6 fw-bolder">
-                                        لا ننصح به
-                                    </div>
+
+                                    <x-box.rate :rate="$scholar['recommended_score']" />
                                 </div>
                             </div>
 
                             <div class="col-6 col-md-4">
-                                <div
-                                    class="bg-info bg-opacity-5 rounded-3 py-3 px-4 h-100 border-start border-3 border-info">
-                                    <div class="text-info fw-semibold mb-2">
-                                        تاريخ الولادة:
-                                    </div>
-                                    <div class="fw-bold">1329هـ</div>
-                                </div>
+                                <x-box.highlight class="py-3" text="تاريخ الولادة:" :rate="$scholar['recommended_score']" :data="$scholar['birth_date'] ?? 'غير معروف'" />
                             </div>
 
                             <div class="col-6 col-md-4">
-                                <div
-                                    class="bg-info bg-opacity-5 rounded-3 py-3 px-4 h-100 border-start border-3 border-info">
-                                    <div class="text-info fw-semibold mb-2">
-                                        تاريخ الوفاة:
-                                    </div>
-                                    <div class="fw-bold">1419هـ</div>
-                                </div>
+                                <x-box.highlight class="py-3" text="تاريخ الوفاة:" :rate="$scholar['recommended_score']" :data="$scholar['death_date'] ?? 'على قيد الحياة'" />
                             </div>
 
                             <div class="col-12 col-md-4">
-                                <div class="d-flex flex-column gap-1 bg-light rounded-3 py-3 px-4 border">
-                                    <span class="text-primary fw-bold">الجنسية</span>
-                                    <span class="fw-bolder fs-5">مصري</span>
-                                </div>
+                                <x-box.highlight class="py-3" text="مكان الولادة" :data="$scholar['nationality']" />
                             </div>
 
                             <div class="col-12">
                                 <div
-                                    class="person_description p-4 bg-gradient bg-warning bg-opacity-15 rounded-3 d-flex flex-column justify-content-between gap-4 h-100">
+                                    class="person_description p-4 bg-warning bg-opacity-10 rounded-3 d-flex flex-column justify-content-between gap-4 h-100">
                                     <p class="d-flex align-items-center gap-3">
                                         <svg width="22" style="enable-background:new 0 0 128 128;" version="1.1"
                                             viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
@@ -107,26 +91,7 @@
                                         </svg>
                                         <span class="fw-bold fs-2 m-0 p-0"> السيرة الذاتية: </span>
                                     </p>
-                                    <p class="fs-4" style="text-align: justify">
-                                        ومن لوازم هؤلاء أنهم يسرفون في التحريم ، فهم يحرمون بالأحاديث الضعيفة ، وإن كانوا
-                                        يقوونها
-                                        بكثرة الطرق، وهذا ليس حكما على إطلاقه أو تكون الأحاديث غير صريحة في الدلالة على
-                                        التحريم
-                                        ،
-                                        فهم يستدلون بصريح غير صحيح ، أو بصحيح غير صريح . ولذا تراهم يكادون يُحَرِّمون على
-                                        الناس
-                                        كل
-                                        شيء الذي يسميه الخليجيون (عكسا) وهو فعلا بمثابة انعكاس الصورة على المرآة . وعلى هذا
-                                        الأساس
-                                        حرموا استخدام التلفزيون ؛ لأنه يقوم على التصوير ، والتصوير كله حرام ، والسينما كلها
-                                        حرام
-                                        ،
-                                        لأنها تقوم على التصوير . والغناء كله حرام ، ولا سيما إذا كان مع الآلات ، وخصوصا إذا
-                                        كان
-                                        المغني امرأة . وكشف المرأة وجهها حرام ، لأن وجهها عورة ، وتغطيته واجبة . ولا يكفي
-                                        المسلمة أن
-                                        تلبس الخمار الذي تغطي به رأسها وعنقها ونحرها . كما تفعل (المحجبات) في عصرنا . فهؤلاء
-                                        المحجبات آثمات في نظر هؤلاء . ومن ذلك قولهم بتحريم حلق اللحية"
+                                    <p class="fs-7 text-gray lh-lg" style="text-align: justify">{{ $scholar['biography'] }}
                                     </p>
                                 </div>
                             </div>

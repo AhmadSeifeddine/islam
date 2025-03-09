@@ -24,9 +24,12 @@ class DatabaseSeeder extends Seeder
         //     'email_verified_at' => now(),
         // ])->addRole('super_admin');
 
-        User::where('id', 2)->update([
-            'password' => Hash::make('idkpass881@@')
-        ]);
+        // User::where('id', 2)->update([
+        //     'password' => Hash::make('idkpass881@@')
+
+        // User::where('id', 1)->update([
+        //     'password' => Hash::make('12345678')
+        // ]);
 
         // $this->call([
         //     RolePermission::class,

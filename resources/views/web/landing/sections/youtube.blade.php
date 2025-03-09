@@ -1,6 +1,6 @@
 <div class="container">
     <x-title title="مقترحات" coloredTitle="الفيديوهات"
-        subTitle="سعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل  متحدثي اللغة العربية" />
+        subTitle="مجموعة منتقاة من الفيديوهات لمساعدتك على التعلم والاستفادة." />
 
     <!-- Swiper -->
     <div class="swiper youtubeSwiper">

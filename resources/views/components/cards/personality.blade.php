@@ -1,5 +1,9 @@
 @props(['data', 'isSwiper' => false])
 
+<?php
+    $isHavePersPhoto = $data['birth_date'] < 1000 ? 'px-2' : 'h-100';
+?>
+
 <div class="card shadow">
     <div class="card-body p-3 border-0">
         <div class="row g-6">
@@ -11,6 +15,9 @@
                     @if ($data['isRecomanded'] < 5)
                         <div
                             class="position-relative w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100">
+                <div class="d-flex align-items-center justify-content-center w-100 py-2 py-md-0 py-lg-2 py-xl-0 bg-light rounded-3 h-100">
+                    @if($data['isRecomanded'] < 5)
+                        <div class="position-relative w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 {{ $isHavePersPhoto }}">
                             {{-- Base image with stronger grayscale --}}
                             <img class="w-100 h-100 rounded-3" src="{{ $data['image'] }}" alt="صورة الشخصية"
                                 style="object-fit: cover; filter: grayscale(100%) brightness(0.8);">
@@ -32,9 +39,14 @@
                                 <small>لا ننصح به</small>
                             </div>
                         </div>
+
                     @else
                         <img class="w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 h-100 rounded-3"
                             src="{{ $data['image'] }}" alt="صورة الشخصية" style="object-fit: cover">
+                        <img class="w-50 w-md-100 {{ $isSwiper ? 'w-lg-25 ' : 'w-lg-50 ' }} w-xl-100 rounded-3 {{ $isHavePersPhoto }}"
+                            src="{{ asset('vendor/img/logo/othman.png') }}"
+                            alt="صورة الشخصية"
+                            style="object-fit: cover">
                     @endif
                 </div>
             </div>
@@ -49,12 +61,12 @@
                         <h2 class="mt-2 fs-1 fw-bolder">{{ $data['nickname'] }}</h2>
                     </div>
 
-                    {{-- ? personality Category --}}
-                    <x-box.category :rate="$data['isRecomanded']" />
+                    {{-- ? personality rate --}}
+                    <x-box.rate :rate="$data['isRecomanded']" />
 
                 </div>
 
-                {{-- ? personality Owner --}}
+                {{-- ? personality nationality --}}
                 <x-box.highlight class="w-100 mt-3" text="مكان الولادة" :data="$data['nationality']" />
 
                 {{-- ? personality Description --}}

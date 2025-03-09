@@ -1,6 +1,6 @@
 <div class="container">
     <x-title title="مقترحات" coloredTitle="الشخصيات"
-        subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
+        subTitle="شخصيات من الماضي والحاضر.. بعضها قدوة، وبعضها فتنة." />
 
     <!-- Swiper -->
     <div class="swiper personalitiesSwiper">

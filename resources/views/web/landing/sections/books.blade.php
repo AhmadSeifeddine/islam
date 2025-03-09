@@ -1,6 +1,6 @@
 <div class="container">
     <x-title title="مقترحات" coloredTitle="الكتب"
-        subTitle="نسعى جاهدين لإثراء المحتوى العربي وتسهيل الوصول إلى المعرفة لكل متحدثي اللغة العربية" />
+        subTitle="نوفر لك كتبًا منتقاة بعناية لتكون مرجعًا في رحلتك العلمية والدينية" />
 
     <!-- Swiper -->
     <div class="swiper booksSwiper">

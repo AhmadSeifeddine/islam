@@ -33,15 +33,15 @@
                 <!--begin::Menu-->
                 <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
                     id="kt_app_header_menu" data-kt-menu="true">
-                    @guest
+                    {{-- @guest --}}
                         <x-nav-item href="articles">{{ __('مقالات') }}</x-nav-item>
                         <x-nav-item href="books">{{ __('كتب') }}</x-nav-item>
                         <x-nav-item href="akida">{{ __('عقيدة') }}</x-nav-item>
                         <x-nav-item href="fiqh">{{ __('فقه') }}</x-nav-item>
                         <x-nav-item href="youtube">{{ __('فيديوهات') }}</x-nav-item>
                         <x-nav-item href="personalities">{{ __('شخصيات') }}</x-nav-item>
-                    @else
-                    @endguest
+                    {{-- @else --}}
+                    {{-- @endguest --}}
                     <!--end:Menu item-->
                 </div>
                 <!--end::Menu-->

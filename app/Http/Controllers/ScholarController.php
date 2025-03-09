@@ -13,9 +13,10 @@ class ScholarController extends BaseController
         return view('web.personality.personalities');
     }
 
-    public function profile()
+    public function profile($id)
     {
-        return view('web.personality.personalityProfile');
+        $scholar = Scholar::with('media')->findOrFail($id);
+        return view('web.personality.personalityProfile', compact('scholar'));
     }
 
     public function store(ScholarRequest $request)
